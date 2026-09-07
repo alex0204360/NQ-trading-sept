@@ -1,5 +1,9 @@
 # Changelog
 
+## Statistical harness RED checkpoint - 2026-09-07
+
+- Specified joint block resampling, matched baseline weighting, ambiguity handling, undefined inference, and Holm failure accounting before production.
+
 ## 0.2.0 - 2026-09-07 - Plan published; implementation checkpoint
 
 - Published and remotely verified the original plan commit before implementation; preserved the user's initial README commit through a merge.
