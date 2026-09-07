@@ -1,4 +1,8 @@
-# MNQ/NQ Pattern-Mining & Strategy Engine
+# NQ-trading-sept
+
+NQ trading repository for September.
+
+## MNQ/NQ Pattern-Mining & Strategy Engine
 
 Phase 0 documentation only. This project has not yet downloaded market data, implemented code, run candidates, or established any statistically significant pattern.
 
