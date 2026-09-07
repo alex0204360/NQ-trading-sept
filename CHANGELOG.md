@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.2.0 - 2026-09-07 - Plan published; implementation checkpoint
+
+- Published and remotely verified the original plan commit before implementation; preserved the user's initial README commit through a merge.
+- Downloaded Kaggle dataset version 1 successfully. After the interrupted session, restored the Python environment and verified the pinned version and raw-file checksum.
+- Added package/dependency configuration and explicit component contracts.
+- Data, outcome-labeling, and feature/candidate agents supplied tests before production implementation; RED evidence is preserved in this checkpoint.
+- No tournament results or statistically significant patterns are claimed at this point.
+
 ## 0.1.1 - 2026-09-07 - Repository supplied; publish attempt denied
 
 - User created `alex0204360/NQ-trading-sept` and authorized publishing the existing work.

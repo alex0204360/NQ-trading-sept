@@ -1,6 +1,6 @@
 # Phase 0 status and recovery
 
-Prepared September 6, 2026; updated September 7, 2026. Status: blocked before implementation by GitHub integration write access.
+Prepared September 6, 2026; updated September 7, 2026. Current status: publication recovered; Phase 0 complete. The original plan commit was verified on GitHub at `152f83bad72e9af30260be467eb55aa210b7d1f0`, before implementation. The user-supplied classic token worked through transient Git authentication. Main at recovery was `3cb0f52`, preserving the user's original README history. The access failures below are historical and no longer block this project.
 
 The user has now supplied [alex0204360/NQ-trading-sept](https://github.com/alex0204360/NQ-trading-sept). Repository metadata is readable and reports the owner has push/admin permissions. However, the first plan-file creation attempt returned HTTP 403, `Resource not accessible by integration`. User account permissions and integration permissions are different. No remote file or commit was created by that attempt. The older creation blocker below is retained as historical context and has been replaced by this write-access blocker.
 

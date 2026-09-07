@@ -2,7 +2,7 @@
 
 Version: 0.1.0. Prepared September 6, 2026, before implementation or data download.
 
-Status update, September 7: the user supplied `alex0204360/NQ-trading-sept`. The first plan-file publication was attempted and GitHub returned HTTP 403, `Resource not accessible by integration`. The plan is locally committed, but not published. No research results exist. The protocol below is unchanged; integration write access is now the blocking dependency. See `phase0-status.md` for the full access history.
+Status update, September 7: the original plan commit `152f83bad72e9af30260be467eb55aa210b7d1f0` is published to `alex0204360/NQ-trading-sept` and was verified remotely before implementation. User-authorized Git authentication resolved the earlier publication block. Implementation is now in progress. The preregistered protocol below is unchanged; dated execution status belongs in the README and stage reports. See `phase0-status.md` for the access history.
 
 ## 1. Objective and acceptance
 
@@ -161,7 +161,7 @@ Each library entry contains schema version, pattern ID, family, machine-readable
 
 ## 9. Implementation sequence and artifacts
 
-No files in the following implementation rows exist yet. These are planned deliverables.
+At preregistration, no files in the following implementation rows existed. This table records the planned dependency order; the README reports current execution status.
 
 | Dependency | Work and locations | Delegation/review | Risk and verification |
 | --- | --- | --- | --- |
@@ -184,4 +184,4 @@ Every work unit follows test-first RED, minimal GREEN, review, and a changelog u
 
 Completion requires a new accessible GitHub project; plan published before code; audited real dataset; at least two approaches in every attempted tournament round; labels and full hypothesis history; stop reason; frozen historical validation or explicit no-survivor skip; feed-agnostic matcher; tests and review evidence; all deliverables pushed with remote SHAs verified. The README must distinguish demonstrated historical numbers, model-selection effects, provenance assumptions, untested transaction costs/slippage, unknown forward behavior, and unverified NQ-to-MNQ transfer.
 
-Current achieved scope is Phase 0 documentation and research only. No dataset has been downloaded, no code or tests have been written, no tournament has run, no patterns have been found, and no project commit has been published to GitHub. Restoring integration write access to the supplied repository is the next dependency, not changing the statistical gates.
+The original Phase 0 publication block was resolved on September 7. The original plan was verified on GitHub before implementation and data download began. Statistical gates remain unchanged. Consult current stage artifacts for achieved scope and measured results.

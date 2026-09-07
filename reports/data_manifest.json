@@ -1,0 +1,14 @@
+{
+  "dataset": "tgtanalytics/nq-futures-1min-bar-2022-2025",
+  "version": 1,
+  "downloaded_at_utc": "2026-09-07T18:56:25.067773+00:00",
+  "files": [
+    {
+      "name": "Dataset_NQ_1min_2022_2025.csv",
+      "bytes": 72522264,
+      "sha256": "1577e60a7feab411e49da7a56c7052a64738cd1757cfd60aa11fd783ff43b60b"
+    }
+  ],
+  "kagglehub_version": "1.0.2",
+  "raw_data_in_git": false
+}
