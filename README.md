@@ -6,6 +6,8 @@ Read `docs/research.plan.md` for the complete protocol, fixed statistical gates,
 
 The user created [NQ-trading-sept](https://github.com/alex0204360/NQ-trading-sept) on September 7, 2026. The connected integration can read its metadata, but the first plan-file publication attempt returned HTTP 403, `Resource not accessible by integration`. No remote commit was created. Implementation remains blocked because the user requires the plan committed first; the next dependency is integration write access to this repository.
 
+A subsequent user-authorized personal-access-token push also returned HTTP 403 permission denied. Its repository selection and Contents write permission require review. No token is present in this project and no remote push has succeeded.
+
 Planned output is a Python pattern library and matching module accepting completed standard one-minute OHLCV bars from any caller. A future data feed can supply these bars without changing the matching module. No specific feed, execution connection, Pine Script, or forward test is part of this delivery.
 
 This is research infrastructure, and an empty validated library is an acceptable result. NQ historical evidence will not establish MNQ execution performance or live profitability. Actual statistical results and the tournament stop reason will replace this setup-only status after the authorized research can run.

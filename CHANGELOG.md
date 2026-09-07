@@ -7,6 +7,7 @@
 - GitHub returned HTTP 403, `Resource not accessible by integration`. No remote commit or file was created by this attempt.
 - Recorded the changed blocker: the repository exists, but the connected integration cannot write it. Preserve the plan-first boundary while repository access is corrected.
 - Updated the plan's status notice without changing any statistical or implementation rule, and packaged the documentation plus genuine local Git history for review.
+- Tried the subsequently user-authorized personal access token via HTTPS Git push. GitHub identified the account but returned HTTP 403 permission denied. No credentials were saved in project files, Git configuration, or logs; remote publication remains blocked.
 
 ## 0.1.0 - 2026-09-06 - Phase 0 documentation
 
