@@ -1,5 +1,9 @@
 # Changelog
 
+## Orchestration and matcher RED checkpoint - 2026-09-07
+
+- Specified protocol gates, exact tournament stops, immutable finalist manifests, calendar audit accounting, and stream/batch matcher equivalence before implementation.
+
 ## Statistical harness RED checkpoint - 2026-09-07
 
 - Specified joint block resampling, matched baseline weighting, ambiguity handling, undefined inference, and Holm failure accounting before production.
