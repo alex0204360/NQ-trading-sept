@@ -6,6 +6,7 @@
 - Verified repository metadata and attempted to publish the plan as the first file.
 - GitHub returned HTTP 403, `Resource not accessible by integration`. No remote commit or file was created by this attempt.
 - Recorded the changed blocker: the repository exists, but the connected integration cannot write it. Preserve the plan-first boundary while repository access is corrected.
+- Updated the plan's status notice without changing any statistical or implementation rule, and packaged the documentation plus genuine local Git history for review.
 
 ## 0.1.0 - 2026-09-06 - Phase 0 documentation
 

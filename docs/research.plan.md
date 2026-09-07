@@ -2,7 +2,7 @@
 
 Version: 0.1.0. Prepared September 6, 2026, before implementation or data download.
 
-Status: documentation prepared for the first project commit. GitHub publication is blocked because the connected tools cannot create the requested new repository. No research results exist. A local documentation commit is not evidence of GitHub publication.
+Status update, September 7: the user supplied `alex0204360/NQ-trading-sept`. The first plan-file publication was attempted and GitHub returned HTTP 403, `Resource not accessible by integration`. The plan is locally committed, but not published. No research results exist. The protocol below is unchanged; integration write access is now the blocking dependency. See `phase0-status.md` for the full access history.
 
 ## 1. Objective and acceptance
 
@@ -184,4 +184,4 @@ Every work unit follows test-first RED, minimal GREEN, review, and a changelog u
 
 Completion requires a new accessible GitHub project; plan published before code; audited real dataset; at least two approaches in every attempted tournament round; labels and full hypothesis history; stop reason; frozen historical validation or explicit no-survivor skip; feed-agnostic matcher; tests and review evidence; all deliverables pushed with remote SHAs verified. The README must distinguish demonstrated historical numbers, model-selection effects, provenance assumptions, untested transaction costs/slippage, unknown forward behavior, and unverified NQ-to-MNQ transfer.
 
-Current achieved scope is Phase 0 documentation and research only. No dataset has been downloaded, no code or tests have been written, no tournament has run, no patterns have been found, and no project commit has been published to GitHub. Restoring the repository destination is the next dependency, not changing the statistical gates.
+Current achieved scope is Phase 0 documentation and research only. No dataset has been downloaded, no code or tests have been written, no tournament has run, no patterns have been found, and no project commit has been published to GitHub. Restoring integration write access to the supplied repository is the next dependency, not changing the statistical gates.
