@@ -18,3 +18,4 @@ data/
 *.pem
 *.key
 *.log
+.coverage.*

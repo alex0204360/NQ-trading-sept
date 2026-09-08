@@ -1,0 +1,19 @@
+{
+  "calendar_name": "CME_Equity",
+  "calendar_package_version": "5.4.0",
+  "calendar_status": "package calendar compared with published CME daily halt; historical holiday completeness not independently certified",
+  "canonical_convention": "interval_start",
+  "confirmatory_metadata_ready": false,
+  "contract_roll_methodology": "unknown; no contract column supplied",
+  "convention_evidence": "Raw bars exist at 18:01 and 17:00 ET; none at 18:00 or 17:01. End stamps inferred mechanically before scoring, not publisher verified.",
+  "dataset_version": 1,
+  "heldout_access": "mechanical audit and split only; no outcomes or candidate scoring",
+  "holdout_cutoff": "2025-01-01T05:00:00Z",
+  "holdout_rows": 330516,
+  "license_publisher_stated": "CC0: Public Domain",
+  "raw_data_redistributed": false,
+  "raw_sha256": "1577e60a7feab411e49da7a56c7052a64738cd1757cfd60aa11fd783ff43b60b",
+  "source_convention": "end_inferred_not_verified",
+  "source_timezone": "America/New_York",
+  "training_rows": 706008
+}

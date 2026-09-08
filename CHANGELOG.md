@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.3.0 - 2026-09-08 - Audited pipeline and tested research engine
+
+- Implemented chronological normalization, calendar reconciliation, first-passage outcomes, causal features, four finite candidate rounds, joint block inference, and OHLCV matcher.
+- Audited 1,048,575 raw rows; retained 706,008 training and 330,516 heldout bars after 12,051 calendar exclusions. Every exclusion is recorded.
+- Froze inferred end-stamp interpretation and recorded unresolved source/roll/calendar metadata, which prevents unsupported confirmation claims.
+- Independent component verification: 244 tests pass; root validation and synthetic round integration: 28 tests pass.
+- Added round checkpoints, fixed dependency lock, and command-line entry points. No market round results claimed yet.
+
 ## Integration review - 2026-09-08
 
 - Added regression specifications for timestamp storage units, positive OHLC, exact model reproducibility, and partial session dates shared by adjacent folds.

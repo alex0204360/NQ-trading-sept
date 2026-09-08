@@ -12,6 +12,7 @@ dependencies = [
   "pandas==2.2.3",
   "scipy==1.17.0",
   "scikit-learn==1.8.0",
+  "threadpoolctl==3.6.0",
   "statsmodels==0.15.0",
   "pyarrow==25.0.1",
   "kagglehub==1.0.2",
