@@ -1,5 +1,12 @@
 # Changelog
 
+## Round 2 results - 2026-09-08
+
+- Scored all 15,120 swing and volume/range hypotheses; all failed the preregistered screening gates.
+- Zero bootstrap finalists and zero survivors; quality remains 0.
+- First diminishing-return assessment failed to improve quality by 0.01. One further non-improving evaluable round will stop the tournament.
+- Published baseline support and data interpretation limitations; heldout outcomes remain unopened.
+
 ## Round 2 definitions - 2026-09-08
 
 - Preregistered sixteen causal swing/breakout signatures and twelve bar-volume/range signatures, for 15,120 hypotheses.

@@ -1,5 +1,5 @@
 {
-  "diminishing_count": 0,
+  "diminishing_count": 1,
   "history": [
     {
       "conditions": [],
@@ -8,10 +8,18 @@
       "improvement": 0.0,
       "quality": 0.0,
       "round": 1
+    },
+    {
+      "conditions": [],
+      "diminishing_count": 1,
+      "evaluable": true,
+      "improvement": 0.0,
+      "quality": 0.0,
+      "round": 2
     }
   ],
   "quality": 0.0,
-  "round_number": 1,
+  "round_number": 2,
   "stop_reason": null,
   "survivors": {}
 }
