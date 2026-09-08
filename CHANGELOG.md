@@ -1,5 +1,11 @@
 # Changelog
 
+## Round 1 definitions - 2026-09-08
+
+- Preregistered eight frozen candle-shape clusters and sixteen price-state signatures.
+- Each signature tests 540 direction/magnitude/window combinations; 12,960 total hypotheses.
+- Baseline cutpoints and code/data hashes frozen before scoring.
+
 ## 0.3.0 - 2026-09-08 - Audited pipeline and tested research engine
 
 - Implemented chronological normalization, calendar reconciliation, first-passage outcomes, causal features, four finite candidate rounds, joint block inference, and OHLCV matcher.
