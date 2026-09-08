@@ -1,5 +1,10 @@
 # Changelog
 
+## Round 2 definitions - 2026-09-08
+
+- Preregistered sixteen causal swing/breakout signatures and twelve bar-volume/range signatures, for 15,120 hypotheses.
+- Published a control-stratum support diagnostic after Round 1. Sparse strata remain unsupported under the original 30-control gate; no thresholds or strata were changed.
+
 ## Round 1 results - 2026-09-08
 
 - Scored all 12,960 preregistered hypotheses across four training walk-forward folds.

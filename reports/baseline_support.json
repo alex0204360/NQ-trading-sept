@@ -1,0 +1,445 @@
+{
+  "description": "Signal-independent control counts per occupied eligible stratum; no heldout data. Rare strata remain failed, not merged after seeing outcomes.",
+  "periods": [
+    {
+      "period": "wf_1",
+      "strata": [
+        {
+          "controls": 383,
+          "name": "2023Q2|00-06|0",
+          "supported": true
+        },
+        {
+          "controls": 124,
+          "name": "2023Q2|00-06|1",
+          "supported": true
+        },
+        {
+          "controls": 2,
+          "name": "2023Q2|00-06|2",
+          "supported": false
+        },
+        {
+          "controls": 154,
+          "name": "2023Q2|06-12|0",
+          "supported": true
+        },
+        {
+          "controls": 178,
+          "name": "2023Q2|06-12|1",
+          "supported": true
+        },
+        {
+          "controls": 183,
+          "name": "2023Q2|06-12|2",
+          "supported": true
+        },
+        {
+          "controls": 2,
+          "name": "2023Q2|12-18|0",
+          "supported": false
+        },
+        {
+          "controls": 162,
+          "name": "2023Q2|12-18|1",
+          "supported": true
+        },
+        {
+          "controls": 82,
+          "name": "2023Q2|12-18|2",
+          "supported": true
+        },
+        {
+          "controls": 414,
+          "name": "2023Q2|18-24|0",
+          "supported": true
+        },
+        {
+          "controls": 15,
+          "name": "2023Q2|18-24|1",
+          "supported": false
+        },
+        {
+          "controls": 1,
+          "name": "2023Q2|18-24|2",
+          "supported": false
+        }
+      ]
+    },
+    {
+      "period": "wf_2",
+      "strata": [
+        {
+          "controls": 271,
+          "name": "2023Q3|00-06|0",
+          "supported": true
+        },
+        {
+          "controls": 226,
+          "name": "2023Q3|00-06|1",
+          "supported": true
+        },
+        {
+          "controls": 15,
+          "name": "2023Q3|00-06|2",
+          "supported": false
+        },
+        {
+          "controls": 89,
+          "name": "2023Q3|06-12|0",
+          "supported": true
+        },
+        {
+          "controls": 174,
+          "name": "2023Q3|06-12|1",
+          "supported": true
+        },
+        {
+          "controls": 257,
+          "name": "2023Q3|06-12|2",
+          "supported": true
+        },
+        {
+          "controls": 0,
+          "name": "2023Q3|12-18|0",
+          "supported": false
+        },
+        {
+          "controls": 88,
+          "name": "2023Q3|12-18|1",
+          "supported": true
+        },
+        {
+          "controls": 160,
+          "name": "2023Q3|12-18|2",
+          "supported": true
+        },
+        {
+          "controls": 373,
+          "name": "2023Q3|18-24|0",
+          "supported": true
+        },
+        {
+          "controls": 63,
+          "name": "2023Q3|18-24|1",
+          "supported": true
+        },
+        {
+          "controls": 3,
+          "name": "2023Q3|18-24|2",
+          "supported": false
+        },
+        {
+          "controls": 326,
+          "name": "2023Q4|00-06|0",
+          "supported": true
+        },
+        {
+          "controls": 164,
+          "name": "2023Q4|00-06|1",
+          "supported": true
+        },
+        {
+          "controls": 20,
+          "name": "2023Q4|00-06|2",
+          "supported": false
+        },
+        {
+          "controls": 120,
+          "name": "2023Q4|06-12|0",
+          "supported": true
+        },
+        {
+          "controls": 177,
+          "name": "2023Q4|06-12|1",
+          "supported": true
+        },
+        {
+          "controls": 215,
+          "name": "2023Q4|06-12|2",
+          "supported": true
+        },
+        {
+          "controls": 8,
+          "name": "2023Q4|12-18|0",
+          "supported": false
+        },
+        {
+          "controls": 127,
+          "name": "2023Q4|12-18|1",
+          "supported": true
+        },
+        {
+          "controls": 150,
+          "name": "2023Q4|12-18|2",
+          "supported": true
+        },
+        {
+          "controls": 384,
+          "name": "2023Q4|18-24|0",
+          "supported": true
+        },
+        {
+          "controls": 58,
+          "name": "2023Q4|18-24|1",
+          "supported": true
+        },
+        {
+          "controls": 0,
+          "name": "2023Q4|18-24|2",
+          "supported": false
+        }
+      ]
+    },
+    {
+      "period": "wf_3",
+      "strata": [
+        {
+          "controls": 258,
+          "name": "2024Q1|00-06|0",
+          "supported": true
+        },
+        {
+          "controls": 220,
+          "name": "2024Q1|00-06|1",
+          "supported": true
+        },
+        {
+          "controls": 18,
+          "name": "2024Q1|00-06|2",
+          "supported": false
+        },
+        {
+          "controls": 68,
+          "name": "2024Q1|06-12|0",
+          "supported": true
+        },
+        {
+          "controls": 211,
+          "name": "2024Q1|06-12|1",
+          "supported": true
+        },
+        {
+          "controls": 225,
+          "name": "2024Q1|06-12|2",
+          "supported": true
+        },
+        {
+          "controls": 0,
+          "name": "2024Q1|12-18|0",
+          "supported": false
+        },
+        {
+          "controls": 99,
+          "name": "2024Q1|12-18|1",
+          "supported": true
+        },
+        {
+          "controls": 192,
+          "name": "2024Q1|12-18|2",
+          "supported": true
+        },
+        {
+          "controls": 395,
+          "name": "2024Q1|18-24|0",
+          "supported": true
+        },
+        {
+          "controls": 44,
+          "name": "2024Q1|18-24|1",
+          "supported": true
+        },
+        {
+          "controls": 2,
+          "name": "2024Q1|18-24|2",
+          "supported": false
+        },
+        {
+          "controls": 288,
+          "name": "2024Q2|00-06|0",
+          "supported": true
+        },
+        {
+          "controls": 198,
+          "name": "2024Q2|00-06|1",
+          "supported": true
+        },
+        {
+          "controls": 22,
+          "name": "2024Q2|00-06|2",
+          "supported": false
+        },
+        {
+          "controls": 90,
+          "name": "2024Q2|06-12|0",
+          "supported": true
+        },
+        {
+          "controls": 192,
+          "name": "2024Q2|06-12|1",
+          "supported": true
+        },
+        {
+          "controls": 238,
+          "name": "2024Q2|06-12|2",
+          "supported": true
+        },
+        {
+          "controls": 0,
+          "name": "2024Q2|12-18|0",
+          "supported": false
+        },
+        {
+          "controls": 103,
+          "name": "2024Q2|12-18|1",
+          "supported": true
+        },
+        {
+          "controls": 149,
+          "name": "2024Q2|12-18|2",
+          "supported": true
+        },
+        {
+          "controls": 359,
+          "name": "2024Q2|18-24|0",
+          "supported": true
+        },
+        {
+          "controls": 72,
+          "name": "2024Q2|18-24|1",
+          "supported": true
+        },
+        {
+          "controls": 10,
+          "name": "2024Q2|18-24|2",
+          "supported": false
+        }
+      ]
+    },
+    {
+      "period": "wf_4",
+      "strata": [
+        {
+          "controls": 144,
+          "name": "2024Q3|00-06|0",
+          "supported": true
+        },
+        {
+          "controls": 240,
+          "name": "2024Q3|00-06|1",
+          "supported": true
+        },
+        {
+          "controls": 131,
+          "name": "2024Q3|00-06|2",
+          "supported": true
+        },
+        {
+          "controls": 44,
+          "name": "2024Q3|06-12|0",
+          "supported": true
+        },
+        {
+          "controls": 160,
+          "name": "2024Q3|06-12|1",
+          "supported": true
+        },
+        {
+          "controls": 314,
+          "name": "2024Q3|06-12|2",
+          "supported": true
+        },
+        {
+          "controls": 0,
+          "name": "2024Q3|12-18|0",
+          "supported": false
+        },
+        {
+          "controls": 30,
+          "name": "2024Q3|12-18|1",
+          "supported": true
+        },
+        {
+          "controls": 218,
+          "name": "2024Q3|12-18|2",
+          "supported": true
+        },
+        {
+          "controls": 170,
+          "name": "2024Q3|18-24|0",
+          "supported": true
+        },
+        {
+          "controls": 200,
+          "name": "2024Q3|18-24|1",
+          "supported": true
+        },
+        {
+          "controls": 73,
+          "name": "2024Q3|18-24|2",
+          "supported": true
+        },
+        {
+          "controls": 194,
+          "name": "2024Q4|00-06|0",
+          "supported": true
+        },
+        {
+          "controls": 227,
+          "name": "2024Q4|00-06|1",
+          "supported": true
+        },
+        {
+          "controls": 80,
+          "name": "2024Q4|00-06|2",
+          "supported": true
+        },
+        {
+          "controls": 64,
+          "name": "2024Q4|06-12|0",
+          "supported": true
+        },
+        {
+          "controls": 191,
+          "name": "2024Q4|06-12|1",
+          "supported": true
+        },
+        {
+          "controls": 265,
+          "name": "2024Q4|06-12|2",
+          "supported": true
+        },
+        {
+          "controls": 0,
+          "name": "2024Q4|12-18|0",
+          "supported": false
+        },
+        {
+          "controls": 90,
+          "name": "2024Q4|12-18|1",
+          "supported": true
+        },
+        {
+          "controls": 196,
+          "name": "2024Q4|12-18|2",
+          "supported": true
+        },
+        {
+          "controls": 257,
+          "name": "2024Q4|18-24|0",
+          "supported": true
+        },
+        {
+          "controls": 159,
+          "name": "2024Q4|18-24|1",
+          "supported": true
+        },
+        {
+          "controls": 23,
+          "name": "2024Q4|18-24|2",
+          "supported": false
+        }
+      ]
+    }
+  ]
+}
