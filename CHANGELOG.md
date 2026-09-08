@@ -1,5 +1,11 @@
 # Changelog
 
+## Round 3 definitions - 2026-09-08
+
+- Preregistered sixteen price/wick rejection and sixteen prior-swing reversal signatures: 17,280 hypotheses.
+- Used fallback refinements already defined before market scoring; no winning approach exists to deepen. The choice is documented in docs/round3-decision.md.
+- All statistical gates and stop conditions remain unchanged.
+
 ## Round 2 results - 2026-09-08
 
 - Scored all 15,120 swing and volume/range hypotheses; all failed the preregistered screening gates.

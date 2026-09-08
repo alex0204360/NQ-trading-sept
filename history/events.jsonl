@@ -35,3 +35,4 @@
 {"recorded_at_utc": "2026-09-08T12:41:39.396001+00:00", "event": "round_completed", "round": 1, "actor": "/root", "status": "completed_no_survivors", "hypotheses": 12960, "artifact": "results/round_01/summary.json", "stop_reason": null}
 {"recorded_at_utc": "2026-09-08T12:43:35.125831+00:00", "event": "round_manifest", "round": 2, "actor": "/root", "status": "prepared_before_scoring", "artifact": "results/round_02/manifest.json", "signatures": 28}
 {"recorded_at_utc": "2026-09-08T12:46:25.032543+00:00", "event": "round_completed", "round": 2, "actor": "/root", "status": "completed_no_survivors", "hypotheses": 15120, "artifact": "results/round_02/summary.json", "stop_reason": null, "diminishing_count": 1}
+{"recorded_at_utc": "2026-09-08T12:48:14.876987+00:00", "event": "round_manifest", "round": 3, "actor": "/root", "status": "prepared_before_scoring", "artifact": "results/round_03/manifest.json", "signatures": 32, "decision": "docs/round3-decision.md"}

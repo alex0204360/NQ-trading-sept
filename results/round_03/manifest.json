@@ -1,0 +1,824 @@
+{
+  "baseline_cutpoints": [
+    [
+      0.0002291701193238316,
+      0.0004399201635297748
+    ],
+    [
+      0.00018923714228161109,
+      0.00037611850439518105
+    ],
+    [
+      0.00017448415636476278,
+      0.0003459645165197614
+    ],
+    [
+      0.00016674565144893195,
+      0.00033065036899608747
+    ]
+  ],
+  "candidates": [
+    {
+      "family": "price_state",
+      "id": "011166a8ad1c0154777fb421c778daf74ac726546d8045fc459c0abba56df12e",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "le",
+            "value": -0.75
+          },
+          {
+            "feature": "lower_wick_fraction",
+            "op": "ge",
+            "value": 0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "4e5b26e1fab25d6a80299023963628e3a6c8dbb45647eea9e5fbf1ecca113d18",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "le",
+            "value": -0.75
+          },
+          {
+            "feature": "lower_wick_fraction",
+            "op": "ge",
+            "value": 0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "57a8a6f9185dfa23e96051d48c527397ecc2834497f9fd0cb2bb6c0de197aad5",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "le",
+            "value": -1.25
+          },
+          {
+            "feature": "lower_wick_fraction",
+            "op": "ge",
+            "value": 0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "de95d3e1e5e70000519005bd5c719491ccc999f4b5edcb5e9cfd79e73684ed89",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "le",
+            "value": -1.25
+          },
+          {
+            "feature": "lower_wick_fraction",
+            "op": "ge",
+            "value": 0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "afe00ccabb448a91c8fff071a98be4c3e553d7be5253998383d952c03493b6b4",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "le",
+            "value": -1.75
+          },
+          {
+            "feature": "lower_wick_fraction",
+            "op": "ge",
+            "value": 0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "5ee41fd390c747f03e199eed5baa2158b9875ae0d0edc7f9418779de3345fe7b",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "le",
+            "value": -1.75
+          },
+          {
+            "feature": "lower_wick_fraction",
+            "op": "ge",
+            "value": 0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "90a955058919bf277c1db2a7e3902c534bab72d6bb03e7be6bdee7261dcdf7f4",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "le",
+            "value": -2.25
+          },
+          {
+            "feature": "lower_wick_fraction",
+            "op": "ge",
+            "value": 0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "a3c0b32a2c583c8e46a87ba6f23678c9df18f8491b99ccd4c9bf9cfc13e1c41c",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "le",
+            "value": -2.25
+          },
+          {
+            "feature": "lower_wick_fraction",
+            "op": "ge",
+            "value": 0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "b529878265f48fa8a8be8945d1b3024c22d60cd0f58fb15b548ad97e29a7539f",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "ge",
+            "value": 0.75
+          },
+          {
+            "feature": "upper_wick_fraction",
+            "op": "ge",
+            "value": 0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "63120b7a50ef5a826649f7837a92805b281d15c6f970b170c9cbc78b984fe376",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "ge",
+            "value": 0.75
+          },
+          {
+            "feature": "upper_wick_fraction",
+            "op": "ge",
+            "value": 0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "7df3f4941212e869c4cf3ef1d77dbd7c271f7216f6207b19a74f79065a85137a",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "ge",
+            "value": 1.25
+          },
+          {
+            "feature": "upper_wick_fraction",
+            "op": "ge",
+            "value": 0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "71d8d689aa72fa9ce46ce0ad4fae7469f9267e1e3f0be3f57271236c3913ceea",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "ge",
+            "value": 1.25
+          },
+          {
+            "feature": "upper_wick_fraction",
+            "op": "ge",
+            "value": 0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "b8915eeecbae0c9455066ccf83ac59924ceadfa8e77e06d1d2acc6083cc09c53",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "ge",
+            "value": 1.75
+          },
+          {
+            "feature": "upper_wick_fraction",
+            "op": "ge",
+            "value": 0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "92da119db905a36e2e8ce9412ae7d5bc461a05615d465587b5cad408a17d69e2",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "ge",
+            "value": 1.75
+          },
+          {
+            "feature": "upper_wick_fraction",
+            "op": "ge",
+            "value": 0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "3992e8ab4917d8ad39437e8ddc87fddc46ae3d18d1e91656a82e5e9ba69adbd4",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "ge",
+            "value": 2.25
+          },
+          {
+            "feature": "upper_wick_fraction",
+            "op": "ge",
+            "value": 0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "price_state",
+      "id": "d7a0437c0d5c4259601072857c46c4f967ed554c18eff32a1862c5db519ff948",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "ge",
+            "value": 2.25
+          },
+          {
+            "feature": "upper_wick_fraction",
+            "op": "ge",
+            "value": 0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "7744ecf644ec9bcea23c086a1ba0455ba4776d5b5f6f80f4208fbc33b6d0d89b",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_up20_atr",
+            "op": "ge",
+            "value": -0.25
+          },
+          {
+            "feature": "breakout_up20_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "le",
+            "value": -0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "7ba512eab06526c35da1bd3d6beb30f12b7277dfa545af5854d1a1641160dcd7",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_up20_atr",
+            "op": "ge",
+            "value": -0.25
+          },
+          {
+            "feature": "breakout_up20_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "le",
+            "value": -0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "b7758d151307f8c7300a70b792f8224fc7fc58478067c710ba8b91f303083de0",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_up20_atr",
+            "op": "ge",
+            "value": -0.5
+          },
+          {
+            "feature": "breakout_up20_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "le",
+            "value": -0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "b5c1797a241d5cc0ad52d9a00d8ee64dbec4f3ade0a6b36107d067583539002b",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_up20_atr",
+            "op": "ge",
+            "value": -0.5
+          },
+          {
+            "feature": "breakout_up20_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "le",
+            "value": -0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "2ceea86161dd6fa59d9f050cb93386d63ad22be7e4b64d42ff94bf0dc9242c45",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_down20_atr",
+            "op": "ge",
+            "value": -0.25
+          },
+          {
+            "feature": "breakout_down20_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "ge",
+            "value": 0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "82c5795e0d658266e2a35ace614397df11a55a16a57ac53876bf36845fda9694",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_down20_atr",
+            "op": "ge",
+            "value": -0.25
+          },
+          {
+            "feature": "breakout_down20_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "ge",
+            "value": 0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "70534d01298f6c45ef7ad5d068505b495dba804a8021fa3e4ff74199ab96bb91",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_down20_atr",
+            "op": "ge",
+            "value": -0.5
+          },
+          {
+            "feature": "breakout_down20_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "ge",
+            "value": 0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "a04f7228bf6f7dc8204df6902e32a2e9db42af0fdad14ce6cc49382d948fd586",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_down20_atr",
+            "op": "ge",
+            "value": -0.5
+          },
+          {
+            "feature": "breakout_down20_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "ge",
+            "value": 0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "93fd851638720bd3b92116f98e81227f664b0814bcc2be2a74f4a89e2dd6956d",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_up60_atr",
+            "op": "ge",
+            "value": -0.25
+          },
+          {
+            "feature": "breakout_up60_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "le",
+            "value": -0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "376e561801c3db33adf0a53c90892549c897703d97b811c0201ffc225c87bf1c",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_up60_atr",
+            "op": "ge",
+            "value": -0.25
+          },
+          {
+            "feature": "breakout_up60_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "le",
+            "value": -0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "c1cf73bed0c12a5ea06be12181c4c3b6993cb0b317b92cdecf2262e53e939420",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_up60_atr",
+            "op": "ge",
+            "value": -0.5
+          },
+          {
+            "feature": "breakout_up60_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "le",
+            "value": -0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "8d343eb7eb2dfad341027f4f9e9c6b65d909cc012615dac1be9cc8883f3feb47",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_up60_atr",
+            "op": "ge",
+            "value": -0.5
+          },
+          {
+            "feature": "breakout_up60_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "le",
+            "value": -0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "e1beb3bdef97652493d84b578f466eb7ac64c697abf65d67a9e18b48f016d51a",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_down60_atr",
+            "op": "ge",
+            "value": -0.25
+          },
+          {
+            "feature": "breakout_down60_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "ge",
+            "value": 0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "70681db096d3798a0278f21b7026788063b04efb4502d61ddbc0568f8b78bd88",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_down60_atr",
+            "op": "ge",
+            "value": -0.25
+          },
+          {
+            "feature": "breakout_down60_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "ge",
+            "value": 0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "b92a201190c91a661c1fbcd865371f25f69d54110a24fb457f35c527ff850219",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_down60_atr",
+            "op": "ge",
+            "value": -0.5
+          },
+          {
+            "feature": "breakout_down60_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "ge",
+            "value": 0.25
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    },
+    {
+      "family": "swing_breakout",
+      "id": "c3f804c88b1dfe505bf462ce8c7a68bb1736e6ebb6dcd2b8960afce5d24b91c6",
+      "signature": {
+        "conditions": [
+          {
+            "feature": "breakout_down60_atr",
+            "op": "ge",
+            "value": -0.5
+          },
+          {
+            "feature": "breakout_down60_atr",
+            "op": "lt",
+            "value": 0.0
+          },
+          {
+            "feature": "body_fraction",
+            "op": "ge",
+            "value": 0.5
+          }
+        ],
+        "kind": "rules",
+        "version": 1
+      }
+    }
+  ],
+  "definitions_sha256": "60ef3c4f7f2a520af97f136df26d41e3503b2f1f03bfd4c95a039193326d4405",
+  "directions": [
+    "up",
+    "down"
+  ],
+  "evidence_status": "exploratory_reused_walk_forward",
+  "horizons": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45
+  ],
+  "magnitudes_points": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32
+  ],
+  "provenance": {
+    "data/schedule.parquet": "fccb7ac0bc7b5c709f76ca5528b303b861b42ef8d78c6d36703252771c9c24a3",
+    "data/training.parquet": "1722334651520716155d7d14aca334342319e4431c084b5d6be8d24bd31b6f08",
+    "reports/pipeline_freeze.json": "8f6b182cfb98071c5ebb412a362f2c51c8640fb1aabdc6913f93b286ec30fd4a",
+    "src/nqpatterns/__init__.py": "f9ee9db5a3ccb99f37f9a1f73a3d78d58998d915fe0067c6eb3fda0266300d69",
+    "src/nqpatterns/acquisition.py": "ac9ee9e2ccffe4aa25d5467112b6006fdb2ea1a34440f9c625d9946d318ed928",
+    "src/nqpatterns/candidates.py": "b5fb3da1878549479f8f61fd08ade7e85ffaf12af759969345e140548331d179",
+    "src/nqpatterns/cli.py": "e4b9970a7f5eb5bc1b1f7b993a7a29d41dc2fac8286b3b5602e91e3af3c63ad2",
+    "src/nqpatterns/data.py": "bc804312ffe5327bf00d5f3372ab52a97855059d8824306834e01128d1ffde8b",
+    "src/nqpatterns/features.py": "23474fa3b8d7c3185d131236ddb568d025d999333747d925822442e2cf0a912f",
+    "src/nqpatterns/finalize.py": "852c8083b61c38d3ca0484ed568feb5ac6768b0423619a0249f36ed21ad0e065",
+    "src/nqpatterns/matcher.py": "2085f0b6f082d3033383a1b958d099900f9b380ee6f674c43551fdb9c1f41a5e",
+    "src/nqpatterns/outcomes.py": "6db9173f1b0881efd20b89bf14ac2d5160f184fb05056f8512c3e95213eab20d",
+    "src/nqpatterns/research.py": "2d16c2702b21cd1ec5416db1ceb44029f679bb3d85549b6155b8f0606c8db840",
+    "src/nqpatterns/splits.py": "a0f02b0b322ed872042cbe1adccd1fc872eff8445b9dd0d33125acb4d0ece681",
+    "src/nqpatterns/statistics.py": "92423ae3de95e0d5137b82dc6a99bb657b5923dee558e0aabd3bdd979fb8c0b6",
+    "src/nqpatterns/tournament.py": "d42d690b25f0a4009452fbaa6503a84b081222b80c717d68383166ff796dd5ea",
+    "src/nqpatterns/validation.py": "44798fc5c9b67527abc75a892b729c541292d6a96da7b6513b76ae5a34a33d15"
+  },
+  "reference_fit_end_exclusive": "2023-04-01T03:15:00+00:00",
+  "round": 3
+}
