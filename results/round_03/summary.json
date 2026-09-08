@@ -1,0 +1,17 @@
+{
+  "evaluable": true,
+  "failures": [],
+  "families": [
+    "price_state",
+    "swing_breakout"
+  ],
+  "finished_at_utc": "2026-09-08T12:49:34.467941+00:00",
+  "hypotheses_scored": 17280,
+  "inference_shortlist": 0,
+  "round": 3,
+  "signatures": 32,
+  "status_counts": {
+    "rejected_screen": 17280
+  },
+  "survivors": []
+}

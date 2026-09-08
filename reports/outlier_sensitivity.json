@@ -1,0 +1,6 @@
+{
+  "flagged_raw_rows": 83,
+  "primary_policy": "Retain flagged OHLCV extremes subject to timestamp/calendar eligibility; no winsorization.",
+  "reason": "No candidate qualified for a survivor-level sensitivity study.",
+  "status": "not_run_no_survivors"
+}

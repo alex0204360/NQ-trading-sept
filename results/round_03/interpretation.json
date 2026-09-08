@@ -1,0 +1,21 @@
+{
+  "best_sample_size_qualified_point_estimate": {
+    "conservative_lift": 0.026229293542281495,
+    "hit_rate": 0.2790513833992095,
+    "pattern_id": "d7a0437c0d5c4259601072857c46c4f967ed554c18eff32a1862c5db519ff948_m16_h29_up",
+    "sample_size": 1265,
+    "screen_reasons": [
+      "minimum_edge",
+      "baseline_support"
+    ]
+  },
+  "hypotheses": 17280,
+  "rejection_reasons_nonexclusive": {
+    "baseline_support": 15120,
+    "fold_event_dates": 3780,
+    "fold_instability": 16953,
+    "fold_sample_size": 6480,
+    "minimum_edge": 16950,
+    "sample_size": 7020
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "verified_at_utc": "2026-09-08T12:49:54.866135+00:00",
+  "python_version": "3.12.13",
+  "tests_passed": 275,
+  "line_coverage_percent": 85.66198901769371,
+  "branch_coverage_percent": 84.10493827160494,
+  "coverage_gate_passed": true,
+  "lint": "ruff check src passed",
+  "build": "sdist and wheel built successfully",
+  "matcher_demo": {
+    "bars": 160,
+    "confirmed_default_matches": 0,
+    "diagnostic_accepted": 3,
+    "diagnostic_suppressed": 97,
+    "evidence": "synthetic mechanics only"
+  },
+  "source_sha256": {
+    "src/nqpatterns/__init__.py": "f9ee9db5a3ccb99f37f9a1f73a3d78d58998d915fe0067c6eb3fda0266300d69",
+    "src/nqpatterns/acquisition.py": "ac9ee9e2ccffe4aa25d5467112b6006fdb2ea1a34440f9c625d9946d318ed928",
+    "src/nqpatterns/candidates.py": "b5fb3da1878549479f8f61fd08ade7e85ffaf12af759969345e140548331d179",
+    "src/nqpatterns/cli.py": "e4b9970a7f5eb5bc1b1f7b993a7a29d41dc2fac8286b3b5602e91e3af3c63ad2",
+    "src/nqpatterns/data.py": "bc804312ffe5327bf00d5f3372ab52a97855059d8824306834e01128d1ffde8b",
+    "src/nqpatterns/features.py": "23474fa3b8d7c3185d131236ddb568d025d999333747d925822442e2cf0a912f",
+    "src/nqpatterns/finalize.py": "852c8083b61c38d3ca0484ed568feb5ac6768b0423619a0249f36ed21ad0e065",
+    "src/nqpatterns/matcher.py": "2085f0b6f082d3033383a1b958d099900f9b380ee6f674c43551fdb9c1f41a5e",
+    "src/nqpatterns/outcomes.py": "6db9173f1b0881efd20b89bf14ac2d5160f184fb05056f8512c3e95213eab20d",
+    "src/nqpatterns/research.py": "2d16c2702b21cd1ec5416db1ceb44029f679bb3d85549b6155b8f0606c8db840",
+    "src/nqpatterns/splits.py": "a0f02b0b322ed872042cbe1adccd1fc872eff8445b9dd0d33125acb4d0ece681",
+    "src/nqpatterns/statistics.py": "92423ae3de95e0d5137b82dc6a99bb657b5923dee558e0aabd3bdd979fb8c0b6",
+    "src/nqpatterns/tournament.py": "d42d690b25f0a4009452fbaa6503a84b081222b80c717d68383166ff796dd5ea",
+    "src/nqpatterns/validation.py": "44798fc5c9b67527abc75a892b729c541292d6a96da7b6513b76ae5a34a33d15"
+  },
+  "limits": [
+    "Real-data clustered inference runs only for hypotheses passing all screening gates.",
+    "Synthetic inference and matcher tests are not evidence of NQ profitability."
+  ]
+}

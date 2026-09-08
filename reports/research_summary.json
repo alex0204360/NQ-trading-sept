@@ -1,0 +1,58 @@
+{
+  "bootstrap_shortlisted": 0,
+  "candidate_execution_failures": 0,
+  "confirmed_patterns": 0,
+  "holdout_outcomes_opened": false,
+  "interpretation": "No hypothesis passed the fixed screening gates; significance was not established. Inadequate matched-control support and unverified data provenance limit inference; this is not proof of no possible price patterns.",
+  "primary_stop_reason": "diminishing_returns",
+  "quality_scores": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "rounds": [
+    {
+      "families": [
+        "candle_shape_cluster",
+        "price_state"
+      ],
+      "hypotheses_scored": 12960,
+      "inference_shortlist": 0,
+      "round": 1,
+      "signatures": 24,
+      "status_counts": {
+        "rejected_screen": 12960
+      }
+    },
+    {
+      "families": [
+        "swing_breakout",
+        "volume_range"
+      ],
+      "hypotheses_scored": 15120,
+      "inference_shortlist": 0,
+      "round": 2,
+      "signatures": 28,
+      "status_counts": {
+        "rejected_screen": 15120
+      }
+    },
+    {
+      "families": [
+        "price_state",
+        "swing_breakout"
+      ],
+      "hypotheses_scored": 17280,
+      "inference_shortlist": 0,
+      "round": 3,
+      "signatures": 32,
+      "status_counts": {
+        "rejected_screen": 17280
+      }
+    }
+  ],
+  "scope_rejections": 3,
+  "survivors": 0,
+  "total_hypotheses": 45360,
+  "total_signatures": 84
+}

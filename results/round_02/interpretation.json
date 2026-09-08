@@ -1,5 +1,5 @@
 {
-  "best_supported_point_estimate": {
+  "best_sample_size_qualified_point_estimate": {
     "conservative_lift": 0.042052649601596624,
     "hit_rate": 0.108502538071066,
     "pattern_id": "599e4ef6455186a65afa1f172e211ea5f9f90863258cf461745f73dfc71c8f31_m16_h4_up",

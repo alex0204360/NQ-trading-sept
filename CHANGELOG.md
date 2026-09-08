@@ -1,5 +1,12 @@
 # Changelog
 
+## Round 3 results and tournament stop - 2026-09-08
+
+- Scored all 17,280 wick/swing-reversal hypotheses; all failed at least one screening gate, with no bootstrap finalists or survivors.
+- Total: 45,360 hypotheses across 84 signatures and three completed rounds; no candidate execution failures.
+- Quality remained 0. Rounds 2 and 3 each improved it by less than 0.01, triggering the original diminishing-returns stop. Round 4 is not run.
+- Finalization will publish an empty library and keep heldout outcomes unopened. No statistical significance or profitability is claimed.
+
 ## Round 3 definitions - 2026-09-08
 
 - Preregistered sixteen price/wick rejection and sixteen prior-swing reversal signatures: 17,280 hypotheses.
