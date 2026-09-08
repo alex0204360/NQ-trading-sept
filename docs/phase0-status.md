@@ -2,6 +2,8 @@
 
 Prepared September 6, 2026; updated September 7, 2026. Current status: publication recovered; Phase 0 complete. The original plan commit was verified on GitHub at `152f83bad72e9af30260be467eb55aa210b7d1f0`, before implementation. The user-supplied classic token worked through transient Git authentication. Main at recovery was `3cb0f52`, preserving the user's original README history. The access failures below are historical and no longer block this project.
 
+The remaining sections preserve historical setup attempts. They are not the current execution status; see the repository README and terminal stage reports.
+
 The user has now supplied [alex0204360/NQ-trading-sept](https://github.com/alex0204360/NQ-trading-sept). Repository metadata is readable and reports the owner has push/admin permissions. However, the first plan-file creation attempt returned HTTP 403, `Resource not accessible by integration`. User account permissions and integration permissions are different. No remote file or commit was created by that attempt. The older creation blocker below is retained as historical context and has been replaced by this write-access blocker.
 
 The user subsequently supplied a personal access token specifically to publish this work. An HTTPS Git push used the token only in a transient subprocess environment. GitHub identified `alex0204360` but returned HTTP 403, `Permission to alex0204360/NQ-trading-sept.git denied to alex0204360`. No push succeeded. The secret was not written to project files, Git configuration, or logs. Repository selection and Contents write permission on the fine-grained token must be checked before retrying. The existing token can be edited; another pasted secret is not required.

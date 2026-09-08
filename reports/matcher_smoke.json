@@ -1,0 +1,9 @@
+{
+  "bars": 160,
+  "expected": "empty confirmed library returns no matches",
+  "fixture": "examples/demo_bars.jsonl",
+  "heldout_outcomes_opened": false,
+  "library": "patterns/library.json",
+  "matches": 0,
+  "status": "passed"
+}

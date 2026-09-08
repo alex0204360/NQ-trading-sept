@@ -1,0 +1,6 @@
+{
+  "causality_verification": "prefix and future-perturbation regression tests",
+  "patterns": [],
+  "status": "not_run_no_survivors",
+  "walk_forward_evidence": "exploratory reused training validation"
+}

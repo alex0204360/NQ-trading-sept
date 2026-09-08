@@ -1,5 +1,13 @@
 # Changelog
 
+## Final research delivery - 2026-09-08
+
+- Published the empty confirmed library and terminal Stage 1/2/3 reports. Stage 2 was not run because no training survivor exists; heldout outcomes remain unopened.
+- Verified all 45,360 result records, outcome denominators, resolution histograms, scope limits, unique IDs, and ledger completeness.
+- Delivered standard OHLCV batch/stream matching, installation instructions and a synthetic diagnostic fixture.
+- Final software verification: 275 tests pass; 85.7% line coverage and 84.1% branch coverage; lint, sdist and wheel builds pass.
+- README distinguishes measured evidence, unresolved assumptions, exact stop reason, and the absence of a connected feed or execution system.
+
 ## Finalist freeze - 2026-09-08
 
 - Froze an empty finalist manifest with pipeline/source hashes and the diminishing-returns stop decision.
@@ -93,4 +101,4 @@
 
 ## Tournament rounds
 
-Not started. Each attempted round will receive its own dated entry with family definitions, results, rejection counts, changes, and stop decision.
+Three rounds completed. Their definition and result entries above document every attempt. The tournament ended on the preregistered diminishing-returns condition with zero survivors.
