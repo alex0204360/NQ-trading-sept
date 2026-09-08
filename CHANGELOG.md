@@ -1,5 +1,10 @@
 # Changelog
 
+## Finalist freeze - 2026-09-08
+
+- Froze an empty finalist manifest with pipeline/source hashes and the diminishing-returns stop decision.
+- No heldout outcome access is authorized by a surviving candidate; finalization will follow the preregistered no-survivor path.
+
 ## Round 3 results and tournament stop - 2026-09-08
 
 - Scored all 17,280 wick/swing-reversal hypotheses; all failed at least one screening gate, with no bootstrap finalists or survivors.

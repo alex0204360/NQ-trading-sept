@@ -1,0 +1,83 @@
+{
+  "content_sha256": "aae38adf55307bfa13643b9463a875928af4886883bf0da1de75cec1238a7c60",
+  "finalists": [],
+  "provenance": {
+    "baseline_cutpoints": null,
+    "confirmatory_metadata_ready": false,
+    "input_hashes": {
+      "reports/pipeline_freeze.json": "8f6b182cfb98071c5ebb412a362f2c51c8640fb1aabdc6913f93b286ec30fd4a"
+    },
+    "pipeline": {
+      "calendar_name": "CME_Equity",
+      "calendar_package_version": "5.4.0",
+      "calendar_status": "package calendar compared with published CME daily halt; historical holiday completeness not independently certified",
+      "canonical_convention": "interval_start",
+      "confirmatory_metadata_ready": false,
+      "contract_roll_methodology": "unknown; no contract column supplied",
+      "convention_evidence": "Raw bars exist at 18:01 and 17:00 ET; none at 18:00 or 17:01. End stamps inferred mechanically before scoring, not publisher verified.",
+      "dataset_version": 1,
+      "heldout_access": "mechanical audit and split only; no outcomes or candidate scoring",
+      "holdout_cutoff": "2025-01-01T05:00:00Z",
+      "holdout_rows": 330516,
+      "license_publisher_stated": "CC0: Public Domain",
+      "raw_data_redistributed": false,
+      "raw_sha256": "1577e60a7feab411e49da7a56c7052a64738cd1757cfd60aa11fd783ff43b60b",
+      "source_convention": "end_inferred_not_verified",
+      "source_timezone": "America/New_York",
+      "training_rows": 706008
+    },
+    "source_hashes": {
+      "src/nqpatterns/__init__.py": "f9ee9db5a3ccb99f37f9a1f73a3d78d58998d915fe0067c6eb3fda0266300d69",
+      "src/nqpatterns/acquisition.py": "ac9ee9e2ccffe4aa25d5467112b6006fdb2ea1a34440f9c625d9946d318ed928",
+      "src/nqpatterns/candidates.py": "b5fb3da1878549479f8f61fd08ade7e85ffaf12af759969345e140548331d179",
+      "src/nqpatterns/cli.py": "e4b9970a7f5eb5bc1b1f7b993a7a29d41dc2fac8286b3b5602e91e3af3c63ad2",
+      "src/nqpatterns/data.py": "bc804312ffe5327bf00d5f3372ab52a97855059d8824306834e01128d1ffde8b",
+      "src/nqpatterns/features.py": "23474fa3b8d7c3185d131236ddb568d025d999333747d925822442e2cf0a912f",
+      "src/nqpatterns/finalize.py": "852c8083b61c38d3ca0484ed568feb5ac6768b0423619a0249f36ed21ad0e065",
+      "src/nqpatterns/matcher.py": "2085f0b6f082d3033383a1b958d099900f9b380ee6f674c43551fdb9c1f41a5e",
+      "src/nqpatterns/outcomes.py": "6db9173f1b0881efd20b89bf14ac2d5160f184fb05056f8512c3e95213eab20d",
+      "src/nqpatterns/research.py": "2d16c2702b21cd1ec5416db1ceb44029f679bb3d85549b6155b8f0606c8db840",
+      "src/nqpatterns/splits.py": "a0f02b0b322ed872042cbe1adccd1fc872eff8445b9dd0d33125acb4d0ece681",
+      "src/nqpatterns/statistics.py": "92423ae3de95e0d5137b82dc6a99bb657b5923dee558e0aabd3bdd979fb8c0b6",
+      "src/nqpatterns/tournament.py": "d42d690b25f0a4009452fbaa6503a84b081222b80c717d68383166ff796dd5ea",
+      "src/nqpatterns/validation.py": "44798fc5c9b67527abc75a892b729c541292d6a96da7b6513b76ae5a34a33d15"
+    },
+    "state": {
+      "diminishing_count": 2,
+      "history": [
+        {
+          "conditions": [],
+          "diminishing_count": 0,
+          "evaluable": true,
+          "improvement": 0.0,
+          "quality": 0.0,
+          "round": 1
+        },
+        {
+          "conditions": [],
+          "diminishing_count": 1,
+          "evaluable": true,
+          "improvement": 0.0,
+          "quality": 0.0,
+          "round": 2
+        },
+        {
+          "conditions": [
+            "diminishing_returns"
+          ],
+          "diminishing_count": 2,
+          "evaluable": true,
+          "improvement": 0.0,
+          "quality": 0.0,
+          "round": 3
+        }
+      ],
+      "quality": 0.0,
+      "round_number": 3,
+      "stop_reason": "diminishing_returns",
+      "survivors": {}
+    },
+    "stop_reason": "diminishing_returns"
+  },
+  "schema_version": 1
+}

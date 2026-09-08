@@ -1,0 +1,14 @@
+{
+  "checks": [
+    "complete parameter grids",
+    "unique IDs",
+    "outcome and fold denominators",
+    "bounded resolution histograms",
+    "short-horizon exclusion accounting",
+    "ledger completeness",
+    "no heldout evaluation marker"
+  ],
+  "scope_rejections": 3,
+  "status": "passed",
+  "unique_hypotheses": 45360
+}
