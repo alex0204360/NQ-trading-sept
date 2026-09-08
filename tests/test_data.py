@@ -230,3 +230,44 @@ def test_unresolved_timestamp_metadata_is_rejected(kwargs):
 def test_missing_required_column_is_rejected():
     with pytest.raises(ValueError, match="volume"):
         normalize_bars(bars(["2024-01-02 09:30"]).drop(columns="volume"))
+
+
+def test_unverified_timestamp_interpretation_remains_an_explicit_assumption():
+    _, audit = normalize_bars(bars(["2024-01-02 09:30"]))
+    assert audit["timestamp_normalization"]["source_timezone_verified"] is False
+    assert audit["timestamp_normalization"]["source_convention_verified"] is False
+    assert audit["confirmatory_metadata_ready"] is False
+
+
+def test_missing_contract_rows_are_quarantined_with_audit():
+    normalized, audit = normalize_bars(
+        bars(["2024-01-02 09:30", "2024-01-02 09:31"], contract=[None, "NQH4"])
+    )
+    assert normalized.source_row.tolist() == [2]
+    assert exclusions(audit) == {1: {"invalid_contract"}}
+
+
+def test_duplicate_extra_source_field_disagreement_is_not_exact_duplication():
+    raw = bars(["2024-01-02 09:30"] * 2, Vwap_RTH=[100.0, 100.25])
+    normalized, audit = normalize_bars(raw)
+    assert normalized.empty
+    assert audit["reason_counts"]["conflicting_duplicate"] == 2
+    assert audit["ignored_source_columns"] == ["Vwap_RTH"]
+
+
+@pytest.mark.parametrize("tick_size", [0, -1, np.nan, np.inf])
+def test_invalid_tick_grid_definition_is_rejected(tick_size):
+    with pytest.raises(ValueError, match="tick_size"):
+        normalize_bars(bars([]), tick_size=tick_size)
+
+
+def test_duplicate_source_column_names_are_rejected():
+    source = bars(["2024-01-02 09:30"])
+    source = pd.concat([source, source[["volume"]]], axis=1)
+    with pytest.raises(ValueError, match="unique"):
+        normalize_bars(source)
+
+
+def test_nonstring_timezone_is_a_type_error():
+    with pytest.raises(TypeError, match="source_tz"):
+        normalize_bars(bars([]), source_tz=123)

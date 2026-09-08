@@ -57,13 +57,15 @@ def test_future_price_volume_and_contract_perturbation_cannot_change_the_past():
     )
 
 
-@pytest.mark.parametrize("boundary", ["gap", "contract"])
+@pytest.mark.parametrize("boundary", ["gap", "contract", "segment_id"])
 def test_gap_and_contract_change_restart_the_entire_warmup(boundary):
     frame = bars(160)
     if boundary == "gap":
         frame.loc[80:, "timestamp"] += pd.Timedelta(minutes=7)
-    else:
+    elif boundary == "contract":
         frame["contract"] = ["NQH23"] * 80 + ["NQM23"] * 80
+    else:
+        frame["segment_id"] = [0] * 80 + [1] * 80
     features = compute_features(frame)
     assert features["valid"].iloc[79]
     assert not features["valid"].iloc[80:140].any()
@@ -141,6 +143,26 @@ def test_volume_standardization_uses_only_observed_trailing_volumes():
     assert last["volume_z20"] == pytest.approx(
         (observed[-1] - observed.mean()) / observed.std(ddof=0)
     )
+
+
+def test_timestamp_storage_units_do_not_change_elapsed_minutes():
+    frame = bars(100)
+    microseconds = frame.copy()
+    microseconds["timestamp"] = microseconds["timestamp"].dt.as_unit("us")
+    pd.testing.assert_frame_equal(compute_features(frame), compute_features(microseconds))
+
+
+@pytest.mark.parametrize("frame", [[], {"close": [1]}, None])
+def test_non_dataframe_inputs_are_rejected(frame):
+    with pytest.raises(TypeError):
+        compute_features(frame)
+
+
+def test_unparseable_timestamps_fail_clearly():
+    frame = bars(100)
+    frame["timestamp"] = "not-a-timestamp"
+    with pytest.raises(ValueError, match="timestamp"):
+        compute_features(frame)
 
 
 @pytest.mark.parametrize("defect", ["naive", "descending", "duplicate", "missing", "nonfinite", "negative_volume", "bad_ohlc"])

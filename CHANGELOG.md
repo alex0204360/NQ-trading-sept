@@ -1,5 +1,10 @@
 # Changelog
 
+## Integration review - 2026-09-08
+
+- Added regression specifications for timestamp storage units, positive OHLC, exact model reproducibility, and partial session dates shared by adjacent folds.
+- Added a synthetic end-to-end round contract that must log every parameter variant, reject weak support, and avoid holdout access.
+
 ## Orchestration and matcher RED checkpoint - 2026-09-07
 
 - Specified protocol gates, exact tournament stops, immutable finalist manifests, calendar audit accounting, and stream/batch matcher equivalence before implementation.

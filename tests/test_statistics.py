@@ -143,6 +143,17 @@ def test_period_identity_is_unambiguous():
         matched_estimate([weighted_period(), weighted_period()])
 
 
+def test_partial_boundary_session_can_appear_in_distinct_fold_frames():
+    first = weighted_period()
+    second = weighted_period()
+    second.period_id = "fold_2"
+    result = matched_estimate([first, second])
+    assert result["sample_size"] == 8
+    assert result["event_dates"] == 2
+    assert len(result["period_results"]) == 2
+    assert result["hit_rate"] == pytest.approx(0.5)
+
+
 def test_day_draws_are_deterministic_shared_truncated_blocks_without_wrap():
     indices = moving_block_indices(23, 5, 99, "fold_1")
     assert indices.shape == (99, 23)

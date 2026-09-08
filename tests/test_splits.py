@@ -1,5 +1,7 @@
 """Fixed protocol boundaries are tested on synthetic timestamps only."""
 
+from itertools import pairwise
+
 import numpy as np
 import pandas as pd
 import pytest
@@ -54,7 +56,7 @@ def test_four_expanding_folds_use_exact_et_boundaries_and_strict_45_minute_purge
         assert start in set(valid_times)
         assert end not in set(valid_times)
         assert not set(fold.fit_indices) & set(fold.validation_indices)
-    assert all(set(a.fit_indices) < set(b.fit_indices) for a, b in zip(folds, folds[1:]))
+    assert all(set(a.fit_indices) < set(b.fit_indices) for a, b in pairwise(folds))
 
 
 def test_walk_forward_rejects_any_holdout_row():
@@ -88,3 +90,8 @@ def test_empty_input_preserves_four_fixed_folds_and_empty_partitions():
     assert len(folds) == 4
     assert all(fold.fit_start is None and len(fold.fit_indices) == 0
                and len(fold.validation_indices) == 0 for fold in folds)
+
+
+def test_missing_timestamp_column_is_explicitly_rejected():
+    with pytest.raises(ValueError, match="timestamp"):
+        split_training_holdout(pd.DataFrame({"close": [100]}))

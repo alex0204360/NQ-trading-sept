@@ -32,6 +32,8 @@ def reference_bars(n=260, start="2023-03-31T18:00:00Z"):
     [
         (1, {"candle_shape_cluster", "price_state"}),
         (2, {"swing_breakout", "volume_range"}),
+        (3, {"price_state", "swing_breakout"}),
+        (4, {"candle_geometry", "volume_range"}),
     ],
 )
 def test_each_initial_round_has_exactly_two_finite_distinct_families(round_number, families):
@@ -189,3 +191,74 @@ def test_cluster_generation_fails_explicitly_without_initial_fit_support():
 def test_unknown_signatures_fail_instead_of_silently_matching(signature):
     with pytest.raises(ValueError):
         match_candidate(compute_features(reference_bars()), signature)
+
+
+def test_later_rounds_preserve_frozen_definitions_regardless_of_previous_outcomes():
+    frame = reference_bars()
+    for round_number in (3, 4):
+        expected = generate_candidates(frame, round_number)
+        assert generate_candidates(frame, round_number, {"future_holdout_hit_rate": 1}) == expected
+        assert any(match_candidate(compute_features(frame), c["signature"]).any() for c in expected)
+
+
+@pytest.mark.parametrize("changes", [
+    {"version": 2},
+    {"conditions": []},
+    {"conditions": ["bad condition"]},
+    {"conditions": [{"feature": "price_z20", "op": "ge", "value": float("nan")}]},
+    {"conditions": [{"feature": "price_z20", "op": "ge", "value": True}]},
+])
+def test_malformed_rules_fail_before_matching(changes):
+    signature = {"version": 1, "kind": "rules", "conditions": [
+        {"feature": "price_z20", "op": "ge", "value": 0.0}
+    ]}
+    signature.update(changes)
+    with pytest.raises(ValueError):
+        match_candidate(compute_features(reference_bars()), signature)
+
+
+@pytest.mark.parametrize("defect", ["artifact", "features", "numeric", "shape", "scale", "cluster"])
+def test_malformed_frozen_cluster_artifacts_fail_before_matching(defect):
+    signature = {
+        "version": 1, "kind": "cluster", "cluster": 0,
+        "artifact": {"features": ["body_fraction"], "mean": [0.0], "scale": [1.0],
+                     "centroids": [[0.0], [1.0]]},
+    }
+    if defect == "artifact":
+        signature["artifact"] = None
+    elif defect == "features":
+        signature["artifact"]["features"] = ["tomorrow"]
+    elif defect == "numeric":
+        signature["artifact"]["mean"] = ["bad value"]
+    elif defect == "shape":
+        signature["artifact"]["centroids"] = [[0.0, 1.0]]
+    elif defect == "scale":
+        signature["artifact"]["scale"] = [0.0]
+    else:
+        signature["cluster"] = 2
+    with pytest.raises(ValueError):
+        match_candidate(compute_features(reference_bars()), signature)
+
+
+def test_missing_feature_or_invalid_valid_column_is_rejected():
+    signature = {"version": 1, "kind": "rules", "conditions": [
+        {"feature": "price_z20", "op": "ge", "value": 0.0}
+    ]}
+    for frame in [pd.DataFrame({"valid": [True]}), pd.DataFrame({"valid": [1], "price_z20": [2]})]:
+        with pytest.raises(ValueError):
+            match_candidate(frame, signature)
+
+
+def test_cluster_matching_has_no_matches_before_warmup_and_rejects_missing_features():
+    signature = generate_candidates(reference_bars(), 1)[0]["signature"]
+    features = compute_features(reference_bars(20))
+    assert not match_candidate(features, signature).any()
+    with pytest.raises(ValueError, match="feature"):
+        match_candidate(features.drop(columns="body_fraction"), signature)
+
+
+def test_naive_initial_fit_dates_are_rejected():
+    frame = reference_bars()
+    frame["timestamp"] = frame["timestamp"].dt.tz_localize(None)
+    with pytest.raises(ValueError, match="aware"):
+        generate_candidates(frame, 1)

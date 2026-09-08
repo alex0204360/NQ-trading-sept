@@ -14,6 +14,13 @@ from nqpatterns.outcomes import (
 )
 
 
+def test_nonpositive_consistent_prices_are_rejected():
+    frame = bars()
+    frame.loc[:, ["open", "high", "low", "close"]] -= 101
+    with pytest.raises(ValueError, match="positive"):
+        first_passage(frame, 1)
+
+
 def bars(count=60):
     return pd.DataFrame(
         {
@@ -159,6 +166,41 @@ def test_contract_column_is_optional():
     assert label_outcomes(frame, 1.0, 1).loc[0, "outcome"] == "no_clear_outcome"
 
 
+def test_explicit_quality_segment_censors_otherwise_consecutive_bars():
+    frame = bars()
+    frame["segment_id"] = 0
+    frame.loc[2:, "segment_id"] = 1
+    frame.loc[1, "high"] = 101.0
+    result = label_outcomes(frame, 1.0, 2)
+    assert result.loc[0, "outcome"] == "censored_data"
+    assert result.loc[2, "eligible_45"]
+
+
+@pytest.mark.parametrize("column", ["contract", "segment_id"])
+def test_unresolved_boundary_metadata_is_rejected(column):
+    frame = bars()
+    frame[column] = pd.Series([None] + ["known"] * 59)
+    with pytest.raises(ValueError, match=column):
+        label_outcomes(frame, 1.0, 1)
+
+
+def test_microsecond_timestamp_storage_preserves_elapsed_minute_semantics():
+    frame = bars()
+    frame["timestamp"] = frame["timestamp"].dt.as_unit("us")
+    assert label_outcomes(frame, 1.0, 45).loc[0, "eligible_45"]
+    assert nonoverlap_indices(frame["timestamp"], np.ones(60, dtype=bool)).tolist() == [0, 45]
+
+
+@pytest.mark.parametrize(
+    ("column", "value"), [("open", np.nan), ("high", 99.0), ("low", 101.0), ("volume", -1)]
+)
+def test_malformed_canonical_prices_or_volume_require_upstream_audit(column, value):
+    frame = bars()
+    frame.loc[1, column] = value
+    with pytest.raises(ValueError):
+        label_outcomes(frame, 1.0, 1)
+
+
 def test_tail_and_common_population_distinguish_short_horizon_availability():
     frame = bars(46)
     result = label_outcomes(frame, 1.0, 1)
@@ -236,7 +278,13 @@ def test_empty_canonical_bars_return_empty_label_and_passage_arrays():
 
 def test_nonoverlap_uses_elapsed_minutes_and_allows_exact_boundary():
     timestamps = pd.to_datetime(
-        ["2024-01-02T00:00Z", "2024-01-02T00:44Z", "2024-01-02T00:45Z", "2024-01-02T01:29Z", "2024-01-02T01:30Z"]
+        [
+            "2024-01-02T00:00Z",
+            "2024-01-02T00:44Z",
+            "2024-01-02T00:45Z",
+            "2024-01-02T01:29Z",
+            "2024-01-02T01:30Z",
+        ]
     )
     assert nonoverlap_indices(timestamps, np.ones(5, dtype=bool)).tolist() == [0, 2, 4]
 
