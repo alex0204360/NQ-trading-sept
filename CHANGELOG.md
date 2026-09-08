@@ -1,5 +1,12 @@
 # Changelog
 
+## Round 1 results - 2026-09-08
+
+- Scored all 12,960 preregistered hypotheses across four training walk-forward folds.
+- All failed at least one point-estimate/support gate; zero bootstrap finalists and zero survivors.
+- Preserved full resolution distributions, per-fold statistics, rejection reasons, and resumable signature checkpoints.
+- Quality score remains 0; no stop condition yet. Heldout outcomes remain unopened.
+
 ## Round 1 definitions - 2026-09-08
 
 - Preregistered eight frozen candle-shape clusters and sixteen price-state signatures.

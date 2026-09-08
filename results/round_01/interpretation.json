@@ -1,0 +1,18 @@
+{
+  "best_supported_point_estimate": {
+    "conservative_lift": 0.01340440546518209,
+    "hit_rate": 0.2796717171717172,
+    "pattern_id": "c08603f2c6fedcfa9db802c53e94b60b46933780a8173119353b79e5cdf5ee84_m16_h27_up",
+    "sample_size": 4752,
+    "screen_reasons": [
+      "minimum_edge",
+      "baseline_support"
+    ]
+  },
+  "hypotheses": 12960,
+  "rejection_reasons_nonexclusive": {
+    "baseline_support": 12960,
+    "fold_instability": 12910,
+    "minimum_edge": 12960
+  }
+}

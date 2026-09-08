@@ -1,0 +1,17 @@
+{
+  "diminishing_count": 0,
+  "history": [
+    {
+      "conditions": [],
+      "diminishing_count": 0,
+      "evaluable": true,
+      "improvement": 0.0,
+      "quality": 0.0,
+      "round": 1
+    }
+  ],
+  "quality": 0.0,
+  "round_number": 1,
+  "stop_reason": null,
+  "survivors": {}
+}

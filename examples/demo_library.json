@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "instrument": "NQ",
+  "bar_interval_minutes": 1,
+  "timestamp_convention": "interval_start",
+  "tick_size": 0.25,
+  "notice": "Synthetic mechanics fixture, not a discovered market pattern. Diagnostic mode only.",
+  "patterns": [
+    {
+      "pattern_id": "synthetic_demo_up",
+      "family": "synthetic_demo",
+      "signature": {
+        "version": 1,
+        "kind": "rules",
+        "conditions": [
+          {
+            "feature": "price_z20",
+            "op": "ge",
+            "value": 1.0
+          }
+        ]
+      },
+      "direction": "up",
+      "magnitude_points": 4,
+      "horizon_bars": 5,
+      "status": "provisional",
+      "historical_stats": {
+        "source": "synthetic fixture only",
+        "sample_size": 0,
+        "hit_rate": null
+      }
+    }
+  ]
+}

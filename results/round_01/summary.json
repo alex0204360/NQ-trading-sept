@@ -1,0 +1,17 @@
+{
+  "evaluable": true,
+  "failures": [],
+  "families": [
+    "candle_shape_cluster",
+    "price_state"
+  ],
+  "finished_at_utc": "2026-09-08T12:40:15.117114+00:00",
+  "hypotheses_scored": 12960,
+  "inference_shortlist": 0,
+  "round": 1,
+  "signatures": 24,
+  "status_counts": {
+    "rejected_screen": 12960
+  },
+  "survivors": []
+}
