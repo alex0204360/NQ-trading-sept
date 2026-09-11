@@ -1,5 +1,11 @@
 # Changelog
 
+## Profitability rebuild baseline - 2026-09-11
+
+- Resumed the expanded goal on a dedicated branch in the existing GitHub checkout. No Bitbucket relationship is established.
+- Restored the environment; all 275 V1 tests pass and all three frozen provenance manifests match.
+- Preserved completed research and initiated independent, real-data V1/V2 recomputation. Profitability remains unfinished.
+
 ## Final research delivery - 2026-09-08
 
 - Published the empty confirmed library and terminal Stage 1/2/3 reports. Stage 2 was not run because no training survivor exists; heldout outcomes remain unopened.

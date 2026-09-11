@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/workspace/scratch/484e26bff85f/mnq-nq-pattern-engine/src/nqpatterns/cli.py", line 57, in <module>
+    main()
+  File "/workspace/scratch/484e26bff85f/mnq-nq-pattern-engine/src/nqpatterns/cli.py", line 35, in main
+    else runner.evaluate_round(args.number)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/484e26bff85f/mnq-nq-pattern-engine/src/nqpatterns/research.py", line 293, in evaluate_round
+    raise FileExistsError("A completed/partial round cannot be overwritten")
+FileExistsError: A completed/partial round cannot be overwritten
