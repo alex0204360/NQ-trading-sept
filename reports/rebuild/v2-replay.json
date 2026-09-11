@@ -1,0 +1,1687 @@
+{
+  "holdout_accessed": false,
+  "training_bars": 706008,
+  "valid_features": 654103,
+  "opportunities": 130817,
+  "folds": [
+    {
+      "family": "regime8",
+      "fold": 1,
+      "policy": {
+        "policy_id": "regime8",
+        "decisions": 16147,
+        "occupied_decisions": 0,
+        "abstained_decisions": 16147,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 16147,
+        "occupied_decisions": 0,
+        "abstained_decisions": 16147,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 3823,
+          "date_count": 81,
+          "maximum_ranking_score": -0.9660784743161437
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 1740,
+          "date_count": 72,
+          "maximum_ranking_score": -0.9447129479546978
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 4483,
+          "date_count": 82,
+          "maximum_ranking_score": -0.9687808616567335
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 1495,
+          "date_count": 72,
+          "maximum_ranking_score": -0.9133503038595384
+        },
+        {
+          "state_id": 4,
+          "supported": false,
+          "sample_size": 55,
+          "date_count": 6,
+          "maximum_ranking_score": -0.9321415584977858
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 2094,
+          "date_count": 66,
+          "maximum_ranking_score": -0.8367486226253789
+        },
+        {
+          "state_id": 6,
+          "supported": false,
+          "sample_size": 64,
+          "date_count": 12,
+          "maximum_ranking_score": -0.8415522965814706
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 2673,
+          "date_count": 67,
+          "maximum_ranking_score": -0.22450864187643338
+        }
+      ]
+    },
+    {
+      "family": "regime8",
+      "fold": 2,
+      "policy": {
+        "policy_id": "regime8",
+        "decisions": 32521,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32521,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 32521,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32521,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 9061,
+          "date_count": 159,
+          "maximum_ranking_score": -0.9686074271834495
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 2116,
+          "date_count": 120,
+          "maximum_ranking_score": -0.9319231935033078
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 9509,
+          "date_count": 160,
+          "maximum_ranking_score": -0.9704523202980186
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 1772,
+          "date_count": 112,
+          "maximum_ranking_score": -0.8595741245405008
+        },
+        {
+          "state_id": 4,
+          "supported": false,
+          "sample_size": 189,
+          "date_count": 39,
+          "maximum_ranking_score": -0.5980298209848287
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 4009,
+          "date_count": 127,
+          "maximum_ranking_score": -0.84815488489992
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 445,
+          "date_count": 54,
+          "maximum_ranking_score": -0.5565024960278939
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 4810,
+          "date_count": 129,
+          "maximum_ranking_score": -0.06875324507926628
+        }
+      ]
+    },
+    {
+      "family": "regime8",
+      "fold": 3,
+      "policy": {
+        "policy_id": "regime8",
+        "decisions": 32305,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32305,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 32305,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32305,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 18358,
+          "date_count": 314,
+          "maximum_ranking_score": -0.9557718460183598
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 3243,
+          "date_count": 207,
+          "maximum_ranking_score": -0.9235637445786156
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 20230,
+          "date_count": 315,
+          "maximum_ranking_score": -0.9502385439255557
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 2675,
+          "date_count": 207,
+          "maximum_ranking_score": -0.7775056610689903
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 583,
+          "date_count": 102,
+          "maximum_ranking_score": -0.69975347484639
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 7854,
+          "date_count": 253,
+          "maximum_ranking_score": -0.8768031676428387
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 1339,
+          "date_count": 129,
+          "maximum_ranking_score": -0.9799569446793227
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 8899,
+          "date_count": 254,
+          "maximum_ranking_score": -0.5715554506342392
+        }
+      ]
+    },
+    {
+      "family": "regime8",
+      "fold": 4,
+      "policy": {
+        "policy_id": "regime8",
+        "decisions": 32715,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32715,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 32715,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32715,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 27729,
+          "date_count": 469,
+          "maximum_ranking_score": -0.9886935140622708
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 4215,
+          "date_count": 310,
+          "maximum_ranking_score": -0.9422340845495752
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 31042,
+          "date_count": 470,
+          "maximum_ranking_score": -0.9646192674117009
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 3349,
+          "date_count": 292,
+          "maximum_ranking_score": -0.9491440193114127
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 1099,
+          "date_count": 169,
+          "maximum_ranking_score": -0.988996217690628
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 11591,
+          "date_count": 377,
+          "maximum_ranking_score": -0.8251836113560898
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 2520,
+          "date_count": 221,
+          "maximum_ranking_score": -1.0234795386466937
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 12653,
+          "date_count": 378,
+          "maximum_ranking_score": -0.569577666198062
+        }
+      ]
+    },
+    {
+      "family": "prototype8",
+      "fold": 1,
+      "policy": {
+        "policy_id": "prototype8",
+        "decisions": 16147,
+        "occupied_decisions": 0,
+        "abstained_decisions": 16147,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 16147,
+        "occupied_decisions": 0,
+        "abstained_decisions": 16147,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 2270,
+          "date_count": 82,
+          "maximum_ranking_score": -0.8463260975235464
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 2486,
+          "date_count": 82,
+          "maximum_ranking_score": -0.6662861808843996
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 1086,
+          "date_count": 82,
+          "maximum_ranking_score": -1.009040084803173
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 1292,
+          "date_count": 81,
+          "maximum_ranking_score": -0.8547272086677709
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 2384,
+          "date_count": 82,
+          "maximum_ranking_score": -0.7666430018697977
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 2084,
+          "date_count": 82,
+          "maximum_ranking_score": -0.9162217681879972
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 2481,
+          "date_count": 82,
+          "maximum_ranking_score": -0.6466753335656903
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 2344,
+          "date_count": 82,
+          "maximum_ranking_score": -0.8392595168782546
+        }
+      ]
+    },
+    {
+      "family": "prototype8",
+      "fold": 2,
+      "policy": {
+        "policy_id": "prototype8",
+        "decisions": 32521,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32521,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 32521,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32521,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 4506,
+          "date_count": 160,
+          "maximum_ranking_score": -0.9408186066170505
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 4975,
+          "date_count": 160,
+          "maximum_ranking_score": -0.9419023483055444
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 2069,
+          "date_count": 160,
+          "maximum_ranking_score": -0.9671036101749079
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 2530,
+          "date_count": 159,
+          "maximum_ranking_score": -0.7705708655030781
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 4476,
+          "date_count": 160,
+          "maximum_ranking_score": -0.7566883456067477
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 4106,
+          "date_count": 159,
+          "maximum_ranking_score": -0.8051815144262995
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 4794,
+          "date_count": 160,
+          "maximum_ranking_score": -0.8373378377976728
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 4455,
+          "date_count": 160,
+          "maximum_ranking_score": -0.7277248189790033
+        }
+      ]
+    },
+    {
+      "family": "prototype8",
+      "fold": 3,
+      "policy": {
+        "policy_id": "prototype8",
+        "decisions": 32305,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32305,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 32305,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32305,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 8659,
+          "date_count": 315,
+          "maximum_ranking_score": -0.918931590075092
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 9835,
+          "date_count": 315,
+          "maximum_ranking_score": -0.852572412708949
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 4152,
+          "date_count": 314,
+          "maximum_ranking_score": -0.913404152633802
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 5018,
+          "date_count": 314,
+          "maximum_ranking_score": -0.8592596399645349
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 8762,
+          "date_count": 315,
+          "maximum_ranking_score": -0.8181914058874649
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 8441,
+          "date_count": 313,
+          "maximum_ranking_score": -0.9085235846875436
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 9592,
+          "date_count": 314,
+          "maximum_ranking_score": -0.8398816652648038
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 8722,
+          "date_count": 315,
+          "maximum_ranking_score": -0.8779110247922234
+        }
+      ]
+    },
+    {
+      "family": "prototype8",
+      "fold": 4,
+      "policy": {
+        "policy_id": "prototype8",
+        "decisions": 32715,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32715,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 32715,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32715,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 12845,
+          "date_count": 470,
+          "maximum_ranking_score": -0.9519713056106514
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 14750,
+          "date_count": 470,
+          "maximum_ranking_score": -0.8610356466978888
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 6232,
+          "date_count": 468,
+          "maximum_ranking_score": -0.9266451056325783
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 7583,
+          "date_count": 469,
+          "maximum_ranking_score": -0.9423819742823595
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 13074,
+          "date_count": 470,
+          "maximum_ranking_score": -0.8869322534071858
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 12805,
+          "date_count": 468,
+          "maximum_ranking_score": -0.9158470728879348
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 14032,
+          "date_count": 467,
+          "maximum_ranking_score": -0.865712475171573
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 12877,
+          "date_count": 470,
+          "maximum_ranking_score": -0.912423777031452
+        }
+      ]
+    },
+    {
+      "family": "regime16",
+      "fold": 1,
+      "policy": {
+        "policy_id": "regime16",
+        "decisions": 16147,
+        "occupied_decisions": 0,
+        "abstained_decisions": 16147,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 16147,
+        "occupied_decisions": 0,
+        "abstained_decisions": 16147,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 1645,
+          "date_count": 68,
+          "maximum_ranking_score": -0.989847665063132
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 761,
+          "date_count": 60,
+          "maximum_ranking_score": -0.7360051061651195
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 1799,
+          "date_count": 68,
+          "maximum_ranking_score": -0.8843614709137992
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 608,
+          "date_count": 61,
+          "maximum_ranking_score": -0.8090657120802328
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 557,
+          "date_count": 56,
+          "maximum_ranking_score": -0.919198571639481
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 806,
+          "date_count": 58,
+          "maximum_ranking_score": -0.9089445577131292
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 744,
+          "date_count": 57,
+          "maximum_ranking_score": -1.0146735433691236
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 749,
+          "date_count": 60,
+          "maximum_ranking_score": -0.9572490368240919
+        },
+        {
+          "state_id": 8,
+          "supported": false,
+          "sample_size": 55,
+          "date_count": 6,
+          "maximum_ranking_score": -0.9321415584977858
+        },
+        {
+          "state_id": 9,
+          "supported": true,
+          "sample_size": 2094,
+          "date_count": 66,
+          "maximum_ranking_score": -0.8367486226253789
+        },
+        {
+          "state_id": 10,
+          "supported": false,
+          "sample_size": 64,
+          "date_count": 12,
+          "maximum_ranking_score": -0.8415522965814706
+        },
+        {
+          "state_id": 11,
+          "supported": true,
+          "sample_size": 2673,
+          "date_count": 67,
+          "maximum_ranking_score": -0.22450864187643338
+        },
+        {
+          "state_id": 12,
+          "supported": true,
+          "sample_size": 1621,
+          "date_count": 67,
+          "maximum_ranking_score": -0.957761768431041
+        },
+        {
+          "state_id": 13,
+          "supported": false,
+          "sample_size": 173,
+          "date_count": 25,
+          "maximum_ranking_score": 0.10440581829584594
+        },
+        {
+          "state_id": 14,
+          "supported": true,
+          "sample_size": 1940,
+          "date_count": 68,
+          "maximum_ranking_score": -0.9635320643463491
+        },
+        {
+          "state_id": 15,
+          "supported": false,
+          "sample_size": 138,
+          "date_count": 17,
+          "maximum_ranking_score": -0.7267879497273892
+        }
+      ]
+    },
+    {
+      "family": "regime16",
+      "fold": 2,
+      "policy": {
+        "policy_id": "regime16",
+        "decisions": 32521,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32521,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 32521,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32521,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 3889,
+          "date_count": 133,
+          "maximum_ranking_score": -0.95931863788733
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 907,
+          "date_count": 85,
+          "maximum_ranking_score": -0.7519487045649206
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 3898,
+          "date_count": 133,
+          "maximum_ranking_score": -0.9577033550149089
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 684,
+          "date_count": 82,
+          "maximum_ranking_score": -0.7957303052609395
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 1743,
+          "date_count": 121,
+          "maximum_ranking_score": -0.8763976218458773
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 1026,
+          "date_count": 96,
+          "maximum_ranking_score": -0.897608972230536
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 1863,
+          "date_count": 122,
+          "maximum_ranking_score": -0.9526293857738937
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 943,
+          "date_count": 90,
+          "maximum_ranking_score": -0.9166620429870078
+        },
+        {
+          "state_id": 8,
+          "supported": false,
+          "sample_size": 189,
+          "date_count": 39,
+          "maximum_ranking_score": -0.5980298209848287
+        },
+        {
+          "state_id": 9,
+          "supported": true,
+          "sample_size": 4009,
+          "date_count": 127,
+          "maximum_ranking_score": -0.84815488489992
+        },
+        {
+          "state_id": 10,
+          "supported": true,
+          "sample_size": 445,
+          "date_count": 54,
+          "maximum_ranking_score": -0.5565024960278939
+        },
+        {
+          "state_id": 11,
+          "supported": true,
+          "sample_size": 4810,
+          "date_count": 129,
+          "maximum_ranking_score": -0.06875324507926628
+        },
+        {
+          "state_id": 12,
+          "supported": true,
+          "sample_size": 3429,
+          "date_count": 132,
+          "maximum_ranking_score": -0.9718009000966003
+        },
+        {
+          "state_id": 13,
+          "supported": false,
+          "sample_size": 183,
+          "date_count": 29,
+          "maximum_ranking_score": 0.0024558563296434577
+        },
+        {
+          "state_id": 14,
+          "supported": true,
+          "sample_size": 3748,
+          "date_count": 133,
+          "maximum_ranking_score": -0.9045115931856293
+        },
+        {
+          "state_id": 15,
+          "supported": false,
+          "sample_size": 145,
+          "date_count": 20,
+          "maximum_ranking_score": -0.5753406650787886
+        }
+      ]
+    },
+    {
+      "family": "regime16",
+      "fold": 3,
+      "policy": {
+        "policy_id": "regime16",
+        "decisions": 32305,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32305,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 32305,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32305,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 7818,
+          "date_count": 262,
+          "maximum_ranking_score": -0.9003588820774522
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 1343,
+          "date_count": 142,
+          "maximum_ranking_score": -0.79632018005356
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 8361,
+          "date_count": 262,
+          "maximum_ranking_score": -0.9696166938037694
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 1051,
+          "date_count": 139,
+          "maximum_ranking_score": -0.7866586051049091
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 3718,
+          "date_count": 247,
+          "maximum_ranking_score": -0.9078908271698741
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 1642,
+          "date_count": 168,
+          "maximum_ranking_score": -0.9425856363149551
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 4180,
+          "date_count": 250,
+          "maximum_ranking_score": -0.9740150058937024
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 1453,
+          "date_count": 167,
+          "maximum_ranking_score": -0.8209926454570373
+        },
+        {
+          "state_id": 8,
+          "supported": true,
+          "sample_size": 583,
+          "date_count": 102,
+          "maximum_ranking_score": -0.69975347484639
+        },
+        {
+          "state_id": 9,
+          "supported": true,
+          "sample_size": 7854,
+          "date_count": 253,
+          "maximum_ranking_score": -0.8768031676428387
+        },
+        {
+          "state_id": 10,
+          "supported": true,
+          "sample_size": 1339,
+          "date_count": 129,
+          "maximum_ranking_score": -0.9799569446793227
+        },
+        {
+          "state_id": 11,
+          "supported": true,
+          "sample_size": 8899,
+          "date_count": 254,
+          "maximum_ranking_score": -0.5715554506342392
+        },
+        {
+          "state_id": 12,
+          "supported": true,
+          "sample_size": 6822,
+          "date_count": 261,
+          "maximum_ranking_score": -0.9564451809946439
+        },
+        {
+          "state_id": 13,
+          "supported": true,
+          "sample_size": 258,
+          "date_count": 47,
+          "maximum_ranking_score": -0.2974807317890026
+        },
+        {
+          "state_id": 14,
+          "supported": true,
+          "sample_size": 7689,
+          "date_count": 262,
+          "maximum_ranking_score": -0.9356275212866476
+        },
+        {
+          "state_id": 15,
+          "supported": false,
+          "sample_size": 171,
+          "date_count": 33,
+          "maximum_ranking_score": -0.3158217075381186
+        }
+      ]
+    },
+    {
+      "family": "regime16",
+      "fold": 4,
+      "policy": {
+        "policy_id": "regime16",
+        "decisions": 32715,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32715,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 32715,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32715,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 11833,
+          "date_count": 389,
+          "maximum_ranking_score": -0.9599463493757705
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 1644,
+          "date_count": 194,
+          "maximum_ranking_score": -0.7191149929912759
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 12823,
+          "date_count": 390,
+          "maximum_ranking_score": -0.9738454291396446
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 1278,
+          "date_count": 176,
+          "maximum_ranking_score": -0.9413103161072246
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 5761,
+          "date_count": 373,
+          "maximum_ranking_score": -0.9542711848045382
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 2220,
+          "date_count": 252,
+          "maximum_ranking_score": -0.9655254328250641
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 6527,
+          "date_count": 375,
+          "maximum_ranking_score": -0.983902679894564
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 1861,
+          "date_count": 239,
+          "maximum_ranking_score": -0.9511260147818114
+        },
+        {
+          "state_id": 8,
+          "supported": true,
+          "sample_size": 1099,
+          "date_count": 169,
+          "maximum_ranking_score": -0.988996217690628
+        },
+        {
+          "state_id": 9,
+          "supported": true,
+          "sample_size": 11591,
+          "date_count": 377,
+          "maximum_ranking_score": -0.8251836113560898
+        },
+        {
+          "state_id": 10,
+          "supported": true,
+          "sample_size": 2520,
+          "date_count": 221,
+          "maximum_ranking_score": -1.0234795386466937
+        },
+        {
+          "state_id": 11,
+          "supported": true,
+          "sample_size": 12653,
+          "date_count": 378,
+          "maximum_ranking_score": -0.569577666198062
+        },
+        {
+          "state_id": 12,
+          "supported": true,
+          "sample_size": 10135,
+          "date_count": 390,
+          "maximum_ranking_score": -0.9646580638516992
+        },
+        {
+          "state_id": 13,
+          "supported": true,
+          "sample_size": 351,
+          "date_count": 64,
+          "maximum_ranking_score": -0.4329890723139458
+        },
+        {
+          "state_id": 14,
+          "supported": true,
+          "sample_size": 11692,
+          "date_count": 390,
+          "maximum_ranking_score": -0.9622938277176135
+        },
+        {
+          "state_id": 15,
+          "supported": true,
+          "sample_size": 210,
+          "date_count": 44,
+          "maximum_ranking_score": -0.6021772389712112
+        }
+      ]
+    },
+    {
+      "family": "prototype16",
+      "fold": 1,
+      "policy": {
+        "policy_id": "prototype16",
+        "decisions": 16147,
+        "occupied_decisions": 0,
+        "abstained_decisions": 16147,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 16147,
+        "occupied_decisions": 0,
+        "abstained_decisions": 16147,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 1443,
+          "date_count": 82,
+          "maximum_ranking_score": -0.48859568350717086
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 752,
+          "date_count": 80,
+          "maximum_ranking_score": -0.9284768659754886
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 924,
+          "date_count": 82,
+          "maximum_ranking_score": -0.7320527346534138
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 1405,
+          "date_count": 82,
+          "maximum_ranking_score": -0.7799865625213447
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 1273,
+          "date_count": 81,
+          "maximum_ranking_score": -0.8019265088629637
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 376,
+          "date_count": 80,
+          "maximum_ranking_score": -0.9897678602899167
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 1441,
+          "date_count": 82,
+          "maximum_ranking_score": -0.9210697081222857
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 1351,
+          "date_count": 82,
+          "maximum_ranking_score": -0.8577241922046199
+        },
+        {
+          "state_id": 8,
+          "supported": true,
+          "sample_size": 292,
+          "date_count": 72,
+          "maximum_ranking_score": -0.5933512709610491
+        },
+        {
+          "state_id": 9,
+          "supported": true,
+          "sample_size": 784,
+          "date_count": 81,
+          "maximum_ranking_score": -0.8263600062133996
+        },
+        {
+          "state_id": 10,
+          "supported": true,
+          "sample_size": 668,
+          "date_count": 81,
+          "maximum_ranking_score": -0.6955477964834074
+        },
+        {
+          "state_id": 11,
+          "supported": true,
+          "sample_size": 1314,
+          "date_count": 82,
+          "maximum_ranking_score": -0.6777301467650478
+        },
+        {
+          "state_id": 12,
+          "supported": true,
+          "sample_size": 1498,
+          "date_count": 82,
+          "maximum_ranking_score": -0.7493803757417431
+        },
+        {
+          "state_id": 13,
+          "supported": true,
+          "sample_size": 782,
+          "date_count": 80,
+          "maximum_ranking_score": -0.8071525681118552
+        },
+        {
+          "state_id": 14,
+          "supported": true,
+          "sample_size": 923,
+          "date_count": 80,
+          "maximum_ranking_score": -0.4873578668918331
+        },
+        {
+          "state_id": 15,
+          "supported": true,
+          "sample_size": 1201,
+          "date_count": 82,
+          "maximum_ranking_score": -0.9547984943722043
+        }
+      ]
+    },
+    {
+      "family": "prototype16",
+      "fold": 2,
+      "policy": {
+        "policy_id": "prototype16",
+        "decisions": 32521,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32521,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 32521,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32521,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 2685,
+          "date_count": 160,
+          "maximum_ranking_score": -0.5264478898765755
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 1562,
+          "date_count": 157,
+          "maximum_ranking_score": -0.46938540398141626
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 1766,
+          "date_count": 159,
+          "maximum_ranking_score": -0.8758378525907147
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 2634,
+          "date_count": 160,
+          "maximum_ranking_score": -0.7217147891786814
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 2551,
+          "date_count": 159,
+          "maximum_ranking_score": -0.9803802666341375
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 725,
+          "date_count": 155,
+          "maximum_ranking_score": -0.9173279861218602
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 2789,
+          "date_count": 159,
+          "maximum_ranking_score": -0.8331759733095905
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 2607,
+          "date_count": 159,
+          "maximum_ranking_score": -0.8201676128740057
+        },
+        {
+          "state_id": 8,
+          "supported": true,
+          "sample_size": 528,
+          "date_count": 140,
+          "maximum_ranking_score": -0.5310456391357887
+        },
+        {
+          "state_id": 9,
+          "supported": true,
+          "sample_size": 1412,
+          "date_count": 158,
+          "maximum_ranking_score": -0.8416586548392941
+        },
+        {
+          "state_id": 10,
+          "supported": true,
+          "sample_size": 1313,
+          "date_count": 157,
+          "maximum_ranking_score": -0.8337733551724227
+        },
+        {
+          "state_id": 11,
+          "supported": true,
+          "sample_size": 2602,
+          "date_count": 160,
+          "maximum_ranking_score": -0.7156657630531895
+        },
+        {
+          "state_id": 12,
+          "supported": true,
+          "sample_size": 2985,
+          "date_count": 160,
+          "maximum_ranking_score": -0.8788504268296475
+        },
+        {
+          "state_id": 13,
+          "supported": true,
+          "sample_size": 1533,
+          "date_count": 157,
+          "maximum_ranking_score": -0.8656194727384818
+        },
+        {
+          "state_id": 14,
+          "supported": true,
+          "sample_size": 1806,
+          "date_count": 158,
+          "maximum_ranking_score": -0.5104287852714815
+        },
+        {
+          "state_id": 15,
+          "supported": true,
+          "sample_size": 2413,
+          "date_count": 159,
+          "maximum_ranking_score": -0.9993084329129218
+        }
+      ]
+    },
+    {
+      "family": "prototype16",
+      "fold": 3,
+      "policy": {
+        "policy_id": "prototype16",
+        "decisions": 32305,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32305,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 32305,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32305,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 5361,
+          "date_count": 315,
+          "maximum_ranking_score": -0.8785268373483723
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 3172,
+          "date_count": 306,
+          "maximum_ranking_score": -0.844979351502849
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 3375,
+          "date_count": 311,
+          "maximum_ranking_score": -0.9108362098453229
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 5234,
+          "date_count": 314,
+          "maximum_ranking_score": -0.8954654886166113
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 4923,
+          "date_count": 313,
+          "maximum_ranking_score": -0.9226829984232782
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 1465,
+          "date_count": 302,
+          "maximum_ranking_score": -0.9391111081587697
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 5727,
+          "date_count": 313,
+          "maximum_ranking_score": -0.8804902413593735
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 5097,
+          "date_count": 313,
+          "maximum_ranking_score": -0.7198919111060518
+        },
+        {
+          "state_id": 8,
+          "supported": true,
+          "sample_size": 1039,
+          "date_count": 284,
+          "maximum_ranking_score": -0.7247318525012281
+        },
+        {
+          "state_id": 9,
+          "supported": true,
+          "sample_size": 2832,
+          "date_count": 309,
+          "maximum_ranking_score": -0.9570833306960065
+        },
+        {
+          "state_id": 10,
+          "supported": true,
+          "sample_size": 2570,
+          "date_count": 307,
+          "maximum_ranking_score": -0.8445208782643028
+        },
+        {
+          "state_id": 11,
+          "supported": true,
+          "sample_size": 5018,
+          "date_count": 315,
+          "maximum_ranking_score": -0.6902079600308269
+        },
+        {
+          "state_id": 12,
+          "supported": true,
+          "sample_size": 6012,
+          "date_count": 314,
+          "maximum_ranking_score": -0.8114749210265375
+        },
+        {
+          "state_id": 13,
+          "supported": true,
+          "sample_size": 3062,
+          "date_count": 311,
+          "maximum_ranking_score": -0.8776089807311784
+        },
+        {
+          "state_id": 14,
+          "supported": true,
+          "sample_size": 3466,
+          "date_count": 310,
+          "maximum_ranking_score": -0.8877969630135737
+        },
+        {
+          "state_id": 15,
+          "supported": true,
+          "sample_size": 4828,
+          "date_count": 314,
+          "maximum_ranking_score": -0.9197968823870052
+        }
+      ]
+    },
+    {
+      "family": "prototype16",
+      "fold": 4,
+      "policy": {
+        "policy_id": "prototype16",
+        "decisions": 32715,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32715,
+        "attempted_trades": 0
+      },
+      "baseline": {
+        "policy_id": "unconditional",
+        "decisions": 32715,
+        "occupied_decisions": 0,
+        "abstained_decisions": 32715,
+        "attempted_trades": 0
+      },
+      "state_scores": [
+        {
+          "state_id": 0,
+          "supported": true,
+          "sample_size": 8026,
+          "date_count": 469,
+          "maximum_ranking_score": -0.7486675426257569
+        },
+        {
+          "state_id": 1,
+          "supported": true,
+          "sample_size": 4822,
+          "date_count": 459,
+          "maximum_ranking_score": -0.7044677777453718
+        },
+        {
+          "state_id": 2,
+          "supported": true,
+          "sample_size": 5050,
+          "date_count": 466,
+          "maximum_ranking_score": -0.9027363339479337
+        },
+        {
+          "state_id": 3,
+          "supported": true,
+          "sample_size": 7720,
+          "date_count": 469,
+          "maximum_ranking_score": -0.9120839320402575
+        },
+        {
+          "state_id": 4,
+          "supported": true,
+          "sample_size": 7398,
+          "date_count": 467,
+          "maximum_ranking_score": -0.874888980967027
+        },
+        {
+          "state_id": 5,
+          "supported": true,
+          "sample_size": 2287,
+          "date_count": 451,
+          "maximum_ranking_score": -0.8517241929317524
+        },
+        {
+          "state_id": 6,
+          "supported": true,
+          "sample_size": 8678,
+          "date_count": 468,
+          "maximum_ranking_score": -0.8824547626532799
+        },
+        {
+          "state_id": 7,
+          "supported": true,
+          "sample_size": 7531,
+          "date_count": 466,
+          "maximum_ranking_score": -0.851887150973879
+        },
+        {
+          "state_id": 8,
+          "supported": true,
+          "sample_size": 1524,
+          "date_count": 419,
+          "maximum_ranking_score": -0.8248398694688786
+        },
+        {
+          "state_id": 9,
+          "supported": true,
+          "sample_size": 4196,
+          "date_count": 462,
+          "maximum_ranking_score": -0.9365245042779891
+        },
+        {
+          "state_id": 10,
+          "supported": true,
+          "sample_size": 3812,
+          "date_count": 456,
+          "maximum_ranking_score": -0.9206366336955782
+        },
+        {
+          "state_id": 11,
+          "supported": true,
+          "sample_size": 7453,
+          "date_count": 469,
+          "maximum_ranking_score": -0.9212979694952914
+        },
+        {
+          "state_id": 12,
+          "supported": true,
+          "sample_size": 9041,
+          "date_count": 469,
+          "maximum_ranking_score": -0.7804116492709169
+        },
+        {
+          "state_id": 13,
+          "supported": true,
+          "sample_size": 4484,
+          "date_count": 461,
+          "maximum_ranking_score": -0.8421139630872968
+        },
+        {
+          "state_id": 14,
+          "supported": true,
+          "sample_size": 5133,
+          "date_count": 464,
+          "maximum_ranking_score": -0.8433282604601876
+        },
+        {
+          "state_id": 15,
+          "supported": true,
+          "sample_size": 7043,
+          "date_count": 468,
+          "maximum_ranking_score": -0.9011093850154163
+        }
+      ]
+    }
+  ],
+  "status": "complete",
+  "models_refit": false,
+  "input_status": {
+    "schedule.parquet": {
+      "used": "/workspace/scratch/484e26bff85f/mnq-nq-pattern-engine/data/schedule.parquet",
+      "sha256": "fccb7ac0bc7b5c709f76ca5528b303b861b42ef8d78c6d36703252771c9c24a3",
+      "v2_copy_sha256": "fccb7ac0bc7b5c709f76ca5528b303b861b42ef8d78c6d36703252771c9c24a3"
+    },
+    "training.parquet": {
+      "used": "/workspace/scratch/484e26bff85f/mnq-nq-pattern-engine/data/training.parquet",
+      "sha256": "1722334651520716155d7d14aca334342319e4431c084b5d6be8d24bd31b6f08",
+      "v2_copy_sha256": "3b38bbad9236d055c633071099133d313c0889c09e75a1ed1f341dd71bd0d46d"
+    }
+  },
+  "elapsed_seconds": 18.25
+}

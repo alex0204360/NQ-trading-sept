@@ -58,3 +58,7 @@ PYTHONPATH=src:.venv/lib/python3.12/site-packages python -m nqpatterns.cli run-r
 The second command intentionally produces the archived overwrite guard. Recomputed diagnostics under `tools/diagnostics/` invoke the same frozen engine without altering original artifacts. The recovery agent regenerates missing logs; any differences must be investigated before production evaluation.
 
 Agents `/root/reproduce_v1` and `/root/reproduce_v2` produced the original fresh checks; `/root/design_review` reviewed the replacement protocol. Usage interruption lost their unpushed files. `/root/recover_diagnostics` regenerates evidence. Root owns integration/commits. Profitability remains unfinished.
+
+## Verified recovery rerun
+
+Recovery again matched45,360/45,360 V1 rows with zero provenance differences in203.873seconds. `reports/rebuild/recomputed.json` and its log preserve this run. Fresh V2 replay again produced454,752 abstentions and zero attempted trades (`v2-replay.json`). The restored snapshot differs from the interrupted filesystem: the payoff cache currently passes size/mmap checks, while the V2 training parquet copy has a damaged footer. Replay used the existing V1 training/calendar only after verifying both hashes match V2 frozen input identity. No file was silently repaired or copied; the initial error log is preserved. The prior cache-corruption observation above is historical, not a claim about the current restored file.

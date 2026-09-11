@@ -1,0 +1,3345 @@
+{
+  "purpose": "Recompute every frozen V1 candidate using current unchanged production engine",
+  "commit": "9324f4e73bbd52d274021280c4363e24909f89fe",
+  "command": "PYTHONPATH=src:.venv/lib/python3.12/site-packages python tools/diagnostics/reproduce.py",
+  "holdout_accessed": false,
+  "training_bars": 706008,
+  "valid_feature_rows": 654103,
+  "rounds": [
+    {
+      "round": 1,
+      "signatures": 24,
+      "scored": 12960,
+      "exact_matches": 12960,
+      "mismatches": [],
+      "status_counts": {
+        "rejected_screen": 12960
+      },
+      "screen_reason_counts": {
+        "minimum_edge": 12960,
+        "baseline_support": 12960,
+        "fold_instability": 12910
+      },
+      "candidate_counts": [
+        {
+          "id": "7852c2804b72dfb55aa724bf1c621bb469ce719186d315e32f98b574c12a6ade",
+          "family": "candle_shape_cluster",
+          "folds": [
+            {
+              "raw": 13870,
+              "retained_before_censoring": 1647,
+              "suppressed": 12223,
+              "eligible": 1578,
+              "censored_or_boundary_excluded": 69
+            },
+            {
+              "raw": 27782,
+              "retained_before_censoring": 3330,
+              "suppressed": 24452,
+              "eligible": 3200,
+              "censored_or_boundary_excluded": 130
+            },
+            {
+              "raw": 28096,
+              "retained_before_censoring": 3301,
+              "suppressed": 24795,
+              "eligible": 3173,
+              "censored_or_boundary_excluded": 128
+            },
+            {
+              "raw": 28469,
+              "retained_before_censoring": 3355,
+              "suppressed": 25114,
+              "eligible": 3217,
+              "censored_or_boundary_excluded": 138
+            }
+          ],
+          "raw_detections": 112529,
+          "retained_before_censoring": 13375,
+          "suppressed_detections": 99154,
+          "eligible_events": 11168,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "aa460aca98397993fde78df1d11f10af241caa359fa293019731157229151c91",
+          "family": "candle_shape_cluster",
+          "folds": [
+            {
+              "raw": 15925,
+              "retained_before_censoring": 1678,
+              "suppressed": 14247,
+              "eligible": 1606,
+              "censored_or_boundary_excluded": 72
+            },
+            {
+              "raw": 31613,
+              "retained_before_censoring": 3358,
+              "suppressed": 28255,
+              "eligible": 3228,
+              "censored_or_boundary_excluded": 130
+            },
+            {
+              "raw": 30481,
+              "retained_before_censoring": 3346,
+              "suppressed": 27135,
+              "eligible": 3213,
+              "censored_or_boundary_excluded": 133
+            },
+            {
+              "raw": 30590,
+              "retained_before_censoring": 3385,
+              "suppressed": 27205,
+              "eligible": 3234,
+              "censored_or_boundary_excluded": 151
+            }
+          ],
+          "raw_detections": 125487,
+          "retained_before_censoring": 13551,
+          "suppressed_detections": 111936,
+          "eligible_events": 11281,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "67b755b6499b6a865eb65f79929ce0880dc734b2755483d8e7bc4e9affe4027d",
+          "family": "candle_shape_cluster",
+          "folds": [
+            {
+              "raw": 10046,
+              "retained_before_censoring": 1579,
+              "suppressed": 8467,
+              "eligible": 1513,
+              "censored_or_boundary_excluded": 66
+            },
+            {
+              "raw": 21110,
+              "retained_before_censoring": 3193,
+              "suppressed": 17917,
+              "eligible": 3069,
+              "censored_or_boundary_excluded": 124
+            },
+            {
+              "raw": 21268,
+              "retained_before_censoring": 3178,
+              "suppressed": 18090,
+              "eligible": 3051,
+              "censored_or_boundary_excluded": 127
+            },
+            {
+              "raw": 21657,
+              "retained_before_censoring": 3231,
+              "suppressed": 18426,
+              "eligible": 3090,
+              "censored_or_boundary_excluded": 141
+            }
+          ],
+          "raw_detections": 85611,
+          "retained_before_censoring": 12867,
+          "suppressed_detections": 72744,
+          "eligible_events": 10723,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "69c2e3565a1bd5187f119e05940b53088d6dd4b695fb700122aa2e4baf85f915",
+          "family": "candle_shape_cluster",
+          "folds": [
+            {
+              "raw": 8955,
+              "retained_before_censoring": 1543,
+              "suppressed": 7412,
+              "eligible": 1477,
+              "censored_or_boundary_excluded": 66
+            },
+            {
+              "raw": 17415,
+              "retained_before_censoring": 3101,
+              "suppressed": 14314,
+              "eligible": 2986,
+              "censored_or_boundary_excluded": 115
+            },
+            {
+              "raw": 17240,
+              "retained_before_censoring": 3070,
+              "suppressed": 14170,
+              "eligible": 2945,
+              "censored_or_boundary_excluded": 125
+            },
+            {
+              "raw": 17757,
+              "retained_before_censoring": 3137,
+              "suppressed": 14620,
+              "eligible": 3002,
+              "censored_or_boundary_excluded": 135
+            }
+          ],
+          "raw_detections": 70438,
+          "retained_before_censoring": 12472,
+          "suppressed_detections": 57966,
+          "eligible_events": 10410,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "ea867d9dd3f3692c48161a8daf5a35872e62f87a96b2344329d2dfe7352494e0",
+          "family": "candle_shape_cluster",
+          "folds": [
+            {
+              "raw": 4161,
+              "retained_before_censoring": 1278,
+              "suppressed": 2883,
+              "eligible": 1218,
+              "censored_or_boundary_excluded": 60
+            },
+            {
+              "raw": 8673,
+              "retained_before_censoring": 2614,
+              "suppressed": 6059,
+              "eligible": 2510,
+              "censored_or_boundary_excluded": 104
+            },
+            {
+              "raw": 8255,
+              "retained_before_censoring": 2536,
+              "suppressed": 5719,
+              "eligible": 2439,
+              "censored_or_boundary_excluded": 97
+            },
+            {
+              "raw": 8094,
+              "retained_before_censoring": 2559,
+              "suppressed": 5535,
+              "eligible": 2457,
+              "censored_or_boundary_excluded": 102
+            }
+          ],
+          "raw_detections": 33725,
+          "retained_before_censoring": 10325,
+          "suppressed_detections": 23400,
+          "eligible_events": 8624,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "c4bf0e757fdf613e4c6887cbdda771f9139e167cbdc4cb5dbc2af55d08489ee2",
+          "family": "candle_shape_cluster",
+          "folds": [
+            {
+              "raw": 5820,
+              "retained_before_censoring": 1406,
+              "suppressed": 4414,
+              "eligible": 1352,
+              "censored_or_boundary_excluded": 54
+            },
+            {
+              "raw": 11809,
+              "retained_before_censoring": 2820,
+              "suppressed": 8989,
+              "eligible": 2725,
+              "censored_or_boundary_excluded": 95
+            },
+            {
+              "raw": 11938,
+              "retained_before_censoring": 2800,
+              "suppressed": 9138,
+              "eligible": 2705,
+              "censored_or_boundary_excluded": 95
+            },
+            {
+              "raw": 12215,
+              "retained_before_censoring": 2824,
+              "suppressed": 9391,
+              "eligible": 2706,
+              "censored_or_boundary_excluded": 118
+            }
+          ],
+          "raw_detections": 47579,
+          "retained_before_censoring": 11322,
+          "suppressed_detections": 36257,
+          "eligible_events": 9488,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "0cb3f36927f52d7b9b11d1f7b61f33f8325cddb704fb86cd149ca5c3bff39c31",
+          "family": "candle_shape_cluster",
+          "folds": [
+            {
+              "raw": 10896,
+              "retained_before_censoring": 1594,
+              "suppressed": 9302,
+              "eligible": 1526,
+              "censored_or_boundary_excluded": 68
+            },
+            {
+              "raw": 21815,
+              "retained_before_censoring": 3199,
+              "suppressed": 18616,
+              "eligible": 3078,
+              "censored_or_boundary_excluded": 121
+            },
+            {
+              "raw": 21590,
+              "retained_before_censoring": 3198,
+              "suppressed": 18392,
+              "eligible": 3069,
+              "censored_or_boundary_excluded": 129
+            },
+            {
+              "raw": 22507,
+              "retained_before_censoring": 3249,
+              "suppressed": 19258,
+              "eligible": 3107,
+              "censored_or_boundary_excluded": 142
+            }
+          ],
+          "raw_detections": 88003,
+          "retained_before_censoring": 12921,
+          "suppressed_detections": 75082,
+          "eligible_events": 10780,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "114611804160442dd6714c61c8dfaa6caac55b4514356dd874698821d186656e",
+          "family": "candle_shape_cluster",
+          "folds": [
+            {
+              "raw": 11065,
+              "retained_before_censoring": 1590,
+              "suppressed": 9475,
+              "eligible": 1523,
+              "censored_or_boundary_excluded": 67
+            },
+            {
+              "raw": 22391,
+              "retained_before_censoring": 3221,
+              "suppressed": 19170,
+              "eligible": 3096,
+              "censored_or_boundary_excluded": 125
+            },
+            {
+              "raw": 22661,
+              "retained_before_censoring": 3212,
+              "suppressed": 19449,
+              "eligible": 3080,
+              "censored_or_boundary_excluded": 132
+            },
+            {
+              "raw": 22297,
+              "retained_before_censoring": 3236,
+              "suppressed": 19061,
+              "eligible": 3101,
+              "censored_or_boundary_excluded": 135
+            }
+          ],
+          "raw_detections": 90731,
+          "retained_before_censoring": 12962,
+          "suppressed_detections": 77769,
+          "eligible_events": 10800,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "7c40629ba8af092cfacac074204d2db65fc6985a58c6f173fc0170a1c5ec1bae",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 18250,
+              "retained_before_censoring": 1037,
+              "suppressed": 17213,
+              "eligible": 990,
+              "censored_or_boundary_excluded": 47
+            },
+            {
+              "raw": 35823,
+              "retained_before_censoring": 2013,
+              "suppressed": 33810,
+              "eligible": 1935,
+              "censored_or_boundary_excluded": 78
+            },
+            {
+              "raw": 35083,
+              "retained_before_censoring": 2011,
+              "suppressed": 33072,
+              "eligible": 1924,
+              "censored_or_boundary_excluded": 87
+            },
+            {
+              "raw": 35203,
+              "retained_before_censoring": 2044,
+              "suppressed": 33159,
+              "eligible": 1945,
+              "censored_or_boundary_excluded": 99
+            }
+          ],
+          "raw_detections": 143004,
+          "retained_before_censoring": 8160,
+          "suppressed_detections": 134844,
+          "eligible_events": 6794,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "ad2cd9fd5360eac441ba2cdc00f5e75e386810fee8ee65504fbe994bc7f41105",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 12022,
+              "retained_before_censoring": 1022,
+              "suppressed": 11000,
+              "eligible": 984,
+              "censored_or_boundary_excluded": 38
+            },
+            {
+              "raw": 25429,
+              "retained_before_censoring": 2112,
+              "suppressed": 23317,
+              "eligible": 2048,
+              "censored_or_boundary_excluded": 64
+            },
+            {
+              "raw": 24378,
+              "retained_before_censoring": 2053,
+              "suppressed": 22325,
+              "eligible": 1980,
+              "censored_or_boundary_excluded": 73
+            },
+            {
+              "raw": 24920,
+              "retained_before_censoring": 2141,
+              "suppressed": 22779,
+              "eligible": 2055,
+              "censored_or_boundary_excluded": 86
+            }
+          ],
+          "raw_detections": 100034,
+          "retained_before_censoring": 8435,
+          "suppressed_detections": 91599,
+          "eligible_events": 7067,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "df56f3ccf11d985026bf8dfe8b43c53f7fe7519f2e1583850e994e7eac65f394",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 12466,
+              "retained_before_censoring": 1021,
+              "suppressed": 11445,
+              "eligible": 976,
+              "censored_or_boundary_excluded": 45
+            },
+            {
+              "raw": 24266,
+              "retained_before_censoring": 1993,
+              "suppressed": 22273,
+              "eligible": 1909,
+              "censored_or_boundary_excluded": 84
+            },
+            {
+              "raw": 23993,
+              "retained_before_censoring": 1947,
+              "suppressed": 22046,
+              "eligible": 1874,
+              "censored_or_boundary_excluded": 73
+            },
+            {
+              "raw": 24439,
+              "retained_before_censoring": 2004,
+              "suppressed": 22435,
+              "eligible": 1922,
+              "censored_or_boundary_excluded": 82
+            }
+          ],
+          "raw_detections": 97977,
+          "retained_before_censoring": 8000,
+          "suppressed_detections": 89977,
+          "eligible_events": 6681,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "02f6afb78d0ee810ac8535695a0cb3b67fb3be4cc2a256b88aba573b09ca7e5b",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 19791,
+              "retained_before_censoring": 1084,
+              "suppressed": 18707,
+              "eligible": 1036,
+              "censored_or_boundary_excluded": 48
+            },
+            {
+              "raw": 42092,
+              "retained_before_censoring": 2219,
+              "suppressed": 39873,
+              "eligible": 2146,
+              "censored_or_boundary_excluded": 73
+            },
+            {
+              "raw": 42685,
+              "retained_before_censoring": 2182,
+              "suppressed": 40503,
+              "eligible": 2104,
+              "censored_or_boundary_excluded": 78
+            },
+            {
+              "raw": 43428,
+              "retained_before_censoring": 2238,
+              "suppressed": 41190,
+              "eligible": 2141,
+              "censored_or_boundary_excluded": 97
+            }
+          ],
+          "raw_detections": 169996,
+          "retained_before_censoring": 8897,
+          "suppressed_detections": 161099,
+          "eligible_events": 7427,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "6a014b6b37e7e9e94d59798c92a1deee99f9c9b4ede6cb0b33451717e7f25031",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 12549,
+              "retained_before_censoring": 949,
+              "suppressed": 11600,
+              "eligible": 910,
+              "censored_or_boundary_excluded": 39
+            },
+            {
+              "raw": 24981,
+              "retained_before_censoring": 1856,
+              "suppressed": 23125,
+              "eligible": 1789,
+              "censored_or_boundary_excluded": 67
+            },
+            {
+              "raw": 24095,
+              "retained_before_censoring": 1832,
+              "suppressed": 22263,
+              "eligible": 1758,
+              "censored_or_boundary_excluded": 74
+            },
+            {
+              "raw": 24288,
+              "retained_before_censoring": 1875,
+              "suppressed": 22413,
+              "eligible": 1790,
+              "censored_or_boundary_excluded": 85
+            }
+          ],
+          "raw_detections": 98881,
+          "retained_before_censoring": 7499,
+          "suppressed_detections": 91382,
+          "eligible_events": 6247,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "21399442337b34ce871cbc84ac002052c865afd5c351541102649c88a3e6a322",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 8081,
+              "retained_before_censoring": 962,
+              "suppressed": 7119,
+              "eligible": 927,
+              "censored_or_boundary_excluded": 35
+            },
+            {
+              "raw": 17357,
+              "retained_before_censoring": 1983,
+              "suppressed": 15374,
+              "eligible": 1925,
+              "censored_or_boundary_excluded": 58
+            },
+            {
+              "raw": 16573,
+              "retained_before_censoring": 1906,
+              "suppressed": 14667,
+              "eligible": 1843,
+              "censored_or_boundary_excluded": 63
+            },
+            {
+              "raw": 16978,
+              "retained_before_censoring": 1989,
+              "suppressed": 14989,
+              "eligible": 1910,
+              "censored_or_boundary_excluded": 79
+            }
+          ],
+          "raw_detections": 68044,
+          "retained_before_censoring": 7875,
+          "suppressed_detections": 60169,
+          "eligible_events": 6605,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "3ea70d6a1e9148465c712facdd4650bbeeaf8a65337ce33e4b25fc5f15ba6370",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 8433,
+              "retained_before_censoring": 959,
+              "suppressed": 7474,
+              "eligible": 920,
+              "censored_or_boundary_excluded": 39
+            },
+            {
+              "raw": 16564,
+              "retained_before_censoring": 1880,
+              "suppressed": 14684,
+              "eligible": 1797,
+              "censored_or_boundary_excluded": 83
+            },
+            {
+              "raw": 16187,
+              "retained_before_censoring": 1841,
+              "suppressed": 14346,
+              "eligible": 1769,
+              "censored_or_boundary_excluded": 72
+            },
+            {
+              "raw": 16652,
+              "retained_before_censoring": 1892,
+              "suppressed": 14760,
+              "eligible": 1812,
+              "censored_or_boundary_excluded": 80
+            }
+          ],
+          "raw_detections": 66544,
+          "retained_before_censoring": 7541,
+          "suppressed_detections": 59003,
+          "eligible_events": 6298,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "c79bce22d1dbc586a978df6eca06ab68d0b03712343616ecdc5fdbf3a009e75b",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 13744,
+              "retained_before_censoring": 996,
+              "suppressed": 12748,
+              "eligible": 953,
+              "censored_or_boundary_excluded": 43
+            },
+            {
+              "raw": 29314,
+              "retained_before_censoring": 2072,
+              "suppressed": 27242,
+              "eligible": 2001,
+              "censored_or_boundary_excluded": 71
+            },
+            {
+              "raw": 29862,
+              "retained_before_censoring": 2033,
+              "suppressed": 27829,
+              "eligible": 1961,
+              "censored_or_boundary_excluded": 72
+            },
+            {
+              "raw": 30362,
+              "retained_before_censoring": 2101,
+              "suppressed": 28261,
+              "eligible": 2019,
+              "censored_or_boundary_excluded": 82
+            }
+          ],
+          "raw_detections": 118588,
+          "retained_before_censoring": 8292,
+          "suppressed_detections": 110296,
+          "eligible_events": 6934,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "ce8230a4b19ff4c2f2dbd9507e33d0bd7d58f880a2e63acc9280e8d4b7ed09ab",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 7058,
+              "retained_before_censoring": 827,
+              "suppressed": 6231,
+              "eligible": 798,
+              "censored_or_boundary_excluded": 29
+            },
+            {
+              "raw": 13510,
+              "retained_before_censoring": 1619,
+              "suppressed": 11891,
+              "eligible": 1552,
+              "censored_or_boundary_excluded": 67
+            },
+            {
+              "raw": 13326,
+              "retained_before_censoring": 1624,
+              "suppressed": 11702,
+              "eligible": 1555,
+              "censored_or_boundary_excluded": 69
+            },
+            {
+              "raw": 13359,
+              "retained_before_censoring": 1633,
+              "suppressed": 11726,
+              "eligible": 1558,
+              "censored_or_boundary_excluded": 75
+            }
+          ],
+          "raw_detections": 54328,
+          "retained_before_censoring": 6554,
+          "suppressed_detections": 47774,
+          "eligible_events": 5463,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "cde410446407110ca6621d09b9b8fc93a9f831246694bf1d7e436c4d2daa4f50",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 4593,
+              "retained_before_censoring": 872,
+              "suppressed": 3721,
+              "eligible": 842,
+              "censored_or_boundary_excluded": 30
+            },
+            {
+              "raw": 9900,
+              "retained_before_censoring": 1810,
+              "suppressed": 8090,
+              "eligible": 1758,
+              "censored_or_boundary_excluded": 52
+            },
+            {
+              "raw": 9448,
+              "retained_before_censoring": 1755,
+              "suppressed": 7693,
+              "eligible": 1688,
+              "censored_or_boundary_excluded": 67
+            },
+            {
+              "raw": 9736,
+              "retained_before_censoring": 1801,
+              "suppressed": 7935,
+              "eligible": 1719,
+              "censored_or_boundary_excluded": 82
+            }
+          ],
+          "raw_detections": 38823,
+          "retained_before_censoring": 7174,
+          "suppressed_detections": 31649,
+          "eligible_events": 6007,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "c1ae04ccfda6279ece58e77a035defa461af7715e28b153b300971094618d3a3",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 4521,
+              "retained_before_censoring": 861,
+              "suppressed": 3660,
+              "eligible": 828,
+              "censored_or_boundary_excluded": 33
+            },
+            {
+              "raw": 9358,
+              "retained_before_censoring": 1698,
+              "suppressed": 7660,
+              "eligible": 1630,
+              "censored_or_boundary_excluded": 68
+            },
+            {
+              "raw": 8707,
+              "retained_before_censoring": 1663,
+              "suppressed": 7044,
+              "eligible": 1597,
+              "censored_or_boundary_excluded": 66
+            },
+            {
+              "raw": 9113,
+              "retained_before_censoring": 1702,
+              "suppressed": 7411,
+              "eligible": 1628,
+              "censored_or_boundary_excluded": 74
+            }
+          ],
+          "raw_detections": 36501,
+          "retained_before_censoring": 6804,
+          "suppressed_detections": 29697,
+          "eligible_events": 5683,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "b05c56b1d6d9e8f6e30629aa75267b08d3857230ec5e9f77e6891bbbbb449154",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 7447,
+              "retained_before_censoring": 856,
+              "suppressed": 6591,
+              "eligible": 821,
+              "censored_or_boundary_excluded": 35
+            },
+            {
+              "raw": 15502,
+              "retained_before_censoring": 1825,
+              "suppressed": 13677,
+              "eligible": 1764,
+              "censored_or_boundary_excluded": 61
+            },
+            {
+              "raw": 16002,
+              "retained_before_censoring": 1790,
+              "suppressed": 14212,
+              "eligible": 1732,
+              "censored_or_boundary_excluded": 58
+            },
+            {
+              "raw": 16194,
+              "retained_before_censoring": 1838,
+              "suppressed": 14356,
+              "eligible": 1769,
+              "censored_or_boundary_excluded": 69
+            }
+          ],
+          "raw_detections": 63403,
+          "retained_before_censoring": 7254,
+          "suppressed_detections": 56149,
+          "eligible_events": 6086,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "21e4d9026a272c7b5b8dac6dbf0525c8cec14e6acf1b238e214b18fa62c8c60a",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 2957,
+              "retained_before_censoring": 673,
+              "suppressed": 2284,
+              "eligible": 649,
+              "censored_or_boundary_excluded": 24
+            },
+            {
+              "raw": 5538,
+              "retained_before_censoring": 1296,
+              "suppressed": 4242,
+              "eligible": 1241,
+              "censored_or_boundary_excluded": 55
+            },
+            {
+              "raw": 5605,
+              "retained_before_censoring": 1297,
+              "suppressed": 4308,
+              "eligible": 1243,
+              "censored_or_boundary_excluded": 54
+            },
+            {
+              "raw": 5572,
+              "retained_before_censoring": 1267,
+              "suppressed": 4305,
+              "eligible": 1215,
+              "censored_or_boundary_excluded": 52
+            }
+          ],
+          "raw_detections": 22595,
+          "retained_before_censoring": 5236,
+          "suppressed_detections": 17359,
+          "eligible_events": 4348,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "71ed098ac997ceca448cd64c25d4b941c2626f81be77168bd95e4f82184c17dc",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 1936,
+              "retained_before_censoring": 680,
+              "suppressed": 1256,
+              "eligible": 654,
+              "censored_or_boundary_excluded": 26
+            },
+            {
+              "raw": 4294,
+              "retained_before_censoring": 1454,
+              "suppressed": 2840,
+              "eligible": 1410,
+              "censored_or_boundary_excluded": 44
+            },
+            {
+              "raw": 4253,
+              "retained_before_censoring": 1407,
+              "suppressed": 2846,
+              "eligible": 1358,
+              "censored_or_boundary_excluded": 49
+            },
+            {
+              "raw": 4398,
+              "retained_before_censoring": 1465,
+              "suppressed": 2933,
+              "eligible": 1398,
+              "censored_or_boundary_excluded": 67
+            }
+          ],
+          "raw_detections": 17064,
+          "retained_before_censoring": 5765,
+          "suppressed_detections": 11299,
+          "eligible_events": 4820,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "1537eda32b68a1052617ee1c869162a09d0d62112729e02e0a0b112c2c2d0f17",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 1745,
+              "retained_before_censoring": 639,
+              "suppressed": 1106,
+              "eligible": 616,
+              "censored_or_boundary_excluded": 23
+            },
+            {
+              "raw": 3774,
+              "retained_before_censoring": 1323,
+              "suppressed": 2451,
+              "eligible": 1274,
+              "censored_or_boundary_excluded": 49
+            },
+            {
+              "raw": 3513,
+              "retained_before_censoring": 1244,
+              "suppressed": 2269,
+              "eligible": 1193,
+              "censored_or_boundary_excluded": 51
+            },
+            {
+              "raw": 3488,
+              "retained_before_censoring": 1264,
+              "suppressed": 2224,
+              "eligible": 1210,
+              "censored_or_boundary_excluded": 54
+            }
+          ],
+          "raw_detections": 14483,
+          "retained_before_censoring": 5158,
+          "suppressed_detections": 9325,
+          "eligible_events": 4293,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "c08603f2c6fedcfa9db802c53e94b60b46933780a8173119353b79e5cdf5ee84",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 2911,
+              "retained_before_censoring": 667,
+              "suppressed": 2244,
+              "eligible": 642,
+              "censored_or_boundary_excluded": 25
+            },
+            {
+              "raw": 5900,
+              "retained_before_censoring": 1417,
+              "suppressed": 4483,
+              "eligible": 1371,
+              "censored_or_boundary_excluded": 46
+            },
+            {
+              "raw": 6255,
+              "retained_before_censoring": 1429,
+              "suppressed": 4826,
+              "eligible": 1380,
+              "censored_or_boundary_excluded": 49
+            },
+            {
+              "raw": 6178,
+              "retained_before_censoring": 1424,
+              "suppressed": 4754,
+              "eligible": 1359,
+              "censored_or_boundary_excluded": 65
+            }
+          ],
+          "raw_detections": 24555,
+          "retained_before_censoring": 5691,
+          "suppressed_detections": 18864,
+          "eligible_events": 4752,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        }
+      ],
+      "provenance_differences": []
+    },
+    {
+      "round": 2,
+      "signatures": 28,
+      "scored": 15120,
+      "exact_matches": 15120,
+      "mismatches": [],
+      "status_counts": {
+        "rejected_screen": 15120
+      },
+      "screen_reason_counts": {
+        "minimum_edge": 15120,
+        "baseline_support": 15120,
+        "fold_instability": 14862
+      },
+      "candidate_counts": [
+        {
+          "id": "8375db0959f0e37f90246e8b17a96bd0ded446acb85ed4e8eb46a98c7cbc8de0",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 5222,
+              "retained_before_censoring": 1108,
+              "suppressed": 4114,
+              "eligible": 1070,
+              "censored_or_boundary_excluded": 38
+            },
+            {
+              "raw": 10912,
+              "retained_before_censoring": 2269,
+              "suppressed": 8643,
+              "eligible": 2196,
+              "censored_or_boundary_excluded": 73
+            },
+            {
+              "raw": 10788,
+              "retained_before_censoring": 2206,
+              "suppressed": 8582,
+              "eligible": 2121,
+              "censored_or_boundary_excluded": 85
+            },
+            {
+              "raw": 10760,
+              "retained_before_censoring": 2267,
+              "suppressed": 8493,
+              "eligible": 2173,
+              "censored_or_boundary_excluded": 94
+            }
+          ],
+          "raw_detections": 42956,
+          "retained_before_censoring": 9055,
+          "suppressed_detections": 33901,
+          "eligible_events": 7560,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "4510b8609163098fae699399ae14c3999f90bca53e77d590e5d50b2646f35fa3",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 2982,
+              "retained_before_censoring": 947,
+              "suppressed": 2035,
+              "eligible": 913,
+              "censored_or_boundary_excluded": 34
+            },
+            {
+              "raw": 5972,
+              "retained_before_censoring": 1951,
+              "suppressed": 4021,
+              "eligible": 1884,
+              "censored_or_boundary_excluded": 67
+            },
+            {
+              "raw": 6051,
+              "retained_before_censoring": 1923,
+              "suppressed": 4128,
+              "eligible": 1847,
+              "censored_or_boundary_excluded": 76
+            },
+            {
+              "raw": 5928,
+              "retained_before_censoring": 1933,
+              "suppressed": 3995,
+              "eligible": 1845,
+              "censored_or_boundary_excluded": 88
+            }
+          ],
+          "raw_detections": 23950,
+          "retained_before_censoring": 7777,
+          "suppressed_detections": 16173,
+          "eligible_events": 6489,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "eaddfd6b581051279390357f3b3c7cfd5794a7430527f368bfad10175659af6e",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 1698,
+              "retained_before_censoring": 756,
+              "suppressed": 942,
+              "eligible": 726,
+              "censored_or_boundary_excluded": 30
+            },
+            {
+              "raw": 3485,
+              "retained_before_censoring": 1596,
+              "suppressed": 1889,
+              "eligible": 1539,
+              "censored_or_boundary_excluded": 57
+            },
+            {
+              "raw": 3468,
+              "retained_before_censoring": 1553,
+              "suppressed": 1915,
+              "eligible": 1496,
+              "censored_or_boundary_excluded": 57
+            },
+            {
+              "raw": 3329,
+              "retained_before_censoring": 1531,
+              "suppressed": 1798,
+              "eligible": 1461,
+              "censored_or_boundary_excluded": 70
+            }
+          ],
+          "raw_detections": 13811,
+          "retained_before_censoring": 6266,
+          "suppressed_detections": 7545,
+          "eligible_events": 5222,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "79560d795112e19ff905b8d30cc90c2754655adcd4c70662532e9af08d95f0c1",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 564,
+              "retained_before_censoring": 387,
+              "suppressed": 177,
+              "eligible": 373,
+              "censored_or_boundary_excluded": 14
+            },
+            {
+              "raw": 1015,
+              "retained_before_censoring": 746,
+              "suppressed": 269,
+              "eligible": 719,
+              "censored_or_boundary_excluded": 27
+            },
+            {
+              "raw": 1078,
+              "retained_before_censoring": 766,
+              "suppressed": 312,
+              "eligible": 733,
+              "censored_or_boundary_excluded": 33
+            },
+            {
+              "raw": 1000,
+              "retained_before_censoring": 723,
+              "suppressed": 277,
+              "eligible": 695,
+              "censored_or_boundary_excluded": 28
+            }
+          ],
+          "raw_detections": 4323,
+          "retained_before_censoring": 3079,
+          "suppressed_detections": 1244,
+          "eligible_events": 2520,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "f32ae50b4af65ac01306451272bdcd846d2d54355b4de9a947f2fbc616a12f7d",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 4712,
+              "retained_before_censoring": 1080,
+              "suppressed": 3632,
+              "eligible": 1043,
+              "censored_or_boundary_excluded": 37
+            },
+            {
+              "raw": 9769,
+              "retained_before_censoring": 2164,
+              "suppressed": 7605,
+              "eligible": 2091,
+              "censored_or_boundary_excluded": 73
+            },
+            {
+              "raw": 9055,
+              "retained_before_censoring": 2111,
+              "suppressed": 6944,
+              "eligible": 2032,
+              "censored_or_boundary_excluded": 79
+            },
+            {
+              "raw": 8680,
+              "retained_before_censoring": 2077,
+              "suppressed": 6603,
+              "eligible": 1987,
+              "censored_or_boundary_excluded": 90
+            }
+          ],
+          "raw_detections": 37190,
+          "retained_before_censoring": 8586,
+          "suppressed_detections": 28604,
+          "eligible_events": 7153,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "44c30d49dce003595f7ee144e9f859112261c9f99875283d8da5c467f30f7345",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 2797,
+              "retained_before_censoring": 924,
+              "suppressed": 1873,
+              "eligible": 896,
+              "censored_or_boundary_excluded": 28
+            },
+            {
+              "raw": 5673,
+              "retained_before_censoring": 1856,
+              "suppressed": 3817,
+              "eligible": 1798,
+              "censored_or_boundary_excluded": 58
+            },
+            {
+              "raw": 5502,
+              "retained_before_censoring": 1824,
+              "suppressed": 3678,
+              "eligible": 1763,
+              "censored_or_boundary_excluded": 61
+            },
+            {
+              "raw": 5277,
+              "retained_before_censoring": 1781,
+              "suppressed": 3496,
+              "eligible": 1703,
+              "censored_or_boundary_excluded": 78
+            }
+          ],
+          "raw_detections": 22134,
+          "retained_before_censoring": 7353,
+          "suppressed_detections": 14781,
+          "eligible_events": 6160,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "1b12ef77c158835c6d2b7439755fc12df490e6c032570ea948186fb4135299be",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 1649,
+              "retained_before_censoring": 744,
+              "suppressed": 905,
+              "eligible": 719,
+              "censored_or_boundary_excluded": 25
+            },
+            {
+              "raw": 3421,
+              "retained_before_censoring": 1519,
+              "suppressed": 1902,
+              "eligible": 1467,
+              "censored_or_boundary_excluded": 52
+            },
+            {
+              "raw": 3413,
+              "retained_before_censoring": 1511,
+              "suppressed": 1902,
+              "eligible": 1463,
+              "censored_or_boundary_excluded": 48
+            },
+            {
+              "raw": 3242,
+              "retained_before_censoring": 1468,
+              "suppressed": 1774,
+              "eligible": 1414,
+              "censored_or_boundary_excluded": 54
+            }
+          ],
+          "raw_detections": 13465,
+          "retained_before_censoring": 6023,
+          "suppressed_detections": 7442,
+          "eligible_events": 5063,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "df43160a908b90956c461cc250ad75b921625362f7eaea5f8e991a15efb88086",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 569,
+              "retained_before_censoring": 393,
+              "suppressed": 176,
+              "eligible": 382,
+              "censored_or_boundary_excluded": 11
+            },
+            {
+              "raw": 1115,
+              "retained_before_censoring": 781,
+              "suppressed": 334,
+              "eligible": 759,
+              "censored_or_boundary_excluded": 22
+            },
+            {
+              "raw": 1227,
+              "retained_before_censoring": 828,
+              "suppressed": 399,
+              "eligible": 807,
+              "censored_or_boundary_excluded": 21
+            },
+            {
+              "raw": 1199,
+              "retained_before_censoring": 829,
+              "suppressed": 370,
+              "eligible": 800,
+              "censored_or_boundary_excluded": 29
+            }
+          ],
+          "raw_detections": 4716,
+          "retained_before_censoring": 3248,
+          "suppressed_detections": 1468,
+          "eligible_events": 2748,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "2eb83a72e149cdb396c6108f4d16c6f322a671ec688be28601a7262a0702a2ba",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 2872,
+              "retained_before_censoring": 680,
+              "suppressed": 2192,
+              "eligible": 652,
+              "censored_or_boundary_excluded": 28
+            },
+            {
+              "raw": 6074,
+              "retained_before_censoring": 1457,
+              "suppressed": 4617,
+              "eligible": 1410,
+              "censored_or_boundary_excluded": 47
+            },
+            {
+              "raw": 5964,
+              "retained_before_censoring": 1406,
+              "suppressed": 4558,
+              "eligible": 1353,
+              "censored_or_boundary_excluded": 53
+            },
+            {
+              "raw": 6083,
+              "retained_before_censoring": 1433,
+              "suppressed": 4650,
+              "eligible": 1369,
+              "censored_or_boundary_excluded": 64
+            }
+          ],
+          "raw_detections": 23939,
+          "retained_before_censoring": 5716,
+          "suppressed_detections": 18223,
+          "eligible_events": 4784,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "d25f2ea1a7b1cc2a19ac50cd9b9d70ade0a0717951304155eebaa1a0ec1a6481",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 1700,
+              "retained_before_censoring": 590,
+              "suppressed": 1110,
+              "eligible": 566,
+              "censored_or_boundary_excluded": 24
+            },
+            {
+              "raw": 3394,
+              "retained_before_censoring": 1247,
+              "suppressed": 2147,
+              "eligible": 1206,
+              "censored_or_boundary_excluded": 41
+            },
+            {
+              "raw": 3440,
+              "retained_before_censoring": 1199,
+              "suppressed": 2241,
+              "eligible": 1157,
+              "censored_or_boundary_excluded": 42
+            },
+            {
+              "raw": 3364,
+              "retained_before_censoring": 1202,
+              "suppressed": 2162,
+              "eligible": 1143,
+              "censored_or_boundary_excluded": 59
+            }
+          ],
+          "raw_detections": 13626,
+          "retained_before_censoring": 4873,
+          "suppressed_detections": 8753,
+          "eligible_events": 4072,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "dcd768bad5f1228ce28113e7e0d3585b7638f26637796aa9e07c082bfd618983",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 989,
+              "retained_before_censoring": 477,
+              "suppressed": 512,
+              "eligible": 460,
+              "censored_or_boundary_excluded": 17
+            },
+            {
+              "raw": 1960,
+              "retained_before_censoring": 986,
+              "suppressed": 974,
+              "eligible": 956,
+              "censored_or_boundary_excluded": 30
+            },
+            {
+              "raw": 2023,
+              "retained_before_censoring": 953,
+              "suppressed": 1070,
+              "eligible": 917,
+              "censored_or_boundary_excluded": 36
+            },
+            {
+              "raw": 1965,
+              "retained_before_censoring": 948,
+              "suppressed": 1017,
+              "eligible": 905,
+              "censored_or_boundary_excluded": 43
+            }
+          ],
+          "raw_detections": 8003,
+          "retained_before_censoring": 3888,
+          "suppressed_detections": 4115,
+          "eligible_events": 3238,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "599e4ef6455186a65afa1f172e211ea5f9f90863258cf461745f73dfc71c8f31",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 337,
+              "retained_before_censoring": 242,
+              "suppressed": 95,
+              "eligible": 236,
+              "censored_or_boundary_excluded": 6
+            },
+            {
+              "raw": 611,
+              "retained_before_censoring": 474,
+              "suppressed": 137,
+              "eligible": 454,
+              "censored_or_boundary_excluded": 20
+            },
+            {
+              "raw": 628,
+              "retained_before_censoring": 472,
+              "suppressed": 156,
+              "eligible": 447,
+              "censored_or_boundary_excluded": 25
+            },
+            {
+              "raw": 629,
+              "retained_before_censoring": 458,
+              "suppressed": 171,
+              "eligible": 439,
+              "censored_or_boundary_excluded": 19
+            }
+          ],
+          "raw_detections": 2609,
+          "retained_before_censoring": 1937,
+          "suppressed_detections": 672,
+          "eligible_events": 1576,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "e4f55ead52b8457dc3996435e54aac2c6b6d8a52f409b4291bf538205bbe185b",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 2540,
+              "retained_before_censoring": 650,
+              "suppressed": 1890,
+              "eligible": 626,
+              "censored_or_boundary_excluded": 24
+            },
+            {
+              "raw": 5234,
+              "retained_before_censoring": 1294,
+              "suppressed": 3940,
+              "eligible": 1233,
+              "censored_or_boundary_excluded": 61
+            },
+            {
+              "raw": 4704,
+              "retained_before_censoring": 1218,
+              "suppressed": 3486,
+              "eligible": 1170,
+              "censored_or_boundary_excluded": 48
+            },
+            {
+              "raw": 4594,
+              "retained_before_censoring": 1229,
+              "suppressed": 3365,
+              "eligible": 1171,
+              "censored_or_boundary_excluded": 58
+            }
+          ],
+          "raw_detections": 19684,
+          "retained_before_censoring": 5076,
+          "suppressed_detections": 14608,
+          "eligible_events": 4200,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "83d2496089f48735b7b20f10d18bf27bff5d048bc5dbcfd5082bc97ed9c9f7af",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 1558,
+              "retained_before_censoring": 561,
+              "suppressed": 997,
+              "eligible": 540,
+              "censored_or_boundary_excluded": 21
+            },
+            {
+              "raw": 3117,
+              "retained_before_censoring": 1088,
+              "suppressed": 2029,
+              "eligible": 1042,
+              "censored_or_boundary_excluded": 46
+            },
+            {
+              "raw": 2909,
+              "retained_before_censoring": 1059,
+              "suppressed": 1850,
+              "eligible": 1021,
+              "censored_or_boundary_excluded": 38
+            },
+            {
+              "raw": 2880,
+              "retained_before_censoring": 1050,
+              "suppressed": 1830,
+              "eligible": 999,
+              "censored_or_boundary_excluded": 51
+            }
+          ],
+          "raw_detections": 12009,
+          "retained_before_censoring": 4340,
+          "suppressed_detections": 7669,
+          "eligible_events": 3602,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "62d27bf7f7a48c26a37b3e1b9cc68278a231ae89817f97653c99f3e6909dbc13",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 930,
+              "retained_before_censoring": 466,
+              "suppressed": 464,
+              "eligible": 448,
+              "censored_or_boundary_excluded": 18
+            },
+            {
+              "raw": 1874,
+              "retained_before_censoring": 864,
+              "suppressed": 1010,
+              "eligible": 832,
+              "censored_or_boundary_excluded": 32
+            },
+            {
+              "raw": 1838,
+              "retained_before_censoring": 871,
+              "suppressed": 967,
+              "eligible": 840,
+              "censored_or_boundary_excluded": 31
+            },
+            {
+              "raw": 1801,
+              "retained_before_censoring": 867,
+              "suppressed": 934,
+              "eligible": 830,
+              "censored_or_boundary_excluded": 37
+            }
+          ],
+          "raw_detections": 7400,
+          "retained_before_censoring": 3543,
+          "suppressed_detections": 3857,
+          "eligible_events": 2950,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "85981b144a0f5b4b3bcc0ecb74022611bc83ca0fe31abfaeb4cbd6dd5b76a631",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 321,
+              "retained_before_censoring": 232,
+              "suppressed": 89,
+              "eligible": 223,
+              "censored_or_boundary_excluded": 9
+            },
+            {
+              "raw": 640,
+              "retained_before_censoring": 451,
+              "suppressed": 189,
+              "eligible": 437,
+              "censored_or_boundary_excluded": 14
+            },
+            {
+              "raw": 716,
+              "retained_before_censoring": 487,
+              "suppressed": 229,
+              "eligible": 473,
+              "censored_or_boundary_excluded": 14
+            },
+            {
+              "raw": 681,
+              "retained_before_censoring": 478,
+              "suppressed": 203,
+              "eligible": 455,
+              "censored_or_boundary_excluded": 23
+            }
+          ],
+          "raw_detections": 2680,
+          "retained_before_censoring": 1879,
+          "suppressed_detections": 801,
+          "eligible_events": 1588,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "c07df8ba153be17436b5343519098a5b3e7cfc2e46e6284b49a199dbac57a3b0",
+          "family": "volume_range",
+          "folds": [
+            {
+              "raw": 11497,
+              "retained_before_censoring": 1566,
+              "suppressed": 9931,
+              "eligible": 1514,
+              "censored_or_boundary_excluded": 52
+            },
+            {
+              "raw": 23153,
+              "retained_before_censoring": 3159,
+              "suppressed": 19994,
+              "eligible": 3067,
+              "censored_or_boundary_excluded": 92
+            },
+            {
+              "raw": 23270,
+              "retained_before_censoring": 3145,
+              "suppressed": 20125,
+              "eligible": 3037,
+              "censored_or_boundary_excluded": 108
+            },
+            {
+              "raw": 23703,
+              "retained_before_censoring": 3155,
+              "suppressed": 20548,
+              "eligible": 3040,
+              "censored_or_boundary_excluded": 115
+            }
+          ],
+          "raw_detections": 93438,
+          "retained_before_censoring": 12674,
+          "suppressed_detections": 80764,
+          "eligible_events": 10658,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "a2474344a6241afed39f564aa9357daa65d44857e7bd528277c087fde64e8b8a",
+          "family": "volume_range",
+          "folds": [
+            {
+              "raw": 11655,
+              "retained_before_censoring": 1581,
+              "suppressed": 10074,
+              "eligible": 1525,
+              "censored_or_boundary_excluded": 56
+            },
+            {
+              "raw": 23669,
+              "retained_before_censoring": 3184,
+              "suppressed": 20485,
+              "eligible": 3079,
+              "censored_or_boundary_excluded": 105
+            },
+            {
+              "raw": 23696,
+              "retained_before_censoring": 3172,
+              "suppressed": 20524,
+              "eligible": 3079,
+              "censored_or_boundary_excluded": 93
+            },
+            {
+              "raw": 23631,
+              "retained_before_censoring": 3204,
+              "suppressed": 20427,
+              "eligible": 3085,
+              "censored_or_boundary_excluded": 119
+            }
+          ],
+          "raw_detections": 94931,
+          "retained_before_censoring": 12817,
+          "suppressed_detections": 82114,
+          "eligible_events": 10768,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "c56a8dff8282c89f8adfc97bb6f45d8f5245626a27408ed489dd3301f00e97c7",
+          "family": "volume_range",
+          "folds": [
+            {
+              "raw": 5832,
+              "retained_before_censoring": 1376,
+              "suppressed": 4456,
+              "eligible": 1324,
+              "censored_or_boundary_excluded": 52
+            },
+            {
+              "raw": 11710,
+              "retained_before_censoring": 2773,
+              "suppressed": 8937,
+              "eligible": 2677,
+              "censored_or_boundary_excluded": 96
+            },
+            {
+              "raw": 12042,
+              "retained_before_censoring": 2772,
+              "suppressed": 9270,
+              "eligible": 2679,
+              "censored_or_boundary_excluded": 93
+            },
+            {
+              "raw": 12259,
+              "retained_before_censoring": 2803,
+              "suppressed": 9456,
+              "eligible": 2685,
+              "censored_or_boundary_excluded": 118
+            }
+          ],
+          "raw_detections": 47606,
+          "retained_before_censoring": 11180,
+          "suppressed_detections": 36426,
+          "eligible_events": 9365,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "eaa2027b620eb1a7ee44f8bbdb519882b3e95bac5f189779d4d815925edeed36",
+          "family": "volume_range",
+          "folds": [
+            {
+              "raw": 5476,
+              "retained_before_censoring": 1377,
+              "suppressed": 4099,
+              "eligible": 1320,
+              "censored_or_boundary_excluded": 57
+            },
+            {
+              "raw": 11282,
+              "retained_before_censoring": 2792,
+              "suppressed": 8490,
+              "eligible": 2689,
+              "censored_or_boundary_excluded": 103
+            },
+            {
+              "raw": 10959,
+              "retained_before_censoring": 2758,
+              "suppressed": 8201,
+              "eligible": 2657,
+              "censored_or_boundary_excluded": 101
+            },
+            {
+              "raw": 10832,
+              "retained_before_censoring": 2785,
+              "suppressed": 8047,
+              "eligible": 2669,
+              "censored_or_boundary_excluded": 116
+            }
+          ],
+          "raw_detections": 44474,
+          "retained_before_censoring": 11181,
+          "suppressed_detections": 33293,
+          "eligible_events": 9335,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "f9fa22f7d24bb778cc4d553b4ca767d7f8ff257766db5048897068389a003e11",
+          "family": "volume_range",
+          "folds": [
+            {
+              "raw": 5726,
+              "retained_before_censoring": 1337,
+              "suppressed": 4389,
+              "eligible": 1282,
+              "censored_or_boundary_excluded": 55
+            },
+            {
+              "raw": 11416,
+              "retained_before_censoring": 2726,
+              "suppressed": 8690,
+              "eligible": 2618,
+              "censored_or_boundary_excluded": 108
+            },
+            {
+              "raw": 11459,
+              "retained_before_censoring": 2669,
+              "suppressed": 8790,
+              "eligible": 2569,
+              "censored_or_boundary_excluded": 100
+            },
+            {
+              "raw": 11725,
+              "retained_before_censoring": 2715,
+              "suppressed": 9010,
+              "eligible": 2592,
+              "censored_or_boundary_excluded": 123
+            }
+          ],
+          "raw_detections": 46021,
+          "retained_before_censoring": 10848,
+          "suppressed_detections": 35173,
+          "eligible_events": 9061,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "34fc68047fca95a1787d5eea13b61bf0371daa278bf903ea579c84f4451fdc27",
+          "family": "volume_range",
+          "folds": [
+            {
+              "raw": 5522,
+              "retained_before_censoring": 1337,
+              "suppressed": 4185,
+              "eligible": 1282,
+              "censored_or_boundary_excluded": 55
+            },
+            {
+              "raw": 11415,
+              "retained_before_censoring": 2760,
+              "suppressed": 8655,
+              "eligible": 2654,
+              "censored_or_boundary_excluded": 106
+            },
+            {
+              "raw": 11315,
+              "retained_before_censoring": 2708,
+              "suppressed": 8607,
+              "eligible": 2610,
+              "censored_or_boundary_excluded": 98
+            },
+            {
+              "raw": 11109,
+              "retained_before_censoring": 2725,
+              "suppressed": 8384,
+              "eligible": 2618,
+              "censored_or_boundary_excluded": 107
+            }
+          ],
+          "raw_detections": 45338,
+          "retained_before_censoring": 10948,
+          "suppressed_detections": 34390,
+          "eligible_events": 9164,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "2115788b1945ac2227271cec462df301d1317a726027bf0f4bb3623183c4d4ca",
+          "family": "volume_range",
+          "folds": [
+            {
+              "raw": 3977,
+              "retained_before_censoring": 1221,
+              "suppressed": 2756,
+              "eligible": 1169,
+              "censored_or_boundary_excluded": 52
+            },
+            {
+              "raw": 7845,
+              "retained_before_censoring": 2475,
+              "suppressed": 5370,
+              "eligible": 2370,
+              "censored_or_boundary_excluded": 105
+            },
+            {
+              "raw": 8062,
+              "retained_before_censoring": 2430,
+              "suppressed": 5632,
+              "eligible": 2343,
+              "censored_or_boundary_excluded": 87
+            },
+            {
+              "raw": 8268,
+              "retained_before_censoring": 2486,
+              "suppressed": 5782,
+              "eligible": 2369,
+              "censored_or_boundary_excluded": 117
+            }
+          ],
+          "raw_detections": 31959,
+          "retained_before_censoring": 9871,
+          "suppressed_detections": 22088,
+          "eligible_events": 8251,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "701ea23deccbe9fa55719a1dad18f505ed653d2a33434fcab1d8acc2149a5770",
+          "family": "volume_range",
+          "folds": [
+            {
+              "raw": 3599,
+              "retained_before_censoring": 1195,
+              "suppressed": 2404,
+              "eligible": 1142,
+              "censored_or_boundary_excluded": 53
+            },
+            {
+              "raw": 7393,
+              "retained_before_censoring": 2438,
+              "suppressed": 4955,
+              "eligible": 2332,
+              "censored_or_boundary_excluded": 106
+            },
+            {
+              "raw": 7209,
+              "retained_before_censoring": 2397,
+              "suppressed": 4812,
+              "eligible": 2296,
+              "censored_or_boundary_excluded": 101
+            },
+            {
+              "raw": 7073,
+              "retained_before_censoring": 2397,
+              "suppressed": 4676,
+              "eligible": 2289,
+              "censored_or_boundary_excluded": 108
+            }
+          ],
+          "raw_detections": 29208,
+          "retained_before_censoring": 9708,
+          "suppressed_detections": 19500,
+          "eligible_events": 8059,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "c707abc75511d304682dbb6d5c4a11c5504e1ea94cfe9be5309d2c8d9b79f901",
+          "family": "volume_range",
+          "folds": [
+            {
+              "raw": 2587,
+              "retained_before_censoring": 1034,
+              "suppressed": 1553,
+              "eligible": 985,
+              "censored_or_boundary_excluded": 49
+            },
+            {
+              "raw": 5039,
+              "retained_before_censoring": 2095,
+              "suppressed": 2944,
+              "eligible": 1995,
+              "censored_or_boundary_excluded": 100
+            },
+            {
+              "raw": 5210,
+              "retained_before_censoring": 2098,
+              "suppressed": 3112,
+              "eligible": 2004,
+              "censored_or_boundary_excluded": 94
+            },
+            {
+              "raw": 5304,
+              "retained_before_censoring": 2118,
+              "suppressed": 3186,
+              "eligible": 2006,
+              "censored_or_boundary_excluded": 112
+            }
+          ],
+          "raw_detections": 20691,
+          "retained_before_censoring": 8395,
+          "suppressed_detections": 12296,
+          "eligible_events": 6990,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "c3e375be369e48d3d597bbc84c71e96923028a85c046e2822b7915536d9e4670",
+          "family": "volume_range",
+          "folds": [
+            {
+              "raw": 2444,
+              "retained_before_censoring": 1018,
+              "suppressed": 1426,
+              "eligible": 965,
+              "censored_or_boundary_excluded": 53
+            },
+            {
+              "raw": 4909,
+              "retained_before_censoring": 2065,
+              "suppressed": 2844,
+              "eligible": 1966,
+              "censored_or_boundary_excluded": 99
+            },
+            {
+              "raw": 4910,
+              "retained_before_censoring": 2044,
+              "suppressed": 2866,
+              "eligible": 1946,
+              "censored_or_boundary_excluded": 98
+            },
+            {
+              "raw": 4810,
+              "retained_before_censoring": 2009,
+              "suppressed": 2801,
+              "eligible": 1897,
+              "censored_or_boundary_excluded": 112
+            }
+          ],
+          "raw_detections": 19724,
+          "retained_before_censoring": 8209,
+          "suppressed_detections": 11515,
+          "eligible_events": 6774,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "14a05f0d932ab8303d73c8c496bb2e424400848d8046f3ca64eefdb9a29b69b1",
+          "family": "volume_range",
+          "folds": [
+            {
+              "raw": 2176,
+              "retained_before_censoring": 963,
+              "suppressed": 1213,
+              "eligible": 912,
+              "censored_or_boundary_excluded": 51
+            },
+            {
+              "raw": 4182,
+              "retained_before_censoring": 1938,
+              "suppressed": 2244,
+              "eligible": 1846,
+              "censored_or_boundary_excluded": 92
+            },
+            {
+              "raw": 4416,
+              "retained_before_censoring": 1964,
+              "suppressed": 2452,
+              "eligible": 1876,
+              "censored_or_boundary_excluded": 88
+            },
+            {
+              "raw": 4460,
+              "retained_before_censoring": 1984,
+              "suppressed": 2476,
+              "eligible": 1877,
+              "censored_or_boundary_excluded": 107
+            }
+          ],
+          "raw_detections": 17317,
+          "retained_before_censoring": 7807,
+          "suppressed_detections": 9510,
+          "eligible_events": 6511,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "629880c924a8e7ef16ccdd05be06ef3fa2f20c23369d6b28158859b68b43d07f",
+          "family": "volume_range",
+          "folds": [
+            {
+              "raw": 1913,
+              "retained_before_censoring": 910,
+              "suppressed": 1003,
+              "eligible": 863,
+              "censored_or_boundary_excluded": 47
+            },
+            {
+              "raw": 3876,
+              "retained_before_censoring": 1866,
+              "suppressed": 2010,
+              "eligible": 1773,
+              "censored_or_boundary_excluded": 93
+            },
+            {
+              "raw": 3852,
+              "retained_before_censoring": 1830,
+              "suppressed": 2022,
+              "eligible": 1742,
+              "censored_or_boundary_excluded": 88
+            },
+            {
+              "raw": 3751,
+              "retained_before_censoring": 1799,
+              "suppressed": 1952,
+              "eligible": 1690,
+              "censored_or_boundary_excluded": 109
+            }
+          ],
+          "raw_detections": 15531,
+          "retained_before_censoring": 7398,
+          "suppressed_detections": 8133,
+          "eligible_events": 6068,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        }
+      ],
+      "provenance_differences": []
+    },
+    {
+      "round": 3,
+      "signatures": 32,
+      "scored": 17280,
+      "exact_matches": 17280,
+      "mismatches": [],
+      "status_counts": {
+        "rejected_screen": 17280
+      },
+      "screen_reason_counts": {
+        "minimum_edge": 16950,
+        "baseline_support": 15120,
+        "fold_instability": 16953,
+        "sample_size": 7020,
+        "fold_sample_size": 6480,
+        "fold_event_dates": 3780
+      },
+      "candidate_counts": [
+        {
+          "id": "011166a8ad1c0154777fb421c778daf74ac726546d8045fc459c0abba56df12e",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 12012,
+              "retained_before_censoring": 1369,
+              "suppressed": 10643,
+              "eligible": 1318,
+              "censored_or_boundary_excluded": 51
+            },
+            {
+              "raw": 24667,
+              "retained_before_censoring": 2765,
+              "suppressed": 21902,
+              "eligible": 2675,
+              "censored_or_boundary_excluded": 90
+            },
+            {
+              "raw": 24196,
+              "retained_before_censoring": 2715,
+              "suppressed": 21481,
+              "eligible": 2620,
+              "censored_or_boundary_excluded": 95
+            },
+            {
+              "raw": 24651,
+              "retained_before_censoring": 2750,
+              "suppressed": 21901,
+              "eligible": 2637,
+              "censored_or_boundary_excluded": 113
+            }
+          ],
+          "raw_detections": 98459,
+          "retained_before_censoring": 11058,
+          "suppressed_detections": 87401,
+          "eligible_events": 9250,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "4e5b26e1fab25d6a80299023963628e3a6c8dbb45647eea9e5fbf1ecca113d18",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 4731,
+              "retained_before_censoring": 1150,
+              "suppressed": 3581,
+              "eligible": 1107,
+              "censored_or_boundary_excluded": 43
+            },
+            {
+              "raw": 9304,
+              "retained_before_censoring": 2328,
+              "suppressed": 6976,
+              "eligible": 2242,
+              "censored_or_boundary_excluded": 86
+            },
+            {
+              "raw": 9392,
+              "retained_before_censoring": 2295,
+              "suppressed": 7097,
+              "eligible": 2212,
+              "censored_or_boundary_excluded": 83
+            },
+            {
+              "raw": 9399,
+              "retained_before_censoring": 2334,
+              "suppressed": 7065,
+              "eligible": 2232,
+              "censored_or_boundary_excluded": 102
+            }
+          ],
+          "raw_detections": 37631,
+          "retained_before_censoring": 9331,
+          "suppressed_detections": 28300,
+          "eligible_events": 7793,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "57a8a6f9185dfa23e96051d48c527397ecc2834497f9fd0cb2bb6c0de197aad5",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 7409,
+              "retained_before_censoring": 1209,
+              "suppressed": 6200,
+              "eligible": 1166,
+              "censored_or_boundary_excluded": 43
+            },
+            {
+              "raw": 15148,
+              "retained_before_censoring": 2461,
+              "suppressed": 12687,
+              "eligible": 2380,
+              "censored_or_boundary_excluded": 81
+            },
+            {
+              "raw": 14804,
+              "retained_before_censoring": 2404,
+              "suppressed": 12400,
+              "eligible": 2316,
+              "censored_or_boundary_excluded": 88
+            },
+            {
+              "raw": 15396,
+              "retained_before_censoring": 2436,
+              "suppressed": 12960,
+              "eligible": 2334,
+              "censored_or_boundary_excluded": 102
+            }
+          ],
+          "raw_detections": 60738,
+          "retained_before_censoring": 9796,
+          "suppressed_detections": 50942,
+          "eligible_events": 8196,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "de95d3e1e5e70000519005bd5c719491ccc999f4b5edcb5e9cfd79e73684ed89",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 2794,
+              "retained_before_censoring": 964,
+              "suppressed": 1830,
+              "eligible": 926,
+              "censored_or_boundary_excluded": 38
+            },
+            {
+              "raw": 5508,
+              "retained_before_censoring": 1897,
+              "suppressed": 3611,
+              "eligible": 1828,
+              "censored_or_boundary_excluded": 69
+            },
+            {
+              "raw": 5527,
+              "retained_before_censoring": 1893,
+              "suppressed": 3634,
+              "eligible": 1815,
+              "censored_or_boundary_excluded": 78
+            },
+            {
+              "raw": 5725,
+              "retained_before_censoring": 1914,
+              "suppressed": 3811,
+              "eligible": 1832,
+              "censored_or_boundary_excluded": 82
+            }
+          ],
+          "raw_detections": 22417,
+          "retained_before_censoring": 7663,
+          "suppressed_detections": 14754,
+          "eligible_events": 6401,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "afe00ccabb448a91c8fff071a98be4c3e553d7be5253998383d952c03493b6b4",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 3379,
+              "retained_before_censoring": 983,
+              "suppressed": 2396,
+              "eligible": 952,
+              "censored_or_boundary_excluded": 31
+            },
+            {
+              "raw": 6725,
+              "retained_before_censoring": 1981,
+              "suppressed": 4744,
+              "eligible": 1910,
+              "censored_or_boundary_excluded": 71
+            },
+            {
+              "raw": 6800,
+              "retained_before_censoring": 1931,
+              "suppressed": 4869,
+              "eligible": 1853,
+              "censored_or_boundary_excluded": 78
+            },
+            {
+              "raw": 7107,
+              "retained_before_censoring": 1967,
+              "suppressed": 5140,
+              "eligible": 1886,
+              "censored_or_boundary_excluded": 81
+            }
+          ],
+          "raw_detections": 27546,
+          "retained_before_censoring": 7890,
+          "suppressed_detections": 19656,
+          "eligible_events": 6601,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "5ee41fd390c747f03e199eed5baa2158b9875ae0d0edc7f9418779de3345fe7b",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 1174,
+              "retained_before_censoring": 611,
+              "suppressed": 563,
+              "eligible": 585,
+              "censored_or_boundary_excluded": 26
+            },
+            {
+              "raw": 2185,
+              "retained_before_censoring": 1219,
+              "suppressed": 966,
+              "eligible": 1177,
+              "censored_or_boundary_excluded": 42
+            },
+            {
+              "raw": 2242,
+              "retained_before_censoring": 1223,
+              "suppressed": 1019,
+              "eligible": 1172,
+              "censored_or_boundary_excluded": 51
+            },
+            {
+              "raw": 2399,
+              "retained_before_censoring": 1267,
+              "suppressed": 1132,
+              "eligible": 1210,
+              "censored_or_boundary_excluded": 57
+            }
+          ],
+          "raw_detections": 9126,
+          "retained_before_censoring": 4950,
+          "suppressed_detections": 4176,
+          "eligible_events": 4144,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "90a955058919bf277c1db2a7e3902c534bab72d6bb03e7be6bdee7261dcdf7f4",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 995,
+              "retained_before_censoring": 548,
+              "suppressed": 447,
+              "eligible": 526,
+              "censored_or_boundary_excluded": 22
+            },
+            {
+              "raw": 1987,
+              "retained_before_censoring": 1116,
+              "suppressed": 871,
+              "eligible": 1069,
+              "censored_or_boundary_excluded": 47
+            },
+            {
+              "raw": 2083,
+              "retained_before_censoring": 1140,
+              "suppressed": 943,
+              "eligible": 1090,
+              "censored_or_boundary_excluded": 50
+            },
+            {
+              "raw": 2223,
+              "retained_before_censoring": 1177,
+              "suppressed": 1046,
+              "eligible": 1120,
+              "censored_or_boundary_excluded": 57
+            }
+          ],
+          "raw_detections": 8286,
+          "retained_before_censoring": 4539,
+          "suppressed_detections": 3747,
+          "eligible_events": 3805,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "a3c0b32a2c583c8e46a87ba6f23678c9df18f8491b99ccd4c9bf9cfc13e1c41c",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 271,
+              "retained_before_censoring": 217,
+              "suppressed": 54,
+              "eligible": 208,
+              "censored_or_boundary_excluded": 9
+            },
+            {
+              "raw": 482,
+              "retained_before_censoring": 397,
+              "suppressed": 85,
+              "eligible": 380,
+              "censored_or_boundary_excluded": 17
+            },
+            {
+              "raw": 558,
+              "retained_before_censoring": 458,
+              "suppressed": 100,
+              "eligible": 439,
+              "censored_or_boundary_excluded": 19
+            },
+            {
+              "raw": 562,
+              "retained_before_censoring": 466,
+              "suppressed": 96,
+              "eligible": 442,
+              "censored_or_boundary_excluded": 24
+            }
+          ],
+          "raw_detections": 2125,
+          "retained_before_censoring": 1748,
+          "suppressed_detections": 377,
+          "eligible_events": 1469,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "b529878265f48fa8a8be8945d1b3024c22d60cd0f58fb15b548ad97e29a7539f",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 12689,
+              "retained_before_censoring": 1408,
+              "suppressed": 11281,
+              "eligible": 1348,
+              "censored_or_boundary_excluded": 60
+            },
+            {
+              "raw": 26355,
+              "retained_before_censoring": 2846,
+              "suppressed": 23509,
+              "eligible": 2735,
+              "censored_or_boundary_excluded": 111
+            },
+            {
+              "raw": 27563,
+              "retained_before_censoring": 2805,
+              "suppressed": 24758,
+              "eligible": 2704,
+              "censored_or_boundary_excluded": 101
+            },
+            {
+              "raw": 27138,
+              "retained_before_censoring": 2853,
+              "suppressed": 24285,
+              "eligible": 2740,
+              "censored_or_boundary_excluded": 113
+            }
+          ],
+          "raw_detections": 108167,
+          "retained_before_censoring": 11408,
+          "suppressed_detections": 96759,
+          "eligible_events": 9527,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "63120b7a50ef5a826649f7837a92805b281d15c6f970b170c9cbc78b984fe376",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 4877,
+              "retained_before_censoring": 1179,
+              "suppressed": 3698,
+              "eligible": 1132,
+              "censored_or_boundary_excluded": 47
+            },
+            {
+              "raw": 9900,
+              "retained_before_censoring": 2374,
+              "suppressed": 7526,
+              "eligible": 2292,
+              "censored_or_boundary_excluded": 82
+            },
+            {
+              "raw": 10625,
+              "retained_before_censoring": 2411,
+              "suppressed": 8214,
+              "eligible": 2324,
+              "censored_or_boundary_excluded": 87
+            },
+            {
+              "raw": 10007,
+              "retained_before_censoring": 2387,
+              "suppressed": 7620,
+              "eligible": 2299,
+              "censored_or_boundary_excluded": 88
+            }
+          ],
+          "raw_detections": 40853,
+          "retained_before_censoring": 9628,
+          "suppressed_detections": 31225,
+          "eligible_events": 8047,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "7df3f4941212e869c4cf3ef1d77dbd7c271f7216f6207b19a74f79065a85137a",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 7747,
+              "retained_before_censoring": 1254,
+              "suppressed": 6493,
+              "eligible": 1203,
+              "censored_or_boundary_excluded": 51
+            },
+            {
+              "raw": 16130,
+              "retained_before_censoring": 2496,
+              "suppressed": 13634,
+              "eligible": 2412,
+              "censored_or_boundary_excluded": 84
+            },
+            {
+              "raw": 16785,
+              "retained_before_censoring": 2493,
+              "suppressed": 14292,
+              "eligible": 2410,
+              "censored_or_boundary_excluded": 83
+            },
+            {
+              "raw": 16505,
+              "retained_before_censoring": 2548,
+              "suppressed": 13957,
+              "eligible": 2448,
+              "censored_or_boundary_excluded": 100
+            }
+          ],
+          "raw_detections": 66094,
+          "retained_before_censoring": 10146,
+          "suppressed_detections": 55948,
+          "eligible_events": 8473,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "71d8d689aa72fa9ce46ce0ad4fae7469f9267e1e3f0be3f57271236c3913ceea",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 2892,
+              "retained_before_censoring": 973,
+              "suppressed": 1919,
+              "eligible": 933,
+              "censored_or_boundary_excluded": 40
+            },
+            {
+              "raw": 5816,
+              "retained_before_censoring": 1972,
+              "suppressed": 3844,
+              "eligible": 1905,
+              "censored_or_boundary_excluded": 67
+            },
+            {
+              "raw": 6253,
+              "retained_before_censoring": 2001,
+              "suppressed": 4252,
+              "eligible": 1930,
+              "censored_or_boundary_excluded": 71
+            },
+            {
+              "raw": 5895,
+              "retained_before_censoring": 1989,
+              "suppressed": 3906,
+              "eligible": 1925,
+              "censored_or_boundary_excluded": 64
+            }
+          ],
+          "raw_detections": 24090,
+          "retained_before_censoring": 7991,
+          "suppressed_detections": 16099,
+          "eligible_events": 6693,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "b8915eeecbae0c9455066ccf83ac59924ceadfa8e77e06d1d2acc6083cc09c53",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 3293,
+              "retained_before_censoring": 974,
+              "suppressed": 2319,
+              "eligible": 935,
+              "censored_or_boundary_excluded": 39
+            },
+            {
+              "raw": 6712,
+              "retained_before_censoring": 1973,
+              "suppressed": 4739,
+              "eligible": 1906,
+              "censored_or_boundary_excluded": 67
+            },
+            {
+              "raw": 6976,
+              "retained_before_censoring": 1966,
+              "suppressed": 5010,
+              "eligible": 1895,
+              "censored_or_boundary_excluded": 71
+            },
+            {
+              "raw": 6966,
+              "retained_before_censoring": 1983,
+              "suppressed": 4983,
+              "eligible": 1901,
+              "censored_or_boundary_excluded": 82
+            }
+          ],
+          "raw_detections": 27754,
+          "retained_before_censoring": 7982,
+          "suppressed_detections": 19772,
+          "eligible_events": 6637,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "92da119db905a36e2e8ce9412ae7d5bc461a05615d465587b5cad408a17d69e2",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 1107,
+              "retained_before_censoring": 608,
+              "suppressed": 499,
+              "eligible": 583,
+              "censored_or_boundary_excluded": 25
+            },
+            {
+              "raw": 2152,
+              "retained_before_censoring": 1209,
+              "suppressed": 943,
+              "eligible": 1170,
+              "censored_or_boundary_excluded": 39
+            },
+            {
+              "raw": 2292,
+              "retained_before_censoring": 1238,
+              "suppressed": 1054,
+              "eligible": 1195,
+              "censored_or_boundary_excluded": 43
+            },
+            {
+              "raw": 2222,
+              "retained_before_censoring": 1219,
+              "suppressed": 1003,
+              "eligible": 1180,
+              "censored_or_boundary_excluded": 39
+            }
+          ],
+          "raw_detections": 8993,
+          "retained_before_censoring": 4948,
+          "suppressed_detections": 4045,
+          "eligible_events": 4128,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "3992e8ab4917d8ad39437e8ddc87fddc46ae3d18d1e91656a82e5e9ba69adbd4",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 927,
+              "retained_before_censoring": 534,
+              "suppressed": 393,
+              "eligible": 513,
+              "censored_or_boundary_excluded": 21
+            },
+            {
+              "raw": 1774,
+              "retained_before_censoring": 1042,
+              "suppressed": 732,
+              "eligible": 1009,
+              "censored_or_boundary_excluded": 33
+            },
+            {
+              "raw": 1871,
+              "retained_before_censoring": 1054,
+              "suppressed": 817,
+              "eligible": 1019,
+              "censored_or_boundary_excluded": 35
+            },
+            {
+              "raw": 1788,
+              "retained_before_censoring": 1016,
+              "suppressed": 772,
+              "eligible": 969,
+              "censored_or_boundary_excluded": 47
+            }
+          ],
+          "raw_detections": 7454,
+          "retained_before_censoring": 4254,
+          "suppressed_detections": 3200,
+          "eligible_events": 3510,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "d7a0437c0d5c4259601072857c46c4f967ed554c18eff32a1862c5db519ff948",
+          "family": "price_state",
+          "folds": [
+            {
+              "raw": 239,
+              "retained_before_censoring": 197,
+              "suppressed": 42,
+              "eligible": 187,
+              "censored_or_boundary_excluded": 10
+            },
+            {
+              "raw": 409,
+              "retained_before_censoring": 346,
+              "suppressed": 63,
+              "eligible": 338,
+              "censored_or_boundary_excluded": 8
+            },
+            {
+              "raw": 476,
+              "retained_before_censoring": 404,
+              "suppressed": 72,
+              "eligible": 397,
+              "censored_or_boundary_excluded": 7
+            },
+            {
+              "raw": 438,
+              "retained_before_censoring": 352,
+              "suppressed": 86,
+              "eligible": 343,
+              "censored_or_boundary_excluded": 9
+            }
+          ],
+          "raw_detections": 1813,
+          "retained_before_censoring": 1513,
+          "suppressed_detections": 300,
+          "eligible_events": 1265,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "7744ecf644ec9bcea23c086a1ba0455ba4776d5b5f6f80f4208fbc33b6d0d89b",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 53,
+              "retained_before_censoring": 52,
+              "suppressed": 1,
+              "eligible": 50,
+              "censored_or_boundary_excluded": 2
+            },
+            {
+              "raw": 131,
+              "retained_before_censoring": 123,
+              "suppressed": 8,
+              "eligible": 115,
+              "censored_or_boundary_excluded": 8
+            },
+            {
+              "raw": 103,
+              "retained_before_censoring": 98,
+              "suppressed": 5,
+              "eligible": 95,
+              "censored_or_boundary_excluded": 3
+            },
+            {
+              "raw": 114,
+              "retained_before_censoring": 105,
+              "suppressed": 9,
+              "eligible": 101,
+              "censored_or_boundary_excluded": 4
+            }
+          ],
+          "raw_detections": 447,
+          "retained_before_censoring": 424,
+          "suppressed_detections": 23,
+          "eligible_events": 361,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "7ba512eab06526c35da1bd3d6beb30f12b7277dfa545af5854d1a1641160dcd7",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 5,
+              "retained_before_censoring": 5,
+              "suppressed": 0,
+              "eligible": 5,
+              "censored_or_boundary_excluded": 0
+            },
+            {
+              "raw": 20,
+              "retained_before_censoring": 20,
+              "suppressed": 0,
+              "eligible": 17,
+              "censored_or_boundary_excluded": 3
+            },
+            {
+              "raw": 9,
+              "retained_before_censoring": 9,
+              "suppressed": 0,
+              "eligible": 9,
+              "censored_or_boundary_excluded": 0
+            },
+            {
+              "raw": 7,
+              "retained_before_censoring": 7,
+              "suppressed": 0,
+              "eligible": 7,
+              "censored_or_boundary_excluded": 0
+            }
+          ],
+          "raw_detections": 47,
+          "retained_before_censoring": 47,
+          "suppressed_detections": 0,
+          "eligible_events": 38,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "b7758d151307f8c7300a70b792f8224fc7fc58478067c710ba8b91f303083de0",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 516,
+              "retained_before_censoring": 387,
+              "suppressed": 129,
+              "eligible": 366,
+              "censored_or_boundary_excluded": 21
+            },
+            {
+              "raw": 1190,
+              "retained_before_censoring": 861,
+              "suppressed": 329,
+              "eligible": 826,
+              "censored_or_boundary_excluded": 35
+            },
+            {
+              "raw": 1129,
+              "retained_before_censoring": 803,
+              "suppressed": 326,
+              "eligible": 768,
+              "censored_or_boundary_excluded": 35
+            },
+            {
+              "raw": 1140,
+              "retained_before_censoring": 814,
+              "suppressed": 326,
+              "eligible": 788,
+              "censored_or_boundary_excluded": 26
+            }
+          ],
+          "raw_detections": 4460,
+          "retained_before_censoring": 3240,
+          "suppressed_detections": 1220,
+          "eligible_events": 2748,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "b5c1797a241d5cc0ad52d9a00d8ee64dbec4f3ade0a6b36107d067583539002b",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 94,
+              "retained_before_censoring": 89,
+              "suppressed": 5,
+              "eligible": 84,
+              "censored_or_boundary_excluded": 5
+            },
+            {
+              "raw": 256,
+              "retained_before_censoring": 235,
+              "suppressed": 21,
+              "eligible": 222,
+              "censored_or_boundary_excluded": 13
+            },
+            {
+              "raw": 232,
+              "retained_before_censoring": 210,
+              "suppressed": 22,
+              "eligible": 198,
+              "censored_or_boundary_excluded": 12
+            },
+            {
+              "raw": 212,
+              "retained_before_censoring": 192,
+              "suppressed": 20,
+              "eligible": 184,
+              "censored_or_boundary_excluded": 8
+            }
+          ],
+          "raw_detections": 889,
+          "retained_before_censoring": 817,
+          "suppressed_detections": 72,
+          "eligible_events": 688,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "2ceea86161dd6fa59d9f050cb93386d63ad22be7e4b64d42ff94bf0dc9242c45",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 37,
+              "retained_before_censoring": 36,
+              "suppressed": 1,
+              "eligible": 35,
+              "censored_or_boundary_excluded": 1
+            },
+            {
+              "raw": 84,
+              "retained_before_censoring": 82,
+              "suppressed": 2,
+              "eligible": 78,
+              "censored_or_boundary_excluded": 4
+            },
+            {
+              "raw": 66,
+              "retained_before_censoring": 63,
+              "suppressed": 3,
+              "eligible": 60,
+              "censored_or_boundary_excluded": 3
+            },
+            {
+              "raw": 44,
+              "retained_before_censoring": 42,
+              "suppressed": 2,
+              "eligible": 37,
+              "censored_or_boundary_excluded": 5
+            }
+          ],
+          "raw_detections": 261,
+          "retained_before_censoring": 252,
+          "suppressed_detections": 9,
+          "eligible_events": 210,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "82c5795e0d658266e2a35ace614397df11a55a16a57ac53876bf36845fda9694",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 6,
+              "retained_before_censoring": 6,
+              "suppressed": 0,
+              "eligible": 5,
+              "censored_or_boundary_excluded": 1
+            },
+            {
+              "raw": 15,
+              "retained_before_censoring": 15,
+              "suppressed": 0,
+              "eligible": 15,
+              "censored_or_boundary_excluded": 0
+            },
+            {
+              "raw": 9,
+              "retained_before_censoring": 8,
+              "suppressed": 1,
+              "eligible": 8,
+              "censored_or_boundary_excluded": 0
+            },
+            {
+              "raw": 3,
+              "retained_before_censoring": 3,
+              "suppressed": 0,
+              "eligible": 2,
+              "censored_or_boundary_excluded": 1
+            }
+          ],
+          "raw_detections": 37,
+          "retained_before_censoring": 36,
+          "suppressed_detections": 1,
+          "eligible_events": 30,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "70534d01298f6c45ef7ad5d068505b495dba804a8021fa3e4ff74199ab96bb91",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 406,
+              "retained_before_censoring": 316,
+              "suppressed": 90,
+              "eligible": 303,
+              "censored_or_boundary_excluded": 13
+            },
+            {
+              "raw": 899,
+              "retained_before_censoring": 664,
+              "suppressed": 235,
+              "eligible": 634,
+              "censored_or_boundary_excluded": 30
+            },
+            {
+              "raw": 693,
+              "retained_before_censoring": 565,
+              "suppressed": 128,
+              "eligible": 542,
+              "censored_or_boundary_excluded": 23
+            },
+            {
+              "raw": 626,
+              "retained_before_censoring": 513,
+              "suppressed": 113,
+              "eligible": 484,
+              "censored_or_boundary_excluded": 29
+            }
+          ],
+          "raw_detections": 3069,
+          "retained_before_censoring": 2404,
+          "suppressed_detections": 665,
+          "eligible_events": 1963,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "a04f7228bf6f7dc8204df6902e32a2e9db42af0fdad14ce6cc49382d948fd586",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 77,
+              "retained_before_censoring": 72,
+              "suppressed": 5,
+              "eligible": 68,
+              "censored_or_boundary_excluded": 4
+            },
+            {
+              "raw": 185,
+              "retained_before_censoring": 170,
+              "suppressed": 15,
+              "eligible": 163,
+              "censored_or_boundary_excluded": 7
+            },
+            {
+              "raw": 136,
+              "retained_before_censoring": 127,
+              "suppressed": 9,
+              "eligible": 118,
+              "censored_or_boundary_excluded": 9
+            },
+            {
+              "raw": 110,
+              "retained_before_censoring": 103,
+              "suppressed": 7,
+              "eligible": 97,
+              "censored_or_boundary_excluded": 6
+            }
+          ],
+          "raw_detections": 608,
+          "retained_before_censoring": 564,
+          "suppressed_detections": 44,
+          "eligible_events": 446,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "93fd851638720bd3b92116f98e81227f664b0814bcc2be2a74f4a89e2dd6956d",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 20,
+              "retained_before_censoring": 20,
+              "suppressed": 0,
+              "eligible": 20,
+              "censored_or_boundary_excluded": 0
+            },
+            {
+              "raw": 61,
+              "retained_before_censoring": 56,
+              "suppressed": 5,
+              "eligible": 53,
+              "censored_or_boundary_excluded": 3
+            },
+            {
+              "raw": 49,
+              "retained_before_censoring": 48,
+              "suppressed": 1,
+              "eligible": 47,
+              "censored_or_boundary_excluded": 1
+            },
+            {
+              "raw": 58,
+              "retained_before_censoring": 53,
+              "suppressed": 5,
+              "eligible": 50,
+              "censored_or_boundary_excluded": 3
+            }
+          ],
+          "raw_detections": 207,
+          "retained_before_censoring": 196,
+          "suppressed_detections": 11,
+          "eligible_events": 170,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "376e561801c3db33adf0a53c90892549c897703d97b811c0201ffc225c87bf1c",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 2,
+              "retained_before_censoring": 2,
+              "suppressed": 0,
+              "eligible": 2,
+              "censored_or_boundary_excluded": 0
+            },
+            {
+              "raw": 7,
+              "retained_before_censoring": 7,
+              "suppressed": 0,
+              "eligible": 5,
+              "censored_or_boundary_excluded": 2
+            },
+            {
+              "raw": 3,
+              "retained_before_censoring": 3,
+              "suppressed": 0,
+              "eligible": 3,
+              "censored_or_boundary_excluded": 0
+            },
+            {
+              "raw": 3,
+              "retained_before_censoring": 3,
+              "suppressed": 0,
+              "eligible": 3,
+              "censored_or_boundary_excluded": 0
+            }
+          ],
+          "raw_detections": 18,
+          "retained_before_censoring": 18,
+          "suppressed_detections": 0,
+          "eligible_events": 13,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "c1cf73bed0c12a5ea06be12181c4c3b6993cb0b317b92cdecf2262e53e939420",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 271,
+              "retained_before_censoring": 211,
+              "suppressed": 60,
+              "eligible": 202,
+              "censored_or_boundary_excluded": 9
+            },
+            {
+              "raw": 639,
+              "retained_before_censoring": 479,
+              "suppressed": 160,
+              "eligible": 459,
+              "censored_or_boundary_excluded": 20
+            },
+            {
+              "raw": 573,
+              "retained_before_censoring": 430,
+              "suppressed": 143,
+              "eligible": 410,
+              "censored_or_boundary_excluded": 20
+            },
+            {
+              "raw": 630,
+              "retained_before_censoring": 460,
+              "suppressed": 170,
+              "eligible": 440,
+              "censored_or_boundary_excluded": 20
+            }
+          ],
+          "raw_detections": 2344,
+          "retained_before_censoring": 1768,
+          "suppressed_detections": 576,
+          "eligible_events": 1511,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "8d343eb7eb2dfad341027f4f9e9c6b65d909cc012615dac1be9cc8883f3feb47",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 37,
+              "retained_before_censoring": 35,
+              "suppressed": 2,
+              "eligible": 33,
+              "censored_or_boundary_excluded": 2
+            },
+            {
+              "raw": 126,
+              "retained_before_censoring": 116,
+              "suppressed": 10,
+              "eligible": 108,
+              "censored_or_boundary_excluded": 8
+            },
+            {
+              "raw": 115,
+              "retained_before_censoring": 106,
+              "suppressed": 9,
+              "eligible": 100,
+              "censored_or_boundary_excluded": 6
+            },
+            {
+              "raw": 100,
+              "retained_before_censoring": 87,
+              "suppressed": 13,
+              "eligible": 83,
+              "censored_or_boundary_excluded": 4
+            }
+          ],
+          "raw_detections": 417,
+          "retained_before_censoring": 381,
+          "suppressed_detections": 36,
+          "eligible_events": 324,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "e1beb3bdef97652493d84b578f466eb7ac64c697abf65d67a9e18b48f016d51a",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 13,
+              "retained_before_censoring": 12,
+              "suppressed": 1,
+              "eligible": 12,
+              "censored_or_boundary_excluded": 0
+            },
+            {
+              "raw": 31,
+              "retained_before_censoring": 31,
+              "suppressed": 0,
+              "eligible": 28,
+              "censored_or_boundary_excluded": 3
+            },
+            {
+              "raw": 27,
+              "retained_before_censoring": 26,
+              "suppressed": 1,
+              "eligible": 24,
+              "censored_or_boundary_excluded": 2
+            },
+            {
+              "raw": 18,
+              "retained_before_censoring": 17,
+              "suppressed": 1,
+              "eligible": 15,
+              "censored_or_boundary_excluded": 2
+            }
+          ],
+          "raw_detections": 101,
+          "retained_before_censoring": 97,
+          "suppressed_detections": 4,
+          "eligible_events": 79,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "70681db096d3798a0278f21b7026788063b04efb4502d61ddbc0568f8b78bd88",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 1,
+              "retained_before_censoring": 1,
+              "suppressed": 0,
+              "eligible": 1,
+              "censored_or_boundary_excluded": 0
+            },
+            {
+              "raw": 2,
+              "retained_before_censoring": 2,
+              "suppressed": 0,
+              "eligible": 2,
+              "censored_or_boundary_excluded": 0
+            },
+            {
+              "raw": 2,
+              "retained_before_censoring": 2,
+              "suppressed": 0,
+              "eligible": 2,
+              "censored_or_boundary_excluded": 0
+            },
+            {
+              "raw": 0,
+              "retained_before_censoring": 0,
+              "suppressed": 0,
+              "eligible": 0,
+              "censored_or_boundary_excluded": 0
+            }
+          ],
+          "raw_detections": 7,
+          "retained_before_censoring": 7,
+          "suppressed_detections": 0,
+          "eligible_events": 5,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "b92a201190c91a661c1fbcd865371f25f69d54110a24fb457f35c527ff850219",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 190,
+              "retained_before_censoring": 148,
+              "suppressed": 42,
+              "eligible": 143,
+              "censored_or_boundary_excluded": 5
+            },
+            {
+              "raw": 452,
+              "retained_before_censoring": 346,
+              "suppressed": 106,
+              "eligible": 326,
+              "censored_or_boundary_excluded": 20
+            },
+            {
+              "raw": 314,
+              "retained_before_censoring": 266,
+              "suppressed": 48,
+              "eligible": 251,
+              "censored_or_boundary_excluded": 15
+            },
+            {
+              "raw": 297,
+              "retained_before_censoring": 241,
+              "suppressed": 56,
+              "eligible": 227,
+              "censored_or_boundary_excluded": 14
+            }
+          ],
+          "raw_detections": 1455,
+          "retained_before_censoring": 1162,
+          "suppressed_detections": 293,
+          "eligible_events": 947,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        },
+        {
+          "id": "c3f804c88b1dfe505bf462ce8c7a68bb1736e6ebb6dcd2b8960afce5d24b91c6",
+          "family": "swing_breakout",
+          "folds": [
+            {
+              "raw": 28,
+              "retained_before_censoring": 26,
+              "suppressed": 2,
+              "eligible": 24,
+              "censored_or_boundary_excluded": 2
+            },
+            {
+              "raw": 88,
+              "retained_before_censoring": 83,
+              "suppressed": 5,
+              "eligible": 77,
+              "censored_or_boundary_excluded": 6
+            },
+            {
+              "raw": 47,
+              "retained_before_censoring": 47,
+              "suppressed": 0,
+              "eligible": 42,
+              "censored_or_boundary_excluded": 5
+            },
+            {
+              "raw": 51,
+              "retained_before_censoring": 49,
+              "suppressed": 2,
+              "eligible": 45,
+              "censored_or_boundary_excluded": 4
+            }
+          ],
+          "raw_detections": 253,
+          "retained_before_censoring": 241,
+          "suppressed_detections": 12,
+          "eligible_events": 188,
+          "population_scope": "folds contain comparable WF counts; top-level raw counts span full training"
+        }
+      ],
+      "provenance_differences": []
+    }
+  ],
+  "status": "complete",
+  "elapsed_seconds": 203.873
+}

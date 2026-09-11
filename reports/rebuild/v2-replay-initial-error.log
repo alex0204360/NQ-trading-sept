@@ -1,0 +1,20 @@
+Traceback (most recent call last):
+  File "/workspace/scratch/484e26bff85f/mnq-nq-pattern-engine/tools/diagnostics/replay_v2.py", line 17, in <module>
+    bars = pd.read_parquet(V2 / 'data/training.parquet')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/io/parquet.py", line 667, in read_parquet
+    return impl.read(
+           ^^^^^^^^^^
+  File "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/lib/python3.12/site-packages/pandas/io/parquet.py", line 274, in read
+    pa_table = self.api.parquet.read_table(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/scratch/484e26bff85f/mnq-nq-pattern-engine/.venv/lib/python3.12/site-packages/pyarrow/parquet/core.py", line 1896, in read_table
+    dataset = ParquetDataset(
+              ^^^^^^^^^^^^^^^
+  File "/workspace/scratch/484e26bff85f/mnq-nq-pattern-engine/.venv/lib/python3.12/site-packages/pyarrow/parquet/core.py", line 1465, in __init__
+    [fragment], schema=schema or fragment.physical_schema,
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "pyarrow/_dataset.pyx", line 1479, in pyarrow._dataset.Fragment.physical_schema.__get__
+  File "pyarrow/error.pxi", line 155, in pyarrow.lib.pyarrow_internal_check_status
+  File "pyarrow/error.pxi", line 92, in pyarrow.lib.check_status
+pyarrow.lib.ArrowInvalid: Could not open Parquet input source '<Buffer>': Parquet magic bytes not found in footer. Either the file is corrupted or this is not a parquet file.

@@ -1,5 +1,12 @@
 # Changelog
 
+## Rebuild diagnosis, design and RED tests - 2026-09-11
+
+- Recovered from an interrupted filesystem using the existing remote branch, without cloning or replacing unrelated work.
+- Recomputed45,360 original scores exactly and454,752 V2 no-trade decisions; preserved current data-copy corruption evidence.
+- Committed failure analysis and prospective net-profit design before fresh package implementation.
+- Committed failing execution, causal-feature, statistics and research regression contracts.
+
 ## Profitability rebuild baseline - 2026-09-11
 
 - Resumed the expanded goal on a dedicated branch in the existing GitHub checkout. No Bitbucket relationship is established.

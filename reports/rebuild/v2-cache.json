@@ -1,0 +1,12 @@
+{
+  "path": "../nq-profitability-research/data/net_payoffs.npy",
+  "shape": [
+    125518,
+    1080
+  ],
+  "dtype": "float32",
+  "header_bytes": 128,
+  "actual_bytes": 542237888,
+  "expected_bytes": 542237888,
+  "mmap_status": "passed"
+}
