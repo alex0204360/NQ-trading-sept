@@ -1,13 +1,13 @@
 # Resumable profitability rebuild
 
-Status: unfinished; no profitable strategy is demonstrated.
+Objective unfinished. Use existing checkout/branch `rebuild/profitable-price-action`; no clone/migration or holdout outcome access.
 
-Branch: `rebuild/profitable-price-action` in the existing reference checkout. Start: `731607099729bdc1e3151b767a695e5c86aea503`. Do not clone, migrate, delete historical results, or touch held-out prices for development.
+Diagnosis and prospective design committed before fresh implementation. Core code at08462b1, registered Round1 manifest atb68405a. Fresh package nqscalp has execution, causal features, trajectory patterns, risk/statistical evidence, resumable research, matcher and paper replay. Root recovered agents interrupted by usage limits.
 
-Current step: finish actual V1/V2 baseline recomputation. V1's 275 tests pass and all frozen provenance hashes match. Original round overwrite protection works. Diagnostic agents own `tools/diagnostics/reproduce_v1.py`, `reproduce_v2.py`, and corresponding `reports/rebuild` results. Root owns commits.
+Current experiment: r001, 80signatures, fixedpoint targets/stops, selected horizons1..45. Full research is running/resumable with `PYTHONPATH=src:.venv/lib/python3.12/site-packages python -m nqscalp research --experiment r001`. Check reports/scalping/r001/progress.json and summary.json first. Do not start a duplicate process. Every completed signature has a hash-bound checkpoint and all validation candidates have CSV trade ledgers.
 
-Next concrete work: commit evidence and failure analysis, then the prospective rebuild design before any production edit. Build a fresh price-action and net-payoff engine with explicit executable trades, conservative ambiguous fills, a shared matcher/replay decision path, and causal chronological research. Run real-data experiments; an empty library is not completion of the revised goal.
+Next concrete experiment after Round1: diagnose full results and preregister Round2 with two approaches addressing observed failures. Consider structural/volatility-scaled exits and confirmed reversal/contingent-entry patterns; expand selected definitions to all1..45 horizons. Do not relax costs or risk retroactively. No new outcome tests without a committed specification.
 
-Runtime: `../nq-rebuild-runtime/bin/python` with `PYTHONPATH=src`. Restore from `requirements.lock` if necessary. Credentials stay in transient process environments only, never source or documentation.
+2025H1/H2 remain unopened, reserved for separate frozen confirmations. No qualifying library or measured forward performance exists yet. Empty library is only an operational checkpoint, not completion.
 
-Held-out outcomes: unopened. Pre-2025 data is repeatedly examined development data; it can never be relabeled unseen. Later confirmation requires a frozen experiment, source/model/config hashes, and an access ledger written before reading outcomes.
+Latest verification:59tests; about91% line/80% branch coverage (exact reports/rebuild/scalping-coverage.json). Matcher normal mode rejects unconfirmed patterns. Preserve historical V1/V2 results and unrelated work. Push frequently and verify completion, as unpushed files have been lost during session recovery.

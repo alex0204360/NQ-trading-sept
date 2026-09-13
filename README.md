@@ -1,5 +1,27 @@
 # NQ-trading-sept
 
+The active profitability rebuild is on `rebuild/profitable-price-action`. Profitability is not yet demonstrated. The fresh `nqscalp` package tests actual filled trades after fees/slippage, with stops, targets, and timeouts up to45minutes. Read the committed [failure analysis](docs/failure-analysis.md) and [rebuild design](docs/rebuild-design.md).
+
+Round1 has48 explicit price-action signatures and32 trajectory prototypes, frozen before scoring in [research/r001.json](research/r001.json). [Results and trade ledgers](reports/scalping/r001) preserve failures. Pre2025 data is exploratory development; 2025 outcomes remain unopened.
+
+Install with `python -m pip install -e '.[dev]'`, then reproduce or resume the registered development workflow:
+
+```sh
+python -m nqscalp research --experiment r001
+```
+
+This verifies input/source hashes and resumes completed signature checkpoints. Do not run concurrent copies. Audited training/calendar inputs are identified in `reports/pipeline_freeze.json`; raw data is not redistributed. In the recovered workspace, `PYTHONPATH=src:.venv/lib/python3.12/site-packages python` can use retained packages when old environment executables are missing.
+
+The vendor-independent matcher accepts standard timezone-aware one-minute OHLCV:
+
+```sh
+python -m nqscalp match --library patterns/scalping-library.json --bars recent.csv
+```
+
+It returns no-trade when no confirmed active pattern exists. A feed can supply this same format later without changing matching logic. Historical paper replay is available through `python -m nqscalp replay --help`; explicit diagnostic mode permits testing unconfirmed definitions. No broker/feed connection, Pine Script, real orders, or measured forward performance exists. The profitability objective remains unfinished.
+
+## Original discovery study, retained for comparison
+
 MNQ/NQ Pattern-Mining & Strategy Engine. This research delivery is complete: three tournament rounds tested 84 signatures and 45,360 direction/magnitude/window hypotheses. No hypothesis passed every preregistered screening gate. The [confirmed pattern library](patterns/library.json) is therefore empty.
 
 The Python infrastructure is ready to test. This result does not prove that short-horizon NQ patterns cannot exist: sparse matched-control groups, strict support requirements, and unresolved source metadata limit what this study can establish.

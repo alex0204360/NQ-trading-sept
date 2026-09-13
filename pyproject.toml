@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "nq-patterns"
 version = "0.2.0"
-description = "Preregistered short-horizon NQ pattern research and OHLCV matching"
+description = "Causal NQ price-action research, net-profit simulation and OHLCV matching"
 requires-python = ">=3.12"
 dependencies = [
   "numpy==2.3.5",
@@ -21,6 +21,9 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest==9.1.1", "pytest-cov==7.1.0", "ruff==0.16.6", "build==1.6.0"]
+
+[project.scripts]
+nq-scalp = "nqscalp.cli:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

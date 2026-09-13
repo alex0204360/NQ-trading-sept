@@ -1,0 +1,25 @@
+...........................................................              [100%]
+=============================== warnings summary ===============================
+tests/test_scalp_execution.py::test_invalid_bars[off_tick]
+  /workspace/scratch/484e26bff85f/mnq-nq-pattern-engine/tests/test_scalp_execution.py:90: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value '100.1' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+    b.loc[0, "close"] = 100.1
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+================================ tests coverage ================================
+_______________ coverage: platform linux, python 3.12.14-final-0 _______________
+
+Name                       Stmts   Miss Branch BrPart  Cover
+------------------------------------------------------------
+src/nqscalp/__init__.py        1      0      0      0   100%
+src/nqscalp/__main__.py        2      2      0      0     0%
+src/nqscalp/cli.py            60     10     18      3    81%
+src/nqscalp/evidence.py      149      3     64      4    97%
+src/nqscalp/execution.py     213     11     76     11    92%
+src/nqscalp/features.py      150      8     60      7    93%
+src/nqscalp/matcher.py        88     10     42      8    85%
+src/nqscalp/patterns.py       46      7     16      6    79%
+src/nqscalp/research.py      224     33     70     13    80%
+------------------------------------------------------------
+TOTAL                        933     84    346     52    88%
+Coverage JSON written to file reports/rebuild/scalping-coverage.json
+59 passed, 1 warning in 5.42s
