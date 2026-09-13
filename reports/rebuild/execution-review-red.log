@@ -1,0 +1,36 @@
+...FF........                                                            [100%]
+=================================== FAILURES ===================================
+___________________________ test_timeout_and_expiry ____________________________
+
+    def test_timeout_and_expiry():
+        b=bars([(100,101,99,100),(100,102,99,101)])
+        r=simulate_one(b,0,TradeSpec(1,4,4,1))
+        assert r['reason']=='timeout' and r['net_points']==0
+        assert pd.Timestamp(r['expiry_timestamp'])==b.timestamp.iloc[1]+pd.Timedelta(minutes=1)
+>       assert r['detection_timestamp']==b.timestamp.iloc[1]
+E       AssertionError: assert Timestamp('2024-01-02 15:00:00+0000', tz='UTC') == Timestamp('2024-01-02 15:01:00+0000', tz='UTC')
+
+tests/test_scalp_execution.py:43: AssertionError
+__________ test_opening_target_resolves_before_later_stop_in_same_bar __________
+
+    def test_opening_target_resolves_before_later_stop_in_same_bar():
+        b=bars([(100,101,99,100),(100,102,99,101),(105,106,95,100)])
+        for implementation in [simulate_one, lambda b,i,s: simulate_batch(b,[i],s).iloc[0]]:
+            r=implementation(b,0,TradeSpec(1,4,4,2))
+>           assert r['reason']=='target' and r['net_points']==3
+E           AssertionError: assert ('stop' == 'target'
+E             
+E             - target
+E             + stop)
+
+tests/test_scalp_execution.py:51: AssertionError
+=============================== warnings summary ===============================
+tests/test_scalp_execution.py::test_invalid_bars[off_tick]
+  /workspace/scratch/484e26bff85f/mnq-nq-pattern-engine/tests/test_scalp_execution.py:76: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value '100.1' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+    if change=='off_tick': b.loc[0,'close']=100.1
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/test_scalp_execution.py::test_timeout_and_expiry - AssertionErro...
+FAILED tests/test_scalp_execution.py::test_opening_target_resolves_before_later_stop_in_same_bar
+2 failed, 11 passed, 1 warning in 0.98s

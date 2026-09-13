@@ -1,7 +1,8 @@
 import numpy as np
 import pandas as pd
 import pytest
-from nqscalp.execution import ExecutionConfig, TradeSpec, prepare_bars, simulate_one, simulate_batch
+
+from nqscalp.execution import TradeSpec, prepare_bars, simulate_batch, simulate_one
 
 
 def bars(rows):
@@ -39,6 +40,15 @@ def test_timeout_and_expiry():
     r=simulate_one(b,0,TradeSpec(1,4,4,1))
     assert r['reason']=='timeout' and r['net_points']==0
     assert pd.Timestamp(r['expiry_timestamp'])==b.timestamp.iloc[1]+pd.Timedelta(minutes=1)
+    assert r['detection_timestamp']==b.timestamp.iloc[1]
+    assert r['exit_timestamp']==b.timestamp.iloc[1]+pd.Timedelta(minutes=1)
+
+
+def test_opening_target_resolves_before_later_stop_in_same_bar():
+    b=bars([(100,101,99,100),(100,102,99,101),(105,106,95,100)])
+    for implementation in [simulate_one, lambda b,i,s: simulate_batch(b,[i],s).iloc[0]]:
+        r=implementation(b,0,TradeSpec(1,4,4,2))
+        assert r['reason']=='target' and r['net_points']==3
 
 
 def test_gap_censors_only_unresolved_path():
