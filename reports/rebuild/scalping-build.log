@@ -1,0 +1,189 @@
+* Getting build dependencies for sdist...
+running egg_info
+writing src/nq_patterns.egg-info/PKG-INFO
+writing dependency_links to src/nq_patterns.egg-info/dependency_links.txt
+writing entry points to src/nq_patterns.egg-info/entry_points.txt
+writing requirements to src/nq_patterns.egg-info/requires.txt
+writing top-level names to src/nq_patterns.egg-info/top_level.txt
+reading manifest file 'src/nq_patterns.egg-info/SOURCES.txt'
+writing manifest file 'src/nq_patterns.egg-info/SOURCES.txt'
+* Building sdist...
+running sdist
+running egg_info
+writing src/nq_patterns.egg-info/PKG-INFO
+writing dependency_links to src/nq_patterns.egg-info/dependency_links.txt
+writing entry points to src/nq_patterns.egg-info/entry_points.txt
+writing requirements to src/nq_patterns.egg-info/requires.txt
+writing top-level names to src/nq_patterns.egg-info/top_level.txt
+reading manifest file 'src/nq_patterns.egg-info/SOURCES.txt'
+writing manifest file 'src/nq_patterns.egg-info/SOURCES.txt'
+running check
+creating nq_patterns-0.2.0
+creating nq_patterns-0.2.0/src/nq_patterns.egg-info
+creating nq_patterns-0.2.0/src/nqpatterns
+creating nq_patterns-0.2.0/src/nqscalp
+creating nq_patterns-0.2.0/tests
+copying files to nq_patterns-0.2.0...
+copying README.md -> nq_patterns-0.2.0
+copying pyproject.toml -> nq_patterns-0.2.0
+copying src/nq_patterns.egg-info/PKG-INFO -> nq_patterns-0.2.0/src/nq_patterns.egg-info
+copying src/nq_patterns.egg-info/SOURCES.txt -> nq_patterns-0.2.0/src/nq_patterns.egg-info
+copying src/nq_patterns.egg-info/dependency_links.txt -> nq_patterns-0.2.0/src/nq_patterns.egg-info
+copying src/nq_patterns.egg-info/entry_points.txt -> nq_patterns-0.2.0/src/nq_patterns.egg-info
+copying src/nq_patterns.egg-info/requires.txt -> nq_patterns-0.2.0/src/nq_patterns.egg-info
+copying src/nq_patterns.egg-info/top_level.txt -> nq_patterns-0.2.0/src/nq_patterns.egg-info
+copying src/nqpatterns/__init__.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqpatterns/acquisition.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqpatterns/candidates.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqpatterns/cli.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqpatterns/data.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqpatterns/features.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqpatterns/finalize.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqpatterns/matcher.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqpatterns/outcomes.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqpatterns/research.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqpatterns/splits.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqpatterns/statistics.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqpatterns/tournament.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqpatterns/validation.py -> nq_patterns-0.2.0/src/nqpatterns
+copying src/nqscalp/__init__.py -> nq_patterns-0.2.0/src/nqscalp
+copying src/nqscalp/__main__.py -> nq_patterns-0.2.0/src/nqscalp
+copying src/nqscalp/cli.py -> nq_patterns-0.2.0/src/nqscalp
+copying src/nqscalp/evidence.py -> nq_patterns-0.2.0/src/nqscalp
+copying src/nqscalp/execution.py -> nq_patterns-0.2.0/src/nqscalp
+copying src/nqscalp/features.py -> nq_patterns-0.2.0/src/nqscalp
+copying src/nqscalp/matcher.py -> nq_patterns-0.2.0/src/nqscalp
+copying src/nqscalp/patterns.py -> nq_patterns-0.2.0/src/nqscalp
+copying src/nqscalp/research.py -> nq_patterns-0.2.0/src/nqscalp
+copying tests/test_acquisition.py -> nq_patterns-0.2.0/tests
+copying tests/test_candidates.py -> nq_patterns-0.2.0/tests
+copying tests/test_data.py -> nq_patterns-0.2.0/tests
+copying tests/test_features.py -> nq_patterns-0.2.0/tests
+copying tests/test_finalize.py -> nq_patterns-0.2.0/tests
+copying tests/test_matcher.py -> nq_patterns-0.2.0/tests
+copying tests/test_outcomes.py -> nq_patterns-0.2.0/tests
+copying tests/test_research.py -> nq_patterns-0.2.0/tests
+copying tests/test_scalp_evidence.py -> nq_patterns-0.2.0/tests
+copying tests/test_scalp_execution.py -> nq_patterns-0.2.0/tests
+copying tests/test_scalp_features.py -> nq_patterns-0.2.0/tests
+copying tests/test_scalp_matcher.py -> nq_patterns-0.2.0/tests
+copying tests/test_scalp_research.py -> nq_patterns-0.2.0/tests
+copying tests/test_scalp_workflow.py -> nq_patterns-0.2.0/tests
+copying tests/test_splits.py -> nq_patterns-0.2.0/tests
+copying tests/test_statistics.py -> nq_patterns-0.2.0/tests
+copying tests/test_tournament.py -> nq_patterns-0.2.0/tests
+copying tests/test_validation.py -> nq_patterns-0.2.0/tests
+Writing nq_patterns-0.2.0/setup.cfg
+Creating tar archive
+removing 'nq_patterns-0.2.0' (and everything under it)
+* Building wheel from sdist
+* Getting build dependencies for wheel...
+running egg_info
+writing src/nq_patterns.egg-info/PKG-INFO
+writing dependency_links to src/nq_patterns.egg-info/dependency_links.txt
+writing entry points to src/nq_patterns.egg-info/entry_points.txt
+writing requirements to src/nq_patterns.egg-info/requires.txt
+writing top-level names to src/nq_patterns.egg-info/top_level.txt
+reading manifest file 'src/nq_patterns.egg-info/SOURCES.txt'
+writing manifest file 'src/nq_patterns.egg-info/SOURCES.txt'
+* Building wheel...
+running bdist_wheel
+running build
+running build_py
+creating build/lib/nqpatterns
+copying src/nqpatterns/acquisition.py -> build/lib/nqpatterns
+copying src/nqpatterns/validation.py -> build/lib/nqpatterns
+copying src/nqpatterns/outcomes.py -> build/lib/nqpatterns
+copying src/nqpatterns/finalize.py -> build/lib/nqpatterns
+copying src/nqpatterns/candidates.py -> build/lib/nqpatterns
+copying src/nqpatterns/matcher.py -> build/lib/nqpatterns
+copying src/nqpatterns/cli.py -> build/lib/nqpatterns
+copying src/nqpatterns/data.py -> build/lib/nqpatterns
+copying src/nqpatterns/statistics.py -> build/lib/nqpatterns
+copying src/nqpatterns/features.py -> build/lib/nqpatterns
+copying src/nqpatterns/research.py -> build/lib/nqpatterns
+copying src/nqpatterns/__init__.py -> build/lib/nqpatterns
+copying src/nqpatterns/splits.py -> build/lib/nqpatterns
+copying src/nqpatterns/tournament.py -> build/lib/nqpatterns
+creating build/lib/nqscalp
+copying src/nqscalp/evidence.py -> build/lib/nqscalp
+copying src/nqscalp/patterns.py -> build/lib/nqscalp
+copying src/nqscalp/matcher.py -> build/lib/nqscalp
+copying src/nqscalp/__main__.py -> build/lib/nqscalp
+copying src/nqscalp/cli.py -> build/lib/nqscalp
+copying src/nqscalp/features.py -> build/lib/nqscalp
+copying src/nqscalp/research.py -> build/lib/nqscalp
+copying src/nqscalp/__init__.py -> build/lib/nqscalp
+copying src/nqscalp/execution.py -> build/lib/nqscalp
+running egg_info
+writing src/nq_patterns.egg-info/PKG-INFO
+writing dependency_links to src/nq_patterns.egg-info/dependency_links.txt
+writing entry points to src/nq_patterns.egg-info/entry_points.txt
+writing requirements to src/nq_patterns.egg-info/requires.txt
+writing top-level names to src/nq_patterns.egg-info/top_level.txt
+reading manifest file 'src/nq_patterns.egg-info/SOURCES.txt'
+writing manifest file 'src/nq_patterns.egg-info/SOURCES.txt'
+installing to build/bdist.linux-x86_64/wheel
+running install
+running install_lib
+creating build/bdist.linux-x86_64/wheel
+creating build/bdist.linux-x86_64/wheel/nqpatterns
+copying build/lib/nqpatterns/acquisition.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+copying build/lib/nqpatterns/validation.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+copying build/lib/nqpatterns/outcomes.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+copying build/lib/nqpatterns/finalize.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+copying build/lib/nqpatterns/candidates.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+copying build/lib/nqpatterns/matcher.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+copying build/lib/nqpatterns/cli.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+copying build/lib/nqpatterns/data.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+copying build/lib/nqpatterns/statistics.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+copying build/lib/nqpatterns/features.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+copying build/lib/nqpatterns/research.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+copying build/lib/nqpatterns/__init__.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+copying build/lib/nqpatterns/splits.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+copying build/lib/nqpatterns/tournament.py -> build/bdist.linux-x86_64/wheel/./nqpatterns
+creating build/bdist.linux-x86_64/wheel/nqscalp
+copying build/lib/nqscalp/evidence.py -> build/bdist.linux-x86_64/wheel/./nqscalp
+copying build/lib/nqscalp/patterns.py -> build/bdist.linux-x86_64/wheel/./nqscalp
+copying build/lib/nqscalp/matcher.py -> build/bdist.linux-x86_64/wheel/./nqscalp
+copying build/lib/nqscalp/__main__.py -> build/bdist.linux-x86_64/wheel/./nqscalp
+copying build/lib/nqscalp/cli.py -> build/bdist.linux-x86_64/wheel/./nqscalp
+copying build/lib/nqscalp/features.py -> build/bdist.linux-x86_64/wheel/./nqscalp
+copying build/lib/nqscalp/research.py -> build/bdist.linux-x86_64/wheel/./nqscalp
+copying build/lib/nqscalp/__init__.py -> build/bdist.linux-x86_64/wheel/./nqscalp
+copying build/lib/nqscalp/execution.py -> build/bdist.linux-x86_64/wheel/./nqscalp
+running install_egg_info
+Copying src/nq_patterns.egg-info to build/bdist.linux-x86_64/wheel/./nq_patterns-0.2.0-py3.12.egg-info
+running install_scripts
+creating build/bdist.linux-x86_64/wheel/nq_patterns-0.2.0.dist-info/WHEEL
+creating '/workspace/scratch/484e26bff85f/mnq-nq-pattern-engine/dist/.tmp-74dv48v1/nq_patterns-0.2.0-py3-none-any.whl' and adding 'build/bdist.linux-x86_64/wheel' to it
+adding 'nqpatterns/__init__.py'
+adding 'nqpatterns/acquisition.py'
+adding 'nqpatterns/candidates.py'
+adding 'nqpatterns/cli.py'
+adding 'nqpatterns/data.py'
+adding 'nqpatterns/features.py'
+adding 'nqpatterns/finalize.py'
+adding 'nqpatterns/matcher.py'
+adding 'nqpatterns/outcomes.py'
+adding 'nqpatterns/research.py'
+adding 'nqpatterns/splits.py'
+adding 'nqpatterns/statistics.py'
+adding 'nqpatterns/tournament.py'
+adding 'nqpatterns/validation.py'
+adding 'nqscalp/__init__.py'
+adding 'nqscalp/__main__.py'
+adding 'nqscalp/cli.py'
+adding 'nqscalp/evidence.py'
+adding 'nqscalp/execution.py'
+adding 'nqscalp/features.py'
+adding 'nqscalp/matcher.py'
+adding 'nqscalp/patterns.py'
+adding 'nqscalp/research.py'
+adding 'nq_patterns-0.2.0.dist-info/METADATA'
+adding 'nq_patterns-0.2.0.dist-info/WHEEL'
+adding 'nq_patterns-0.2.0.dist-info/entry_points.txt'
+adding 'nq_patterns-0.2.0.dist-info/top_level.txt'
+adding 'nq_patterns-0.2.0.dist-info/RECORD'
+removing build/bdist.linux-x86_64/wheel
+Successfully built nq_patterns-0.2.0.tar.gz and nq_patterns-0.2.0-py3-none-any.whl

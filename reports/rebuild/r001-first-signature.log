@@ -1,0 +1,2 @@
+r001 signature 1/80: momentum_long_all
+{"experiment_id": "r001", "manifest_sha256": "cf0e539266a40043def9307463a37efce8297e8d8387fffb2d2c55808e63d322", "status": "checkpoint", "objective": "unfinished", "evidence": "exploratory_development_only", "holdout_accessed": false, "completed_signatures": 1, "fit_actions": 160}
