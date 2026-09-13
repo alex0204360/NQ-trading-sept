@@ -1,5 +1,12 @@
 # Changelog
 
+## Fresh engine and Round 1 definitions - 2026-09-13
+
+- Implemented independent price-action features, trajectory prototypes, scalar/vector execution, net-return evidence and resumable research.
+- Passed51 regression tests; corrected completed-bar timestamps, opening target ordering, and contract-boundary handling during integration.
+- Registered48 symbolic signatures and32 trajectory prototypes with320 unrestricted direction/TP/SL/horizon choices before outcome scoring.
+- Agent usage interruptions were recovered by root; no profitability or held-out result is claimed.
+
 ## Rebuild diagnosis, design and RED tests - 2026-09-11
 
 - Recovered from an interrupted filesystem using the existing remote branch, without cloning or replacing unrelated work.

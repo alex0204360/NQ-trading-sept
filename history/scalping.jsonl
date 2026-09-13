@@ -1,0 +1,6 @@
+{"time": "2026-09-13T15:24:25.669479+00:00", "actor": "root", "stage": "prepare", "status": "started", "experiment": "r001"}
+{"time": "2026-09-13T15:24:33.728043+00:00", "actor": "root", "stage": "prepare", "status": "completed", "experiment": "r001", "objective": "unfinished"}
+{"time": "2026-09-13T15:25:46.408892+00:00", "stage": "implementation", "actor": "features", "artifact": "src/nqscalp/features.py", "status": "recovered_and_tested_by_root", "holdout_accessed": false}
+{"time": "2026-09-13T15:25:46.408917+00:00", "stage": "implementation", "actor": "execution", "artifact": "src/nqscalp/execution.py", "status": "recovered_and_tested_by_root", "holdout_accessed": false}
+{"time": "2026-09-13T15:25:46.408925+00:00", "stage": "implementation", "actor": "evidence", "artifact": "src/nqscalp/evidence.py", "status": "recovered_and_tested_by_root", "holdout_accessed": false}
+{"time": "2026-09-13T15:25:46.408930+00:00", "stage": "implementation", "actor": "root", "artifact": "src/nqscalp/research.py", "status": "recovered_and_tested_by_root", "holdout_accessed": false}
