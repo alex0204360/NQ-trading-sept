@@ -1,0 +1,39 @@
+{
+  "schema_version": "nq-synthetic-profile-v1",
+  "calibrated": true,
+  "source_sha256": "aad99c9b16d2fd8bc7e7cce3e8d225bf779c8d302f0b446a3e7991f55aaa4a42",
+  "raw_source_sha256": "1577e60a7feab411e49da7a56c7052a64738cd1757cfd60aa11fd783ff43b60b",
+  "source_dataset": "tgtanalytics/nq-futures-1min-bar-2022-2025/versions/1",
+  "audit_method": "Replayed main reports/data_quality.json row exclusions against checksum-verified raw CSV; end-to-start UTC conversion; training-only cutoff.",
+  "training_rows": 706008,
+  "contiguous_returns": 704871,
+  "fit_start_utc": "2022-12-26T23:00:00+00:00",
+  "fit_end_utc": "2024-12-31T21:59:00+00:00",
+  "holdout_cutoff_utc": "2025-01-01T05:00:00+00:00",
+  "tick_size": 0.25,
+  "point_value": 20,
+  "reference_price": 18798.75,
+  "sigma_log_return": 0.0002594409960922441,
+  "return_ar1": 0.0007182709302096935,
+  "volatility_persistence": 0.8680990550783697,
+  "upper_wick_fraction_mean": 7.470995119629341e-05,
+  "lower_wick_fraction_mean": 7.776903604313738e-05,
+  "log_volume_mean": 5.037914305203062,
+  "log_volume_std": 1.4774946113282303,
+  "observed": {
+    "return_lag1_correlation": 0.0007182709302096935,
+    "absolute_return_lag1_correlation": 0.3783280837687206,
+    "absolute_return_q50_q90_q99": [
+      9.271093399659396e-05,
+      0.00036518246486648783,
+      0.0009707092674992056
+    ],
+    "range_fraction_mean": 0.00030776482762039054
+  },
+  "limitations": [
+    "Parametric stress generator; not a calibrated limit-order-book model.",
+    "Scenario drift, Student-t tails, and volatility dynamics are modeling assumptions.",
+    "Source end timestamps are inferred and contract-roll construction is unresolved.",
+    "Synthetic validation does not establish real-market profitability."
+  ]
+}
