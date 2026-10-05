@@ -123,12 +123,13 @@ test("self-contained HTML embeds the same engine/profile and changes playback in
   const profileText = html.match(/<script id="nqProfile" type="application\/json">([\s\S]*?)<\/script>/)[1];
   assert.deepEqual(JSON.parse(profileText), JSON.parse(fs.readFileSync(path.join(__dirname, "../examples/nq_calibration.json"))));
   const nodes = {};
-  const defaults = {mode: "nq", seed: "12345", startPrice: "24000", commission: "4.5", slippage: "1", horizon: "10", scenario: "mixed", speed: "0", visible: "160"};
+  const auditText = html.match(/<script id="historicalAudit" type="application\/json">([\s\S]*?)<\/script>/)[1];
+  const defaults = {mode: "nq", chartZone: "UTC", seed: "12345", startPrice: "24000", commission: "4.5", slippage: "1", horizon: "10", scenario: "mixed", speed: "0", visible: "160"};
   const context = new Proxy({}, {get: () => () => {}});
   const document = {
     hidden: false, addEventListener() {},
     getElementById(id) {
-      return nodes[id] ??= {value: defaults[id] ?? "", textContent: id === "nqProfile" ? profileText : "", getContext: () => context, getBoundingClientRect: () => ({width: 1000, height: 800}), clientWidth: 1000, clientHeight: 800};
+      return nodes[id] ??= {value: defaults[id] ?? "", textContent: id === "nqProfile" ? profileText : id === "historicalAudit" ? auditText : "", addEventListener() {}, getContext: () => context, getBoundingClientRect: () => ({width: 1000, height: 800}), clientWidth: 1000, clientHeight: 800};
     },
   };
   let callback;
@@ -137,20 +138,27 @@ test("self-contained HTML embeds the same engine/profile and changes playback in
     if (!script[1].includes('type="application/json"')) vm.runInContext(script[2], browser);
   }
   let timestamp = 0;
-  for (const mode of ["nq", "exact", "corrected"]) {
+  for (const mode of ["nq", "exact", "corrected", "real"]) {
     nodes.mode.value = mode;
     nodes.speed.value = "0";
     nodes.speed.oninput();
     nodes.mode.onchange();
+    const initial = mode === "real" ? 1 : 0;
+    if (mode === "real") vm.runInContext("const packed = new Float64Array(60000*6); for(let index=0;index<60000;index++) packed.set([Date.UTC(2024,0,2)+index*60000,16000,16001,15999,16000,100],index*6); sim=new HistoricalReplay({count:60000,packed}); sim.seek(1); playing=true;", browser);
     callback(timestamp);
     for (let frame = 1; frame <= 600; frame++) callback(timestamp + frame * 1000 / 60);
     timestamp += 10000;
-    assert.equal(vm.runInContext("sim.candles.length", browser), 10);
+    assert.equal(vm.runInContext("sim.candles.length", browser), initial + 10);
     nodes.speed.value = "1";
     nodes.speed.oninput();
     callback(timestamp);
     for (let frame = 1; frame <= 600; frame++) callback(timestamp + frame * 1000 / 60);
     timestamp += 10000;
-    assert.equal(vm.runInContext("sim.candles.length", browser), 110);
+    assert.equal(vm.runInContext("sim.candles.length", browser), initial + 110);
   }
+  vm.runInContext("sim.seek(50001); playing=true; rateClock.reset();", browser);
+  callback(timestamp);
+  for (let frame = 1; frame <= 60; frame++) callback(timestamp + frame * 1000 / 60);
+  assert.equal(vm.runInContext("sim.candles.length", browser), 50011);
 });
+
