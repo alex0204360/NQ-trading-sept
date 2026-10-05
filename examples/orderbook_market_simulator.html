@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Order-Book Market Simulator — Exact vs Corrected</title>
+<style>
+  :root{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color-scheme:dark}
+  body{margin:0;background:#070916;color:#eef2ff}
+  #wrap{display:grid;grid-template-columns:280px 1fr;height:100vh}
+  aside{padding:16px;background:#121725;border-right:1px solid #283044;overflow:auto}
+  main{position:relative;min-width:0}
+  h1{font-size:18px;margin:0 0 14px}
+  label{display:block;font-size:12px;color:#aeb7ca;margin-top:10px}
+  input,select,button{width:100%;box-sizing:border-box;margin-top:4px;padding:8px 10px;border-radius:8px;border:1px solid #394258;background:#0d1220;color:#fff}
+  button{cursor:pointer;font-weight:700}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .stat{margin:10px 0;padding:10px;border-radius:9px;background:#0d1220}
+  .stat b{display:block;font-size:20px}
+  small{color:#8f9ab0}
+  canvas{display:block;width:100%;height:100%}
+  #badge{position:absolute;top:12px;left:12px;padding:7px 10px;border-radius:8px;background:#121725cc;font-size:12px;pointer-events:none}
+  .note{font-size:11px;line-height:1.4;color:#909bb0;margin-top:10px}
+</style>
+</head>
+<body>
+<div id="wrap">
+<aside>
+  <h1>Order-Book Market Simulator</h1>
+  <label>Mode
+    <select id="mode">
+      <option value="exact">Exact reconstructed build</option>
+      <option value="corrected">Corrected matching/accounting</option>
+    </select>
+  </label>
+
+  <div class="row">
+    <button id="play">Pause</button>
+    <button id="reset">Reset</button>
+  </div>
+
+  <label>Speed (candles per frame target)
+    <input id="speed" type="range" min="1" max="250" value="10">
+  </label>
+
+  <label>Seed
+    <input id="seed" type="number" value="12345">
+  </label>
+
+  <div class="stat">Last price<b id="price">$10.00</b><small id="internal">1000 internal</small></div>
+  <div class="stat">Candles<b id="count">0</b><small id="bookStat">0 bids / 0 asks</small></div>
+  <div class="stat">Order-book imbalance<b id="imbalance">0.000</b></div>
+
+  <div class="row">
+    <button id="buy">Buy</button>
+    <button id="sell">Sell</button>
+  </div>
+  <div class="stat">Position<b id="position">Flat</b><small id="pnl">PnL: 0.00</small></div>
+
+  <label>Visible candles
+    <input id="visible" type="range" min="50" max="400" value="160">
+  </label>
+
+  <div class="note">
+    Reconstructed parameters: 10 traders, 10% activity, 5% maker / 95% taker,
+    roughly ±0.5% triangular price proposals, 5 ticks per candle, 12% order-removal rate,
+    and 0.65–1.15 prune factors. Exact mode preserves the strict crossing and volume/imbalance quirks found in the compiled build.
+  </div>
+</aside>
+<main>
+  <canvas id="chart"></canvas>
+  <div id="badge">Canvas renderer • batched simulation</div>
+</main>
+</div>
+
+<script>
+"use strict";
+
+class RNG {
+  constructor(seed=12345){ this.s = (seed|0) || 1; }
+  nextU32(){
+    let x=this.s|0;
+    x ^= x << 13; x ^= x >>> 17; x ^= x << 5;
+    this.s=x|0; return x>>>0;
+  }
+  f(){ return this.nextU32()/4294967296; }
+  int(n){ return Math.floor(this.f()*n); }
+}
+
+class Book {
+  constructor(sim){
+    this.sim=sim;
+    this.buy=new Map();
+    this.sell=new Map();
+    this.bestBid=0;
+    this.bestAsk=2147483647;
+    this.totalBuy=0;
+    this.totalSell=0;
+    this.last=sim.lastPrice;
+    this.imbalance=0;
+    this.history=new Int32Array(100);
+    this.tradeIndex=0;
+    this.tradeCount=0;
+    this.MA5=3; this.MA25=3; this.MA50=3;
+  }
+
+  recomputeBest(){
+    this.bestBid=0;
+    for(const p of this.buy.keys()) if(p>this.bestBid) this.bestBid=p;
+    this.bestAsk=2147483647;
+    for(const p of this.sell.keys()) if(p<this.bestAsk) this.bestAsk=p;
+  }
+
+  computeMA(period){
+    let s=0;
+    for(let i=0;i<period;i++){
+      const idx=(this.tradeIndex-1-i+this.history.length)%this.history.length;
+      s += this.history[idx];
+    }
+    return Math.trunc(s/period);
+  }
+
+  recordTrade(price){
+    this.history[this.tradeIndex]=price;
+    this.tradeIndex=(this.tradeIndex+1)%this.history.length;
+    this.tradeCount=Math.min(this.tradeCount+1,this.history.length);
+    if(this.tradeCount>=5) this.MA5=this.computeMA(5);
+    if(this.tradeCount>=25) this.MA25=this.computeMA(25);
+    if(this.tradeCount>=50) this.MA50=this.computeMA(50);
+  }
+
+  updateImbalance(){
+    const d=this.totalBuy+this.totalSell;
+    if(!d){ this.imbalance=0; return; }
+    if(this.sim.mode==="exact"){
+      this.imbalance=Math.trunc((this.totalBuy-this.totalSell)/d);
+    } else {
+      this.imbalance=(this.totalBuy-this.totalSell)/d;
+    }
+  }
+
+  make(price,qty,isBuy){
+    const m=isBuy?this.buy:this.sell;
+    m.set(price,(m.get(price)||0)+qty);
+    if(isBuy){
+      this.totalBuy += qty;
+      if(price>this.bestBid) this.bestBid=price;
+    } else {
+      this.totalSell += qty;
+      if(price<this.bestAsk) this.bestAsk=price;
+    }
+  }
+
+  place(price,qty,isBuy){
+    if(price<=0 || qty<=0) return;
+    if(isBuy){
+      const crosses=this.sim.mode==="exact" ? (this.sell.size>0 && price>this.bestAsk) : (this.sell.size>0 && price>=this.bestAsk);
+      if(crosses) this.take(price,qty,true); else this.make(price,qty,true);
+    } else {
+      const crosses=this.sim.mode==="exact" ? (this.buy.size>0 && price<this.bestBid) : (this.buy.size>0 && price<=this.bestBid);
+      if(crosses) this.take(price,qty,false); else this.make(price,qty,false);
+    }
+  }
+
+  take(limit,qty,isBuy){
+    let left=qty;
+    this.last=this.sim.lastPrice;
+
+    while(left>0){
+      if(isBuy){
+        if(this.sell.size===0){ this.bestAsk=2147483647; break; }
+        if(!this.sell.has(this.bestAsk)) this.recomputeBest();
+        if(limit<this.bestAsk) break;
+        const avail=this.sell.get(this.bestAsk)||0;
+        if(avail<=0){ this.sell.delete(this.bestAsk); this.recomputeBest(); continue; }
+        const fill=Math.min(avail,left);
+        const px=this.bestAsk;
+        const remain=avail-fill;
+        left-=fill;
+        if(remain<=0) this.sell.delete(px); else this.sell.set(px,remain);
+
+        if(this.sim.mode==="exact") this.totalBuy -= fill;
+        else this.totalSell -= fill;
+
+        this.last=px;
+        this.sim.trade(px,fill);
+        this.recomputeBest();
+      } else {
+        if(this.buy.size===0){ this.bestBid=0; break; }
+        if(!this.buy.has(this.bestBid)) this.recomputeBest();
+        if(limit>this.bestBid) break;
+        const avail=this.buy.get(this.bestBid)||0;
+        if(avail<=0){ this.buy.delete(this.bestBid); this.recomputeBest(); continue; }
+        const fill=Math.min(avail,left);
+        const px=this.bestBid;
+        const remain=avail-fill;
+        left-=fill;
+        if(remain<=0) this.buy.delete(px); else this.buy.set(px,remain);
+
+        if(this.sim.mode==="exact") this.totalSell -= fill;
+        else this.totalBuy -= fill;
+
+        this.last=px;
+        this.sim.trade(px,fill);
+        this.recomputeBest();
+      }
+    }
+
+    this.sim.lastPrice=this.last;
+    this.updateImbalance();
+    if(left>0) this.make(limit,left,isBuy);
+  }
+
+  randomRemove(rate,it=0){
+    if(this.sim.rng.f()>rate && it===0) return;
+    const buys=[...this.buy.keys()], sells=[...this.sell.keys()];
+    if(!buys.length && !sells.length) return;
+
+    let chooseSell;
+    if(buys.length && sells.length){
+      const vol=this.totalSell+this.totalBuy;
+      const levels=sells.length+buys.length;
+      const v=vol>0 ? this.totalSell/vol : 0.5;
+      const l=levels>0 ? sells.length/levels : 0.5;
+      const p=0.5 + (0.5*(v+l)-0.5);
+      chooseSell=this.sim.rng.f()<p;
+    } else chooseSell=!!sells.length;
+
+    const map=chooseSell?this.sell:this.buy;
+    const keys=chooseSell?sells:buys;
+    const key=keys[this.sim.rng.int(keys.length)];
+    const qty=map.get(key);
+    if(qty==null || qty>30){
+      if(it<25) this.randomRemove(1,it+1);
+      return;
+    }
+    if(chooseSell) this.totalSell-=qty; else this.totalBuy-=qty;
+    map.delete(key);
+    this.recomputeBest();
+
+    const d=this.totalBuy+this.totalSell;
+    this.imbalance=d>0?(this.totalBuy-this.totalSell)/d:0;
+  }
+
+  truncate(anchor,budget=64){
+    if(anchor<=0) return;
+    const min=Math.max(1,Math.ceil(anchor*0.65));
+    const max=Math.max(min,Math.floor(anchor*1.15));
+
+    const trim=(map,isBuy)=>{
+      let n=0;
+      const keys=[...map.keys()].sort((a,b)=>a-b);
+      for(const p of keys){
+        if(n>=budget) break;
+        if(p<min || p>max){
+          const q=map.get(p)||0;
+          if(isBuy) this.totalBuy-=q; else this.totalSell-=q;
+          map.delete(p); n++;
+        }
+      }
+    };
+    trim(this.buy,true); trim(this.sell,false);
+    this.recomputeBest();
+    const d=this.totalBuy+this.totalSell;
+    this.imbalance=d>0?(this.totalBuy-this.totalSell)/d:0;
+  }
+}
+
+class Sim {
+  constructor(seed=12345,mode="exact"){
+    this.mode=mode; this.rng=new RNG(seed);
+    this.lastPrice=1000;
+    this.numTraders=10;
+    this.activity=0.1;
+    this.makerProp=0.05;
+    this.dropRate=0.12;
+    this.ticks=0;
+    this.candleIndex=0;
+    this.book=new Book(this);
+    this.candles=[];
+    this.live={o:1000,h:1000,l:1000,c:1000,v:0};
+
+    this.position=0; this.entry=0; this.posSize=0; this.realized=0;
+    this.commission=0.0025;
+  }
+
+  trade(price,volume){
+    const c=this.live;
+    c.c=price; if(price>c.h)c.h=price; if(price<c.l)c.l=price; c.v+=volume;
+  }
+
+  takerQty(){
+    const t=this.candleIndex;
+    const x=(Math.sin(2*Math.PI*(t/14.142136))+
+             Math.sin(2*Math.PI*(t/40.840706))+
+             Math.sin(2*Math.PI*(t/27.506578))+3)/6*20;
+    return Math.max(1,Math.min(20,Math.round(x)));
+  }
+
+  traderOrder(){
+    const current=this.book.last;
+    const u1=this.rng.f(), u2=this.rng.f();
+    const mult=1+(((u1+u2)/2)*0.01-0.005);
+    const adjusted=current*mult + 0.5*Math.sign(mult-1);
+    const price=Math.round(adjusted);
+    const maker=this.rng.f()<this.makerProp;
+
+    if(maker){
+      const isBuy=price<current;
+      return {price,qty:this.rng.int(20)+1,isBuy};
+    }
+    const isBuy=price>=current;
+    return {price,qty:this.takerQty(),isBuy};
+  }
+
+  processTick(){
+    for(let i=0;i<this.numTraders;i++){
+      if(this.rng.f()<this.activity){
+        const o=this.traderOrder();
+        this.book.place(o.price,o.qty,o.isBuy);
+      }
+    }
+    this.ticks++;
+    if(this.ticks>=5){
+      this.ticks=0;
+      this.lastPrice=this.live.c;
+      const c={...this.live};
+      this.candles.push(c);
+      this.book.recordTrade(c.c);
+      this.candleIndex++;
+      this.live={o:this.lastPrice,h:this.lastPrice,l:this.lastPrice,c:this.lastPrice,v:0};
+      this.book.truncate(this.lastPrice,64);
+      this.book.randomRemove(this.dropRate,0);
+    }
+  }
+
+  stepCandles(n){
+    const target=this.candleIndex+n;
+    while(this.candleIndex<target) this.processTick();
+  }
+
+  buy(){
+    const p=this.book.last;
+    if(this.position===0){
+      this.entry=p; this.posSize=100/(p*(1+this.commission)); this.position=1;
+    } else if(this.position===-1){
+      const gross=(this.entry-p)*this.posSize;
+      const fee=(this.entry+p)*this.commission*this.posSize;
+      this.realized+=gross-fee; this.position=0; this.posSize=0;
+    }
+  }
+  sell(){
+    const p=this.book.last;
+    if(this.position===0){
+      this.entry=p; this.posSize=100/(p*(1-this.commission)); this.position=-1;
+    } else if(this.position===1){
+      const gross=(p-this.entry)*this.posSize;
+      const fee=(this.entry+p)*this.commission*this.posSize;
+      this.realized+=gross-fee; this.position=0; this.posSize=0;
+    }
+  }
+  floating(){
+    const p=this.book.last;
+    if(this.position===1) return (p*(1-this.commission)-this.entry)*this.posSize;
+    if(this.position===-1) return (this.entry-p*(1+this.commission))*this.posSize;
+    return 0;
+  }
+}
+
+const $=id=>document.getElementById(id);
+const canvas=$("chart"),ctx=canvas.getContext("2d",{alpha:false});
+let sim,playing=true;
+
+function reset(){
+  sim=new Sim(+$("seed").value,$("mode").value);
+  draw();
+}
+$("reset").onclick=reset;
+$("mode").onchange=reset;
+$("play").onclick=()=>{playing=!playing;$("play").textContent=playing?"Pause":"Play"};
+$("buy").onclick=()=>sim.buy();
+$("sell").onclick=()=>sim.sell();
+
+function resize(){
+  const dpr=Math.min(devicePixelRatio||1,2);
+  const r=canvas.getBoundingClientRect();
+  canvas.width=Math.max(1,Math.floor(r.width*dpr));
+  canvas.height=Math.max(1,Math.floor(r.height*dpr));
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+}
+addEventListener("resize",()=>{resize();draw()}); resize();
+
+function sma(arr,n,i){
+  if(i+1<n) return null;
+  let s=0; for(let k=i-n+1;k<=i;k++) s+=arr[k].c;
+  return s/n;
+}
+
+function draw(){
+  const w=canvas.clientWidth,h=canvas.clientHeight;
+  ctx.fillStyle="#070916";ctx.fillRect(0,0,w,h);
+
+  const visible=+$("visible").value;
+  const data=sim.candles.slice(-visible);
+  if(data.length){
+    let lo=Infinity,hi=-Infinity,maxV=1;
+    for(const c of data){if(c.l<lo)lo=c.l;if(c.h>hi)hi=c.h;if(c.v>maxV)maxV=c.v}
+    if(hi===lo){hi++;lo--}
+    const pad=(hi-lo)*0.08; hi+=pad;lo-=pad;
+    const top=24,bottom=h*0.77,left=16,right=w-110;
+    const cw=Math.max(1,(right-left)/Math.max(1,data.length));
+    const py=p=>top+(hi-p)/(hi-lo)*(bottom-top);
+
+    ctx.strokeStyle="#202638";ctx.lineWidth=1;
+    for(let i=0;i<5;i++){const y=top+(bottom-top)*i/4;ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(right,y);ctx.stroke()}
+
+    for(let i=0;i<data.length;i++){
+      const c=data[i],x=left+(i+0.5)*cw;
+      const up=c.c>=c.o;
+      ctx.strokeStyle=up?"#52f46d":"#ff3b45";
+      ctx.fillStyle=ctx.strokeStyle;
+      ctx.beginPath();ctx.moveTo(x,py(c.h));ctx.lineTo(x,py(c.l));ctx.stroke();
+      const y1=py(Math.max(c.o,c.c)),y2=py(Math.min(c.o,c.c));
+      ctx.fillRect(x-cw*0.34,y1,Math.max(1,cw*0.68),Math.max(1,y2-y1));
+
+      const vh=(c.v/maxV)*(h-bottom-30);
+      ctx.globalAlpha=.75;ctx.fillRect(x-cw*.34,h-8-vh,Math.max(1,cw*.68),vh);ctx.globalAlpha=1;
+    }
+
+    const periods=[25,50,200];
+    const cols=["#8a94b8","#e5e77b","#775777"];
+    periods.forEach((n,pi)=>{
+      ctx.strokeStyle=cols[pi];ctx.lineWidth=1.25;ctx.beginPath();let started=false;
+      const offset=Math.max(0,sim.candles.length-visible);
+      for(let i=0;i<data.length;i++){
+        const global=offset+i, v=sma(sim.candles,n,global); if(v==null) continue;
+        const x=left+(i+0.5)*cw,y=py(v);
+        if(!started){ctx.moveTo(x,y);started=true}else ctx.lineTo(x,y);
+      }
+      if(started)ctx.stroke();
+    });
+
+    const bookX=right+18,bookW=80;
+    const maxQ=Math.max(1,...sim.book.buy.values(),...sim.book.sell.values());
+    for(const [p,q] of sim.book.buy){ if(p<lo||p>hi)continue; ctx.fillStyle="#52f46d";ctx.fillRect(bookX,py(p),bookW*(q/maxQ),2); }
+    for(const [p,q] of sim.book.sell){ if(p<lo||p>hi)continue; ctx.fillStyle="#ff3b45";ctx.fillRect(bookX,py(p),bookW*(q/maxQ),2); }
+  }
+
+  const lp=sim.book.last;
+  $("price").textContent="$"+(lp/100).toFixed(2);
+  $("internal").textContent=lp+" internal";
+  $("count").textContent=sim.candles.length.toLocaleString();
+  $("bookStat").textContent=sim.book.buy.size+" bids / "+sim.book.sell.size+" asks";
+  $("imbalance").textContent=Number(sim.book.imbalance).toFixed(3);
+  $("position").textContent=sim.position===1?"Long":sim.position===-1?"Short":"Flat";
+  $("pnl").textContent="PnL: "+(sim.realized+sim.floating()).toFixed(2);
+}
+
+function frame(){
+  if(playing){
+    const n=+$("speed").value;
+    sim.stepCandles(n);
+  }
+  draw();
+  requestAnimationFrame(frame);
+}
+reset();
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
