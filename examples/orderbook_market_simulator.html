@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Order-Book Market Simulator — Exact vs Corrected</title>
+<title>NQ Synthetic Market Lab</title>
 <style>
   :root{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color-scheme:dark}
   body{margin:0;background:#070916;color:#eef2ff}
-  #wrap{display:grid;grid-template-columns:280px 1fr;height:100vh}
+  #wrap{display:grid;grid-template-columns:310px 1fr;height:100vh}
   aside{padding:16px;background:#121725;border-right:1px solid #283044;overflow:auto}
   main{position:relative;min-width:0}
   h1{font-size:18px;margin:0 0 14px}
@@ -21,14 +21,18 @@
   canvas{display:block;width:100%;height:100%}
   #badge{position:absolute;top:12px;left:12px;padding:7px 10px;border-radius:8px;background:#121725cc;font-size:12px;pointer-events:none}
   .note{font-size:11px;line-height:1.4;color:#909bb0;margin-top:10px}
+  [hidden]{display:none!important}
+  #status{font-size:12px;line-height:1.5;color:#c9d7f3;white-space:pre-wrap}
+  @media(max-width:650px){#wrap{grid-template-columns:1fr;height:auto}main{height:65vh}aside{border-right:0}}
 </style>
 </head>
 <body>
 <div id="wrap">
 <aside>
-  <h1>Order-Book Market Simulator</h1>
+  <h1>NQ Synthetic Market Lab</h1>
   <label>Mode
     <select id="mode">
+      <option value="nq" selected>NQ calibrated scenarios</option>
       <option value="exact">Exact reconstructed build</option>
       <option value="corrected">Corrected matching/accounting</option>
     </select>
@@ -39,17 +43,41 @@
     <button id="reset">Reset</button>
   </div>
 
-  <label>Speed (candles per frame target)
-    <input id="speed" type="range" min="1" max="250" value="10">
+  <label>Playback: <output id="speedValue">1.0 candle/sec</output>
+    <input id="speed" type="range" min="-1" max="2.7" step="0.01" value="0">
   </label>
 
   <label>Seed
-    <input id="seed" type="number" value="12345">
+    <input id="seed" type="number" min="1" max="4294967295" value="12345">
   </label>
+
+  <div id="nqSettings">
+    <label>Price scenario
+      <select id="scenario">
+        <option value="mixed">Mixed market regimes</option>
+        <option value="noise">Noise / no designed edge</option>
+        <option value="trend_up">Uptrend with pullbacks</option>
+        <option value="trend_down">Downtrend with rallies</option>
+        <option value="range">Mean-reverting range</option>
+        <option value="compression">Low-volatility compression</option>
+        <option value="breakout">Compression then breakout</option>
+        <option value="failed_breakout">Failed breakout / reversal</option>
+        <option value="shock">Volatility shock</option>
+      </select>
+    </label>
+    <label>Starting NQ price <input id="startPrice" type="number" min="100" max="1000000" step="0.25" value="24000"></label>
+    <label>Round-trip fees ($/contract) <input id="commission" type="number" min="0" max="1000" step="0.25" value="4.50"></label>
+    <label>Slippage (ticks per side) <input id="slippage" type="number" min="0" max="100" step="1" value="1"></label>
+    <label>Label horizon (bars) <input id="horizon" type="number" min="1" max="45" value="10"></label>
+    <button id="generate">Generate 1,000 bars (paused)</button>
+    <div class="row"><button id="exportBars">Export bars</button><button id="exportExamples">Export AI examples</button></div>
+    <label>Load a new calibration profile <input id="profileFile" type="file" accept=".json,application/json"></label>
+  </div>
+  <p id="status" role="status" aria-live="polite"></p>
 
   <div class="stat">Last price<b id="price">$10.00</b><small id="internal">1000 internal</small></div>
   <div class="stat">Candles<b id="count">0</b><small id="bookStat">0 bids / 0 asks</small></div>
-  <div class="stat">Order-book imbalance<b id="imbalance">0.000</b></div>
+  <div class="stat" id="bookPanel">Order-book imbalance<b id="imbalance">0.000</b></div>
 
   <div class="row">
     <button id="buy">Buy</button>
@@ -61,7 +89,8 @@
     <input id="visible" type="range" min="50" max="400" value="160">
   </label>
 
-  <div class="note">
+  <div class="note" id="nqNote">NQ uses 0.25-point ticks and $20/point per contract. Prices, volume, and pattern regimes are synthetic. Fees and slippage are adjustable assumptions. Train with exported features only; future targets and scenario settings are not model inputs. Synthetic results do not establish a real trading edge.</div>
+  <div class="note" id="originalNote" hidden>
     Reconstructed parameters: 10 traders, 10% activity, 5% maker / 95% taker,
     roughly ±0.5% triangular price proposals, 5 ticks per candle, 12% order-removal rate,
     and 0.65–1.15 prune factors. Exact mode preserves the strict crossing and volume/imbalance quirks found in the compiled build.
@@ -73,6 +102,299 @@
 </main>
 </div>
 
+<script id="nqProfile" type="application/json">
+{
+  "schema_version": "nq-synthetic-profile-v1",
+  "calibrated": true,
+  "source_sha256": "aad99c9b16d2fd8bc7e7cce3e8d225bf779c8d302f0b446a3e7991f55aaa4a42",
+  "raw_source_sha256": "1577e60a7feab411e49da7a56c7052a64738cd1757cfd60aa11fd783ff43b60b",
+  "source_dataset": "tgtanalytics/nq-futures-1min-bar-2022-2025/versions/1",
+  "audit_method": "Replayed main reports/data_quality.json row exclusions against checksum-verified raw CSV; end-to-start UTC conversion; training-only cutoff.",
+  "training_rows": 706008,
+  "contiguous_returns": 704871,
+  "fit_start_utc": "2022-12-26T23:00:00+00:00",
+  "fit_end_utc": "2024-12-31T21:59:00+00:00",
+  "holdout_cutoff_utc": "2025-01-01T05:00:00+00:00",
+  "tick_size": 0.25,
+  "point_value": 20,
+  "reference_price": 18798.75,
+  "sigma_log_return": 0.0002594409960922441,
+  "return_ar1": 0.0007182709302096935,
+  "volatility_persistence": 0.8680990550783697,
+  "upper_wick_fraction_mean": 0.00007470995119629341,
+  "lower_wick_fraction_mean": 0.00007776903604313738,
+  "log_volume_mean": 5.037914305203062,
+  "log_volume_std": 1.4774946113282303,
+  "observed": {
+    "return_lag1_correlation": 0.0007182709302096935,
+    "absolute_return_lag1_correlation": 0.3783280837687206,
+    "absolute_return_q50_q90_q99": [
+      0.00009271093399659396,
+      0.00036518246486648783,
+      0.0009707092674992056
+    ],
+    "range_fraction_mean": 0.00030776482762039054
+  },
+  "limitations": [
+    "Parametric stress generator; not a calibrated limit-order-book model.",
+    "Scenario drift, Student-t tails, and volatility dynamics are modeling assumptions.",
+    "Source end timestamps are inferred and contract-roll construction is unresolved.",
+    "Synthetic validation does not establish real-market profitability."
+  ]
+}
+</script>
+<script id="nqEngine">
+"use strict";
+
+(function expose(root) {
+  const SCENARIOS = ["noise", "trend_up", "trend_down", "range", "compression", "breakout", "failed_breakout", "shock"];
+
+  function finite(value, name, minimum, maximum) {
+    if (!Number.isFinite(value) || value < minimum || value > maximum) {
+      throw new Error(`${name} must be finite and between ${minimum} and ${maximum}`);
+    }
+    return value;
+  }
+
+  class SeededRandom {
+    constructor(seed) {
+      finite(seed, "seed", 1, 4294967295);
+      if (!Number.isInteger(seed)) throw new Error("seed must be an integer");
+      this.state = seed >>> 0;
+    }
+    uniform() {
+      let state = this.state;
+      state ^= state << 13;
+      state ^= state >>> 17;
+      state ^= state << 5;
+      this.state = state >>> 0;
+      return (this.state + 0.5) / 4294967296;
+    }
+    normal() {
+      return Math.sqrt(-2 * Math.log(this.uniform())) * Math.cos(2 * Math.PI * this.uniform());
+    }
+    student() {
+      const numerator = this.normal();
+      let denominator = 0;
+      for (let count = 0; count < 5; count++) denominator += this.normal() ** 2;
+      return numerator / Math.sqrt(denominator / 5) * Math.sqrt(3 / 5);
+    }
+  }
+
+  class RateClock {
+    constructor() {
+      this.reset();
+    }
+    reset() {
+      this.previous = null;
+      this.pending = 0;
+    }
+    due(timestamp, rate, playing) {
+      finite(rate, "candles per second", 0.1, 500);
+      if (!playing) {
+        this.reset();
+        return 0;
+      }
+      if (this.previous === null) {
+        this.previous = timestamp;
+        return 0;
+      }
+      const elapsed = Math.min(100, Math.max(0, timestamp - this.previous));
+      this.previous = timestamp;
+      this.pending += elapsed / 1000 * rate;
+      const due = Math.floor(this.pending + 1e-9);
+      this.pending -= due;
+      return due;
+    }
+  }
+
+  function validateProfile(profile) {
+    if (profile.schema_version !== "nq-synthetic-profile-v1" || profile.calibrated !== true) {
+      throw new Error("A calibrated nq-synthetic-profile-v1 profile is required");
+    }
+    finite(profile.sigma_log_return, "sigma_log_return", 1e-8, 0.05);
+    finite(profile.return_ar1, "return_ar1", -0.5, 0.5);
+    finite(profile.volatility_persistence, "volatility_persistence", 0, 0.999);
+    finite(profile.upper_wick_fraction_mean, "upper wick", 0, 0.05);
+    finite(profile.lower_wick_fraction_mean, "lower wick", 0, 0.05);
+    finite(profile.log_volume_mean, "log volume", 0, 30);
+    finite(profile.log_volume_std, "log volume deviation", 0, 10);
+    if (profile.tick_size !== 0.25 || profile.point_value !== 20) throw new Error("Expected NQ contract settings");
+  }
+
+  class NQSim {
+    constructor(profile, options = {}) {
+      validateProfile(profile);
+      this.profile = JSON.parse(JSON.stringify(profile));
+      this.rng = new SeededRandom(options.seed ?? 12345);
+      this.scenario = options.scenario ?? "mixed";
+      if (this.scenario !== "mixed" && !SCENARIOS.includes(this.scenario)) throw new Error("Unknown scenario");
+      this.lastPrice = this.tick(finite(options.startPrice ?? 24000, "start price", 100, 1000000));
+      this.start = Date.parse(options.startTimestamp ?? "2024-01-02T14:30:00Z");
+      if (!Number.isFinite(this.start) || this.start % 60000) throw new Error("Start timestamp must be minute-aligned");
+      this.mode = "nq";
+      this.candles = [];
+      this.candleIndex = 0;
+      this.previousReturn = 0;
+      this.logVolatility = 0;
+      this.episodeAge = 0;
+      this.episodeLength = 0;
+      this.regime = "noise";
+      this.anchor = this.lastPrice;
+      this.position = 0;
+      this.entry = 0;
+      this.realized = 0;
+      this.roundTripCommission = finite(options.roundTripCommission ?? 4.5, "round-trip commission", 0, 1000);
+      this.slippageTicks = finite(options.slippageTicks ?? 1, "slippage per side", 0, 100);
+      this.book = {last: this.lastPrice, buy: new Map(), sell: new Map(), imbalance: 0};
+    }
+    tick(price) {
+      return Math.max(0.25, Math.round(price * 4) / 4);
+    }
+    stepCandles(count) {
+      if (!Number.isInteger(count) || count < 0 || count > 100000) throw new Error("Invalid batch size");
+      for (let ordinal = 0; ordinal < count; ordinal++) this.step();
+    }
+    step() {
+      if (this.episodeAge >= this.episodeLength) {
+        this.regime = this.scenario === "mixed" ? SCENARIOS[Math.floor(this.rng.uniform() * SCENARIOS.length)] : this.scenario;
+        this.episodeLength = 80 + Math.floor(this.rng.uniform() * 140);
+        this.episodeAge = 0;
+        this.anchor = this.lastPrice;
+        this.direction = this.rng.uniform() < 0.5 ? -1 : 1;
+      }
+      const progress = this.episodeAge / this.episodeLength;
+      const sigma = this.profile.sigma_log_return;
+      const persistence = this.profile.volatility_persistence;
+      this.logVolatility = persistence * this.logVolatility + 0.10 * this.rng.normal();
+      let scale = Math.exp(Math.max(-1.5, Math.min(1.5, this.logVolatility)));
+      let drift = 0;
+      if (this.regime === "trend_up") drift = sigma * 0.20;
+      if (this.regime === "trend_down") drift = -sigma * 0.20;
+      if (this.regime === "range") drift = 0.035 * Math.log(this.anchor / this.lastPrice);
+      if (this.regime === "compression") scale *= 0.35;
+      if (this.regime === "breakout" || this.regime === "failed_breakout") {
+        if (progress < 0.4) {
+          scale *= 0.35;
+          drift = 0.035 * Math.log(this.anchor / this.lastPrice);
+        } else {
+          drift = this.direction * sigma * 0.40;
+          if (this.regime === "failed_breakout" && progress > 0.65) {
+            drift = 0.06 * Math.log(this.anchor / this.lastPrice);
+          }
+        }
+      }
+      if (this.regime === "shock" && progress > 0.40 && progress < 0.55) scale *= 3.5;
+      const innovation = sigma * scale * this.rng.student();
+      const rawReturn = drift + this.profile.return_ar1 * this.previousReturn + innovation;
+      const logReturn = Math.max(-0.03, Math.min(0.03, rawReturn));
+      const open = this.lastPrice;
+      const close = this.tick(open * Math.exp(logReturn));
+      const upper = -Math.log(this.rng.uniform()) * this.profile.upper_wick_fraction_mean * open * scale;
+      const lower = -Math.log(this.rng.uniform()) * this.profile.lower_wick_fraction_mean * open * scale;
+      const high = this.tick(Math.max(open, close) + upper);
+      const low = this.tick(Math.max(0.25, Math.min(open, close) - lower));
+      const volume = Math.max(0, Math.round(Math.expm1(Math.min(20,
+        this.profile.log_volume_mean + this.profile.log_volume_std * this.rng.normal() + 0.35 * Math.log(scale)))));
+      const candle = {o: open, h: high, l: low, c: close, v: volume};
+      this.candles.push(candle);
+      this.lastPrice = close;
+      this.book.last = close;
+      this.previousReturn = logReturn;
+      this.candleIndex++;
+      this.episodeAge++;
+      return candle;
+    }
+    trade(direction) {
+      const slippage = this.slippageTicks * 0.25;
+      if (!this.position) {
+        this.position = direction;
+        this.entry = this.lastPrice + direction * slippage;
+        this.realized -= this.roundTripCommission / 2;
+      } else if (this.position !== direction) {
+        const exit = this.lastPrice - this.position * slippage;
+        this.realized += (exit - this.entry) * this.position * 20 - this.roundTripCommission / 2;
+        this.position = 0;
+      }
+    }
+    buy() { this.trade(1); }
+    sell() { this.trade(-1); }
+    floating() {
+      return this.position ? (this.lastPrice - this.position * this.slippageTicks * 0.25 - this.entry) * this.position * 20 - this.roundTripCommission / 2 : 0;
+    }
+    rows(sequenceId = "browser", split = "preview") {
+      return this.candles.map((bar, index) => ({
+        timestamp: new Date(this.start + index * 60000).toISOString(),
+        open: bar.o, high: bar.h, low: bar.l, close: bar.c, volume: bar.v,
+        completed: true, synthetic: true, sequence_id: sequenceId, split,
+      }));
+    }
+  }
+
+  function mean(values) {
+    return values.reduce((total, value) => total + value, 0) / values.length;
+  }
+  function examples(rows, options = {}) {
+    const horizon = options.horizon ?? 10;
+    if (!Number.isInteger(horizon) || horizon < 1 || horizon > 45) throw new Error("Horizon must be 1–45 bars");
+    const commission = finite(options.roundTripCommission ?? 4.5, "round-trip commission", 0, 1000);
+    const slippage = finite(options.slippageTicks ?? 1, "slippage ticks per side", 0, 100);
+    const costPoints = commission / 20 + slippage * 0.25 * 2;
+    const samples = [];
+    for (let index = 60; index + horizon < rows.length; index++) {
+      const history = rows.slice(index - 60, index + 1);
+      const current = rows[index];
+      const future = rows.slice(index + 1, index + horizon + 1);
+      if (history.concat(future).some((row, ordinal, window) => row.sequence_id !== current.sequence_id ||
+          row.split !== current.split || (ordinal > 0 && Date.parse(row.timestamp) - Date.parse(window[ordinal - 1].timestamp) !== 60000))) continue;
+      const ranges = history.slice(-14).map((bar, ordinal) => {
+        const prior = history[history.length - 15 + ordinal].close;
+        return Math.max(bar.high - bar.low, Math.abs(bar.high - prior), Math.abs(bar.low - prior));
+      });
+      const atr = Math.max(0.25, mean(ranges));
+      const closes20 = history.slice(-20).map(bar => bar.close);
+      const closeMean = mean(closes20);
+      const closeStd = Math.sqrt(mean(closes20.map(close => (close - closeMean) ** 2)));
+      const prior20 = history.slice(-21, -1);
+      const volumes = history.slice(-20).map(bar => bar.volume);
+      const volumeMean = mean(volumes);
+      const volumeStd = Math.sqrt(mean(volumes.map(volume => (volume - volumeMean) ** 2)));
+      const range = Math.max(0.25, current.high - current.low);
+      const movement = future[future.length - 1].close - future[0].open;
+      const longNet = (movement - costPoints) * 20;
+      const shortNet = (-movement - costPoints) * 20;
+      samples.push({
+        sequence_id: current.sequence_id, split: current.split, timestamp: current.timestamp,
+        features: {
+          body_fraction: (current.close - current.open) / range,
+          upper_wick_fraction: (current.high - Math.max(current.open, current.close)) / range,
+          lower_wick_fraction: (Math.min(current.open, current.close) - current.low) / range,
+          return_1_atr: (current.close - history[59].close) / atr,
+          return_5_atr: (current.close - history[55].close) / atr,
+          return_20_atr: (current.close - history[40].close) / atr,
+          range_to_atr14: range / atr,
+          atr14_fraction: atr / current.close,
+          price_z20: closeStd ? (current.close - closeMean) / closeStd : 0,
+          volume_z20: volumeStd ? (current.volume - volumeMean) / volumeStd : 0,
+          breakout_up20_atr: (current.close - Math.max(...prior20.map(bar => bar.high))) / atr,
+          breakout_down20_atr: (Math.min(...prior20.map(bar => bar.low)) - current.close) / atr,
+        },
+        targets: {
+          horizon_bars: horizon, entry_timestamp: future[0].timestamp,
+          exit_timestamp: future[future.length - 1].timestamp,
+          forward_points: movement, long_net_dollars: longNet, short_net_dollars: shortNet,
+          action: longNet > 0 ? "long" : shortNet > 0 ? "short" : "hold",
+        },
+      });
+    }
+    return samples;
+  }
+
+  const api = {SCENARIOS, SeededRandom, RateClock, NQSim, examples, validateProfile};
+  if (typeof module !== "undefined" && module.exports) module.exports = api;
+  else root.NQSynthetic = api;
+})(typeof globalThis !== "undefined" ? globalThis : this);
+</script>
 <script>
 "use strict";
 
@@ -369,17 +691,80 @@ class Sim {
 
 const $=id=>document.getElementById(id);
 const canvas=$("chart"),ctx=canvas.getContext("2d",{alpha:false});
-let sim,playing=true;
+let sim,playing=true,generating=false;
+let profile=JSON.parse($("nqProfile").textContent);
+const rateClock=new NQSynthetic.RateClock();
+let previousDraw=-Infinity;
+let measurementStart=null,measurementCount=0;
+const playbackRate=()=>Math.min(500,Math.pow(10,+$("speed").value));
+
+function showError(error){$("status").textContent=error.message || String(error)}
+function pause(){playing=false;rateClock.reset();$("play").textContent="Play"}
+function refreshRate(){
+  $("speedValue").textContent=playbackRate().toFixed(1)+" candles/sec";
+  rateClock.reset();measurementStart=null;measurementCount=0;
+}
 
 function reset(){
-  sim=new Sim(+$("seed").value,$("mode").value);
-  draw();
+  if(generating)return;
+  try{
+    const nq=$("mode").value==="nq";
+    const next=nq?new NQSynthetic.NQSim(profile,{
+      seed:+$("seed").value,scenario:$("scenario").value,startPrice:+$("startPrice").value,
+      roundTripCommission:+$("commission").value,slippageTicks:+$("slippage").value,
+    }):new Sim(+$("seed").value,$("mode").value);
+    sim=next;rateClock.reset();previousDraw=-Infinity;measurementStart=null;measurementCount=0;
+    $("nqSettings").hidden=!nq;$("nqNote").hidden=!nq;$("bookPanel").hidden=nq;$("originalNote").hidden=nq;
+    $("status").textContent=nq?"Calibrated on "+profile.training_rows.toLocaleString()+" training bars ending "+profile.fit_end_utc+". Playback uses candles per second; scenario changes reset the path.":"Original Unity reconstruction; price scale is internal / 100.";
+    draw();
+  }catch(error){pause();showError(error)}
 }
 $("reset").onclick=reset;
 $("mode").onchange=reset;
-$("play").onclick=()=>{playing=!playing;$("play").textContent=playing?"Pause":"Play"};
+$("play").onclick=()=>{if(generating)return;playing=!playing;rateClock.reset();$("play").textContent=playing?"Pause":"Play"};
 $("buy").onclick=()=>sim.buy();
 $("sell").onclick=()=>sim.sell();
+$("speed").oninput=refreshRate;
+$("scenario").onchange=reset;
+$("startPrice").onchange=reset;
+$("commission").onchange=reset;
+$("slippage").onchange=reset;
+$("profileFile").onchange=async()=>{
+  if(generating)return;
+  try{const incoming=JSON.parse(await $("profileFile").files[0].text());NQSynthetic.validateProfile(incoming);profile=incoming;reset()}
+  catch(error){showError(error)}
+};
+document.addEventListener("visibilitychange",()=>{rateClock.reset();measurementStart=null;measurementCount=0});
+
+function download(filename,text){
+  const url=URL.createObjectURL(new Blob([text],{type:"application/x-ndjson"}));
+  const link=document.createElement("a");link.href=url;link.download=filename;link.click();
+  setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+$("exportBars").onclick=()=>{
+  if(sim.mode!=="nq")return;
+  if(!sim.candles.length){showError(new Error("Generate bars before exporting"));return}
+  download("nq_synthetic_bars.jsonl",sim.rows().map(row=>JSON.stringify(row)).join("\n")+"\n");
+};
+$("exportExamples").onclick=()=>{
+  if(sim.mode!=="nq")return;
+  try{
+    const samples=NQSynthetic.examples(sim.rows(),{horizon:+$("horizon").value,roundTripCommission:sim.roundTripCommission,slippageTicks:sim.slippageTicks});
+    if(!samples.length)throw new Error("Generate at least 61 + horizon bars first");
+    download("nq_synthetic_examples.jsonl",samples.map(sample=>JSON.stringify(sample)).join("\n")+"\n");
+    $("status").textContent="Exported "+samples.length+" examples. This is one preview sequence; use the CLI for independent training/validation/test sets.";
+  }catch(error){showError(error)}
+};
+$("generate").onclick=async()=>{
+  if(generating||sim.mode!=="nq")return;
+  pause();generating=true;$("generate").disabled=true;
+  try{
+    const target=Math.min(50000,sim.candles.length+1000);
+    while(sim.candles.length<target){sim.stepCandles(Math.min(50,target-sim.candles.length));draw();await new Promise(resolve=>setTimeout(resolve,0))}
+    $("status").textContent="Generated "+sim.candles.length.toLocaleString()+" synthetic NQ bars. Export bars or AI examples.";
+  }catch(error){showError(error)}
+  finally{generating=false;$("generate").disabled=false;rateClock.reset()}
+};
 
 function resize(){
   const dpr=Math.min(devicePixelRatio||1,2);
@@ -447,23 +832,33 @@ function draw(){
   }
 
   const lp=sim.book.last;
-  $("price").textContent="$"+(lp/100).toFixed(2);
-  $("internal").textContent=lp+" internal";
+  $("price").textContent=sim.mode==="nq"?lp.toFixed(2)+" pts":"$"+(lp/100).toFixed(2);
+  $("internal").textContent=sim.mode==="nq"?"NQ • 0.25-point tick • $20/point":lp+" internal";
   $("count").textContent=sim.candles.length.toLocaleString();
-  $("bookStat").textContent=sim.book.buy.size+" bids / "+sim.book.sell.size+" asks";
+  $("bookStat").textContent=sim.mode==="nq"?"Synthetic 1-minute OHLCV; no order book":sim.book.buy.size+" bids / "+sim.book.sell.size+" asks";
   $("imbalance").textContent=Number(sim.book.imbalance).toFixed(3);
   $("position").textContent=sim.position===1?"Long":sim.position===-1?"Short":"Flat";
   $("pnl").textContent="PnL: "+(sim.realized+sim.floating()).toFixed(2);
 }
 
-function frame(){
-  if(playing){
-    const n=+$("speed").value;
-    sim.stepCandles(n);
-  }
-  draw();
+function frame(timestamp){
+  try{
+    const due=rateClock.due(timestamp,playbackRate(),playing&&!generating&&!document.hidden);
+    if(due&&sim){
+      const remaining=50000-sim.candles.length;
+      sim.stepCandles(Math.min(due,remaining));measurementCount+=Math.min(due,remaining);
+      if(remaining<=due){pause();$("status").textContent="50,000-bar preview limit reached. Export or reset; use the CLI for larger datasets."}
+    }
+    if(measurementStart===null)measurementStart=timestamp;
+    if(timestamp-measurementStart>=1000){
+      $("badge").textContent="Target "+playbackRate().toFixed(1)+" candles/sec • actual "+(measurementCount*1000/(timestamp-measurementStart)).toFixed(1)+" • "+(playing?"playing":"paused");
+      measurementStart=timestamp;measurementCount=0;
+    }
+    if(sim&&timestamp-previousDraw>=1000/30){draw();previousDraw=timestamp}
+  }catch(error){pause();showError(error)}
   requestAnimationFrame(frame);
 }
+refreshRate();
 reset();
 requestAnimationFrame(frame);
 </script>
