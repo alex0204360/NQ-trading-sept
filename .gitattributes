@@ -1,0 +1,4 @@
+tools/mnq_oracle_prepare.py -text
+tools/mnq_oracle_execution.py -text
+tools/mnq_oracle_research.py -text
+docs/MNQ_ORACLE_EXPERIMENT_PLAN.json -text
